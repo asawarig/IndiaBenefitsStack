@@ -19,9 +19,15 @@ The stylesheet is a separate file in `public/` rather than inline in the
 and CSS `url()` resolves relative to the stylesheet, so the `@font-face` rules
 keep working under any mount path without threading `BASE_URL` through them.
 
-The page sets `export const prerender = true` — it is fully static, so it is
-built to HTML and served as a static asset with no Worker invocation per
-request.
+There is deliberately **no `prerender` export** on the page — `output` decides
+per target: `'server'` (Webflow Cloud) renders on demand, `'static'` (Pages)
+prerenders. It has to be on demand on Webflow Cloud: prerendering wrote
+`dist/<base>/index.html`, and Cloudflare's static-asset router applies
+`html_handling: "auto-trailing-slash"`, so `/<base>` got a 307 to `/<base>/`
+while Webflow's edge strips the slash back off — an infinite redirect loop on
+the mount path. Setting `prerender = false` explicitly is not equivalent: under
+`output: 'static'` it marks the route on demand and the Pages build fails with
+`no-adapter-installed`.
 
 ## Mount path
 
