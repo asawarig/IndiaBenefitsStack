@@ -28,7 +28,10 @@ const BASE = process.env.BASE_PATH || MOUNT_PATH;
 
 export default defineConfig({
   base: BASE,
-  trailingSlash: 'always',
+  // No trailingSlash: 'always'. It made Astro 301 /<base> -> /<base>/, while
+  // Webflow's edge normalises the other way and strips the slash back off —
+  // an infinite redirect loop (ERR_TOO_MANY_REDIRECTS) on the mount path.
+  // Leaving it at Astro's default ('ignore') means neither side redirects.
   ...(PAGES
     ? { output: 'static' }
     : {

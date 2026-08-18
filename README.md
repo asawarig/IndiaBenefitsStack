@@ -10,7 +10,7 @@ src/pages/index.astro   the guide markup (prerendered) + TOC highlight script
 public/guide.css        the stylesheet, incl. @font-face rules
 public/fonts/           self-hosted webfonts
 astro.config.mjs        MOUNT_PATH is declared here — see below
-wrangler.json           Workers runtime config (Webflow Cloud reads this)
+wrangler.json           Workers config for local preview only (see Mount path)
 webflow.json            declares the framework as astro
 ```
 
@@ -19,22 +19,39 @@ The stylesheet is a separate file in `public/` rather than inline in the
 and CSS `url()` resolves relative to the stylesheet, so the `@font-face` rules
 keep working under any mount path without threading `BASE_URL` through them.
 
-The page sets `export const prerender = true` — it is fully static, so it is
-built to HTML and served as a static asset with no Worker invocation per
-request.
+There is deliberately **no `prerender` export** on the page — `output` decides
+per target: `'server'` (Webflow Cloud) renders on demand, `'static'` (Pages)
+prerenders. It has to be on demand on Webflow Cloud: prerendering wrote
+`dist/<base>/index.html`, and Cloudflare's static-asset router applies
+`html_handling: "auto-trailing-slash"`, so `/<base>` got a 307 to `/<base>/`
+while Webflow's edge strips the slash back off — an infinite redirect loop on
+the mount path. Setting `prerender = false` explicitly is not equivalent: under
+`output: 'static'` it marks the route on demand and the Pages build fails with
+`no-adapter-installed`.
 
 ## Mount path
 
-`MOUNT_PATH` in `astro.config.mjs` **must match the mount path of the Webflow
-Cloud environment this repo is wired to.** It is currently:
+**Webflow Cloud sets this itself — `MOUNT_PATH` here does not control it.**
+
+The Webflow Cloud builder renames `astro.config.mjs` to
+`clouduser.astro.config.mjs` and generates its own from a template, taking the
+base path from its `COSMIC_MOUNT_PATH` environment variable (the mount path set
+in the Webflow Cloud UI). It also discards `wrangler.json` in favour of its own
+template. So on Webflow Cloud the mount path cannot drift out of sync with this
+file — their value always wins.
+
+`MOUNT_PATH` in `astro.config.mjs` therefore only affects:
+
+- `npm run dev` / `npm run preview` locally
+- GitHub Pages, where the workflow overrides it with `BASE_PATH=/<repo>`
 
 ```js
 const MOUNT_PATH = '/india-benefits-stack';
 ```
 
-Astro needs this at build time to emit correct asset URLs, so it cannot be
-inferred at runtime. If a deploy serves HTML but 404s on `guide.css` and the
-fonts, this value and the Webflow Cloud mount path have diverged.
+Keeping it equal to the Webflow Cloud mount path is still worth doing, so local
+preview reproduces production URLs — but it is a convenience, not a
+requirement.
 
 ## Local development
 
@@ -64,8 +81,9 @@ Self-hosted — the page makes **no external requests at all**.
 
 | Role | Font | Status |
 |---|---|---|
-| `--font-display` | **GT Alpina** (Grilli Type) | on brand — webfont licence held |
-| `--font-sans` | **Figtree** (SIL OFL 1.1) | **substitute** for Passenger Sans |
+| `--font-display` | **GT Alpina** (Grilli Type) | on brand — licensed webfonts |
+| `--font-sans` | **Passenger Sans** | on brand — licensed webfonts |
+| U+20B9 only | **Figtree** (SIL OFL 1.1) | pinned rupee glyph, see below |
 
 ### GT Alpina — complete
 
@@ -82,38 +100,40 @@ Only these three faces are served. GT Alpina Bold (700) and the Regular/Bold
 desktop `.ttf`/`.otf` builds are deliberately absent: a desktop licence does not
 cover webfont delivery, and no rule needs weight 700 in the serif.
 
-### Passenger Sans — blocked, Figtree standing in
+### Passenger Sans — wired up, with the rupee sign pinned
 
-Passenger Sans is commercial and only part of its webfont set is available, so
-the body sans is currently a substitute. Figtree is variable (400–700), `latin`
-+ `latin-ext`.
-
-| CSS needs | Webfont supplied | Rules affected |
+| CSS weight | File | Rules |
 |---|---|---|
-| **400 Regular** | ❌ desktop `.otf` only | all body prose (the default weight) |
-| **500 Medium** | ❌ desktop `.otf` only | 8 |
-| 600 Semibold | ✅ `PassengerSansBold.woff` (usWeight 600) | 19 |
-| 700 Black | ✅ `PassengerSansBlack.woff` (usWeight 700) | 1 |
+| 400 | `PassengerSans-Regular.woff` | all body prose (the default) |
+| 500 | *no webfont build supplied* | 8 — resolve to 400, see below |
+| 600 | `PassengerSans-Bold.woff` (usWeight 600) | 19 |
+| 700 | `PassengerSans-Black.woff` (usWeight 700) | 1 |
 
-The two missing weights are the two that matter most — 400 carries every
-paragraph on the page. Serving Passenger Sans for 600/700 while prose fell back
-to Figtree would put two different sans families side by side, so none of it is
-wired up until **400 and 500 arrive as `woff`/`woff2`**. The 600/700 webfont
-files are held outside the repo rather than committed, so nothing unused ships.
+**No Passenger Sans file — web or desktop, any weight — contains U+20B9**, and
+the page uses the rupee sign 103 times. Rather than let all of them fall back to
+whatever system font the visitor has, a `Plum Rupee` `@font-face` pins that one
+codepoint to Figtree and is listed **first** in `--font-sans`. A face is only
+eligible for codepoints inside its `unicode-range`, so every other character
+falls straight through to Passenger Sans. Figtree is variable, so the rupee
+tracks the surrounding weight. Figtree also stays as the fallback behind
+Passenger Sans.
 
-Once they arrive: add four `@font-face` blocks to `public/guide.css`, repoint
-`--font-sans` to `'Passenger Sans'`, and update the Figtree `<link rel="preload">`
-in `src/pages/index.astro`. Passenger Sans italics (600/700) were also supplied;
-no rule currently uses an italic sans.
+**Medium (500) is missing.** Per CSS weight matching, a target of exactly 500
+checks 500, then descends, then ascends — so those eight label rules render at
+Regular and lose the step above body prose they were drawn with. The kit's
+"Bold" is usWeight 600, a step heavier than the Semibold the 19 emphasis rules
+were drawn against. Asking the foundry for Medium and Semibold closes both gaps.
 
-`latin-ext` is required for Figtree because the page uses the rupee sign
-(U+20B9) throughout. GT Alpina ships a full ~1281-glyph charset, unsubsetted.
+`latin-ext` is required for Figtree because of the rupee sign. GT Alpina ships a
+full ~1281-glyph charset, unsubsetted.
 
 ## Notes
 
-- `kv_namespaces: [{ binding: "SESSION" }]` in `wrangler.json` exists only to
-  satisfy `@astrojs/cloudflare`, which auto-enables KV-backed sessions unless a
-  session driver is configured. The page never uses sessions.
+- `@astrojs/cloudflare` logs a warning that it is enabling KV-backed sessions
+  with a `SESSION` binding. The page never uses sessions and no such binding is
+  declared — the Webflow Cloud deploy ends up with only `ASSETS`. The warning is
+  inert; a `kv_namespaces` entry was tried and rejected by Webflow's schema for
+  lacking an `id`.
 - The nav "get a quote" CTA uses `target="_top"` so it escapes the frame if the
   page is ever embedded rather than served directly.
 - The Plum logo is an inline SVG traced from the original 1920×1080 PNG, which

@@ -12,10 +12,5 @@
   },
   "observability": {
     "enabled": true
-  },
-  "kv_namespaces": [
-    {
-      "binding": "SESSION"
-    }
-  ]
+  }
 }
