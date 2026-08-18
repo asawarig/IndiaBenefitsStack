@@ -45,11 +45,6 @@
   font-display: swap;
 }
 
-/* Passenger Sans Black (700) is not supplied. Its @font-face block is held
-   below rather than deleted: drop the files into fonts/ and uncomment to
-   restore it. Until then CSS weight matching resolves 700 to the Semibold
-   (600) face above — this affects only the '+' glyph in .bd-check-list. */
-/*
 @font-face {
   font-family: 'Passenger Sans';
   src: url('fonts/PassengerSans-Black.woff2') format('woff2'),
@@ -58,7 +53,6 @@
   font-style: normal;
   font-display: swap;
 }
-*/
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
 :root {
