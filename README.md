@@ -50,10 +50,18 @@ how Webflow Cloud serves it.
 
 ## Fonts
 
-Five of the six declared faces are present. **Passenger Sans Black (700) is
-missing** — its `@font-face` block is commented out in `public/guide.css`.
-Until the file is added, CSS weight matching resolves 700 to the Semibold
-face; this affects only the `+` glyph in `.bd-check-list`.
+All six declared faces are present, so no weight falls back:
+
+| Family | Weight | File |
+|---|---|---|
+| GT Alpina | 400 | `GT-Alpina-Standard-Regular` |
+| GT Alpina | 300 italic | `GT-Alpina-Standard-Light-Italic` |
+| Passenger Sans | 400 | `PassengerSans-Regular` |
+| Passenger Sans | 500 | `PassengerSans-Medium` |
+| Passenger Sans | 600 | `PassengerSans-Semibold` |
+| Passenger Sans | 700 | `PassengerSans-Black` |
+
+Each is served as woff2 with the original ttf/otf as a fallback source.
 
 > **Licensing:** GT Alpina (Grilli Type) and Passenger Sans are commercial
 > fonts, and the files here are desktop builds. Self-hosting them as webfonts
