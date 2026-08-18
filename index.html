@@ -12,40 +12,60 @@
 
 @font-face {
   font-family: 'GT Alpina';
-  src: url('GT-Alpina-Standard-Regular.ttf') format('truetype');
+  src: url('fonts/GT-Alpina-Standard-Regular.woff2') format('woff2'),
+       url('fonts/GT-Alpina-Standard-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'GT Alpina';
-  src: url('GT-Alpina-Standard-Light-Italic.ttf') format('truetype');
+  src: url('fonts/GT-Alpina-Standard-Light-Italic.woff2') format('woff2'),
+       url('fonts/GT-Alpina-Standard-Light-Italic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Passenger Sans';
-  src: url('PassengerSans-Regular.otf') format('opentype');
+  src: url('fonts/PassengerSans-Regular.woff2') format('woff2'),
+       url('fonts/PassengerSans-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Passenger Sans';
-  src: url('PassengerSans-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Passenger Sans';
-  src: url('PassengerSans-Semibold.otf') format('opentype');
+  src: url('fonts/PassengerSans-Semibold.woff2') format('woff2'),
+       url('fonts/PassengerSans-Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
+}
+
+/* Passenger Sans Medium (500) and Black (700) font files are not yet
+   supplied. Their @font-face blocks are held below rather than deleted:
+   drop the files into fonts/ and uncomment to restore the intended
+   weights. Until then, CSS weight matching resolves both 500 and 700 to
+   the Semibold (600) face above. */
+/*
+@font-face {
+  font-family: 'Passenger Sans';
+  src: url('fonts/PassengerSans-Medium.woff2') format('woff2'),
+       url('fonts/PassengerSans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Passenger Sans';
-  src: url('PassengerSans-Black.otf') format('opentype');
+  src: url('fonts/PassengerSans-Black.woff2') format('woff2'),
+       url('fonts/PassengerSans-Black.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
+*/
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
 :root {
