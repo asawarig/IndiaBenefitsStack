@@ -3,33 +3,39 @@
    Tokens: plum-design.md
    ──────────────────────────────────────────────────────────────────── */
 
-/* FONTS — open-licensed (SIL OFL 1.1) substitutes, self-hosted.
+/* FONTS
 
-   GT Alpina and Passenger Sans are commercial fonts and Plum does not hold
-   a webfont licence for them, so they cannot be served from here. These are
-   the closest OFL equivalents:
+   Display serif: GT Alpina (Grilli Type), self-hosted from the licensed
+   webfont builds. Only Light (300) and Light Italic (300) were supplied as
+   woff2/woff, so those are the only two faces served. Regular (400) and Bold
+   (700) arrived as desktop ttf/otf only and are deliberately NOT used: the
+   desktop licence does not cover webfont delivery. The display rules use 300
+   as a result — see the note in the README about restoring 400.
 
-       GT Alpina      -> Newsreader  (editorial serif, true italics)
-       Passenger Sans -> Figtree     (humanist sans)
+   Body sans: Figtree (SIL OFL 1.1), standing in for Passenger Sans, which is
+   commercial and has no webfont licence confirmed. Variable, so one file per
+   subset covers 400-700.
 
-   Both are variable fonts, so one file per style covers the whole weight
-   range. Self-hosted rather than linked from Google Fonts: no third-party
-   request, no dependency on an external host, and it keeps visitor data off
-   Google's servers. latin-ext is included because the page uses the rupee
-   sign (U+20B9) throughout.
-
-   To restore the real brand fonts once a webfont licence is in place: swap
-   these blocks for the GT Alpina / Passenger Sans ones and repoint the two
-   --font-* tokens below. The originals are in git history at commit ae46c6c.
+   latin-ext is required for Figtree because the page uses the rupee sign
+   (U+20B9) throughout. GT Alpina ships a full 1281-glyph charset unsubsetted.
+   Nothing is loaded from a third-party host.
    ──────────────────────────────────────────────────────────────────────── */
 
 @font-face {
-  font-family: 'Figtree';
-  src: url('fonts/Figtree-Variable-latin-ext.woff2') format('woff2');
-  font-weight: 400 700;
+  font-family: 'GT Alpina';
+  src: url('fonts/GT-Alpina-Standard-Light.woff2') format('woff2'),
+       url('fonts/GT-Alpina-Standard-Light.woff') format('woff');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'GT Alpina';
+  src: url('fonts/GT-Alpina-Standard-Light-Italic.woff2') format('woff2'),
+       url('fonts/GT-Alpina-Standard-Light-Italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Figtree';
@@ -40,36 +46,12 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Newsreader';
-  src: url('fonts/Newsreader-Italic-Variable-latin-ext.woff2') format('woff2');
-  font-weight: 300 600;
-  font-style: italic;
-  font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Newsreader';
-  src: url('fonts/Newsreader-Italic-Variable-latin.woff2') format('woff2');
-  font-weight: 300 600;
-  font-style: italic;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Newsreader';
-  src: url('fonts/Newsreader-Variable-latin-ext.woff2') format('woff2');
-  font-weight: 300 600;
+  font-family: 'Figtree';
+  src: url('fonts/Figtree-Variable-latin-ext.woff2') format('woff2');
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Newsreader';
-  src: url('fonts/Newsreader-Variable-latin.woff2') format('woff2');
-  font-weight: 300 600;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
@@ -123,7 +105,7 @@
   --recommended-bg:      #E6F5EF;
 
   /* Typography */
-  --font-display:   'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-display:   'GT Alpina', Georgia, serif;
   --font-sans:      'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Shadows */
@@ -282,7 +264,7 @@ section[id] { scroll-margin-top: 24px; }
 .masthead h1 {
   font-family: var(--font-display);
   font-size: clamp(34px, 6vw, 62px);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.08;
   letter-spacing: -.03em;
   color: var(--fg-on-red);
@@ -373,8 +355,8 @@ h2 {
   text-wrap: balance;
   font-family: var(--font-display);
   font-size: clamp(24px, 3.2vw, 36px);
-  font-weight: 400;
-  letter-spacing: -.02em;
+  font-weight: 300;
+  letter-spacing: -.04em;
   line-height: 1.15;
   color: var(--fg-1);
   margin-bottom: 10px;
@@ -497,7 +479,7 @@ h2 {
 .policy-name {
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -.02em;
   color: var(--fg-1);
   margin-bottom: 4px;
@@ -698,7 +680,7 @@ h2 {
 .stat-num {
   font-family: var(--font-display);
   font-size: clamp(26px,3.5vw,34px);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -.03em;
   color: var(--fg-1);
   line-height: 1;
@@ -780,7 +762,7 @@ h2 {
 .persona-emoji { display: none; } /* no emoji per design spec */
 .persona-name {
   font-family: var(--font-display);
-  font-size: 16px; font-weight: 400;
+  font-size: 16px; font-weight: 300;
   color: var(--fg-1); margin-bottom: 2px;
 }
 .persona-role {
@@ -831,7 +813,7 @@ h2 {
 }
 .bd-title {
   font-family: var(--font-display);
-  font-size: 20px; font-weight: 400;
+  font-size: 20px; font-weight: 300;
   letter-spacing: -.02em; color: var(--fg-1);
 }
 .bd-sub {
@@ -899,7 +881,7 @@ h2 {
 }
 .outside-lane h3 {
   font-family: var(--font-display);
-  font-size: 20px; font-weight: 400; letter-spacing: -.02em;
+  font-size: 20px; font-weight: 300; letter-spacing: -.02em;
   color: var(--cream); margin-bottom: 8px;
 }
 .outside-lane > p {
@@ -944,7 +926,7 @@ h2 {
 .footer-logo svg { height: 24px; width: auto; margin-bottom: 10px; display: block; color: #fff; opacity: .8; }
 .footer-brand {
   font-family: var(--font-display);
-  font-size: 14px; font-weight: 400;
+  font-size: 14px; font-weight: 300;
   color: rgba(255,250,242,.5);
   margin-bottom: 4px; letter-spacing: -.01em;
 }
