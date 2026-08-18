@@ -1,0 +1,1535 @@
+---
+// The India Benefits Stack — a single static guide page.
+//
+// The stylesheet lives in public/guide.css rather than inline here for two
+// reasons: Astro <style> blocks cannot be interpolated, and CSS url() is
+// resolved relative to the stylesheet itself. That means the @font-face
+// rules keep working under any Webflow Cloud mount path without needing
+// BASE_URL threaded through them.
+// Fully static page: prerender at build time and serve as a static asset,
+// so no Worker invocation happens on request.
+export const prerender = true;
+
+const base = import.meta.env.BASE_URL;
+const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The India Benefits Stack — A Guide for MNC Decision-Makers | Plum</title>
+<meta name="description" content="What your insurance, employee benefits, and compliance programme should look like in India — from entity registration to full operations." />
+<link rel="stylesheet" href={href('guide.css')} />
+<link rel="preload" as="font" type="font/woff" crossorigin href={href('fonts/PassengerSans-Regular.woff')} />
+<link rel="preload" as="font" type="font/woff" crossorigin href={href('fonts/GT-Alpina-Standard-Regular.woff')} />
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-eyebrow"><span class="masthead-eyebrow-rule"></span> MNC Decision-Maker Guide &middot; India Entry</div>
+    <h1>The India <em>Benefits</em> Stack</h1>
+    <p class="masthead-sub">What your insurance, employee benefits, and compliance programme should actually look like — from entity registration to full operations. Benchmarks sourced from Plum's analysis of 4,500+ employee healthcare plans.</p>
+    <div class="masthead-meta">
+      <span>Employee Benefits (EB)</span>
+      <span>Business Insurance (Non-EB)</span>
+      <span>Statutory Compliance</span>
+      <span>Updated 2026</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-top" aria-label="Site navigation">
+  <a href="https://www.plumhq.com" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
+-31 -3 -1595 c-2 -1503 -1 -1597 15 -1629 10 -19 31 -44 46 -55 28 -20 41 -21
+500 -24 319 -2 484 0 509 8 23 7 48 24 65 47 l28 36 3 1666 c2 1156 0 1677 -8
+1703 -16 57 -61 88 -123 87 -29 0 -247 -34 -486 -75z M1968 3456 c-406 -72
+-636 -329 -774 -870 -15 -56 -31 -107 -36 -113 -16 -20 -73 -16 -93 7 -18 19
+-17 32 29 407 26 212 45 400 42 418 -4 17 -20 45 -37 61 l-30 29 -494 0 -493
+0 -27 -25 c-59 -55 -55 58 -55 -1667 0 -1519 1 -1590 18 -1622 10 -19 34 -43
+53 -53 31 -17 68 -18 524 -18 527 0 519 0 559 53 19 25 21 44 24 180 3 136 -2
+191 -47 532 -28 209 -54 397 -57 417 -7 45 21 78 65 78 37 0 43 -8 89 -123 55
+-137 125 -248 212 -337 85 -87 138 -125 248 -180 160 -80 346 -120 553 -120
+263 0 475 72 625 213 183 171 290 423 346 822 18 123 18 727 0 850 -36 252
+-82 419 -162 580 -119 240 -307 398 -555 466 -66 18 -112 22 -265 25 -124 2
+-211 -1 -262 -10z m-133 -1026 c138 -67 184 -183 192 -480 9 -336 -44 -510
+-182 -595 -47 -29 -52 -30 -174 -30 -116 0 -131 2 -196 29 -75 31 -242 128
+-276 159 -20 19 -21 27 -16 256 5 258 12 304 68 419 17 35 57 91 89 126 101
+107 203 148 356 142 70 -2 103 -9 139 -26z M10073 3455 c-161 -29 -276 -85
+-376 -183 -127 -124 -209 -292 -278 -572 -39 -155 -51 -180 -91 -180 -10 0
+-27 9 -39 21 -17 17 -20 29 -16 58 3 20 22 187 42 371 41 369 40 375 -17 410
+-32 19 -51 20 -513 20 -458 0 -481 -1 -512 -20 -18 -10 -40 -34 -50 -52 -17
+-31 -18 -101 -18 -1338 0 -1287 0 -1305 20 -1339 11 -18 36 -42 55 -52 32 -18
+66 -19 515 -19 536 0 528 -1 570 70 19 34 20 55 26 740 4 496 9 717 17 747 36
+128 112 232 207 281 44 24 61 27 150 27 84 0 107 -4 141 -22 51 -27 101 -83
+127 -141 43 -99 46 -159 47 -887 l0 -691 23 -44 c41 -82 25 -80 572 -80 458 0
+481 1 512 20 72 43 67 -4 74 775 6 761 7 768 65 891 56 120 143 174 292 182
+88 5 95 3 157 -27 82 -40 124 -99 157 -216 21 -78 22 -96 27 -810 6 -682 7
+-732 24 -757 40 -59 39 -59 576 -56 477 3 490 4 518 24 15 11 36 36 45 55 17
+31 18 89 18 775 0 420 -4 797 -10 870 -43 537 -187 864 -455 1036 -158 102
+-291 133 -539 125 -251 -7 -397 -49 -537 -154 -155 -117 -267 -321 -345 -631
+-18 -74 -39 -140 -45 -148 -15 -19 -74 -18 -93 1 -8 8 -18 41 -21 72 -13 104
+-45 259 -69 331 -96 280 -305 474 -560 521 -80 15 -304 12 -393 -4z M4945
+3391 c-27 -12 -62 -50 -74 -84 -15 -40 -15 -1500 0 -1639 21 -195 86 -406 169
+-549 197 -336 552 -538 1055 -600 130 -16 482 -16 610 0 621 78 998 349 1160
+834 70 209 68 181 72 1116 4 933 8 870 -60 911 -31 19 -54 20 -522 20 -468 0
+-491 -1 -522 -20 -72 -44 -67 12 -73 -845 l-5 -770 -23 -50 c-31 -67 -62 -98
+-135 -132 -58 -26 -70 -28 -192 -28 -147 0 -205 14 -268 66 -46 38 -72 87 -86
+164 -7 39 -11 302 -11 782 0 784 2 750 -55 803 l-27 25 -496 2 c-273 1 -506
+-2 -517 -6z"/></svg>
+  </a>
+  <a href="https://www.plumhq.com/get-quote" class="nav-cta" target="_top">get a quote</a>
+</nav>
+
+<div class="layout">
+
+<nav class="toc-bar" aria-label="On this page">
+  <div class="toc-inner">
+  <p class="toc-heading">On this page</p>
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#statutory">Statutory (EB)</a></li>
+    <li><a href="#voluntary-eb">Voluntary EB</a></li>
+    <li><a href="#global-benchmark">Global Benchmark</a></li>
+    <li><a href="#claims-reality">Claims Reality</a></li>
+    <li><a href="#maternity">Maternity</a></li>
+    <li><a href="#business">Business Insurance</a></li>
+    <li><a href="#by-setup">By Setup Stage</a></li>
+    <li><a href="#sector">Sector Notes</a></li>
+    <li><a href="#city">City Guide</a></li>
+    <li><a href="#checklist">Checklist</a></li>
+    <li><a href="#beyond">Beyond Insurance</a></li>
+  </ul>
+  </div>
+</nav>
+
+<main class="page-body">
+
+  <!-- OVERVIEW -->
+  <section id="overview" style="margin-top:0;margin-bottom:48px;">
+    <div class="intro-strip">
+      <div class="intro-card">
+        <div class="intro-card-label">Regulatory body</div>
+        <div class="intro-card-value">IRDAI (Insurance Regulatory and Development Authority of India)</div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">Labour code effective</div>
+        <div class="intro-card-value">New Labour Codes operative from November 21, 2025</div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">GST on group health</div>
+        <div class="intro-card-value">18% GST applies to employer group health policies</div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">Min. group health size</div>
+        <div class="intro-card-value">7 employees to qualify for a group policy under most insurers</div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">India median sum insured</div>
+        <div class="intro-card-value">₹5,00,000 — global startups in India carry ₹10,00,000</div>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card-label">Claims data source</div>
+        <div class="intro-card-value">18,000+ claims + 4,500+ plans analysed by Plum (Jan '23–Jan '24)</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--mandatory-border)"></div> Mandatory — legal obligation</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-teal)"></div> Recommended — market standard for MNCs</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div> Sector-specific requirement</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div> GCC / global capability centre applicability</div>
+    </div>
+  </section>
+
+
+  <!-- PART 1: STATUTORY -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="statutory">
+    <div class="section-label">Part 1 — Employee Benefits</div>
+    <h2>Mandatory statutory insurance &amp; benefits</h2>
+    <p class="section-intro">Indian labour law mandates several contributory schemes. Thresholds are headcount and salary based. Non-compliance risks fines up to ₹1 lakh, criminal liability, and operational disruption.</p>
+
+    <div class="callout callout-coral">
+      <span class="callout-icon">⚑</span>
+      <div><strong>Labour Code 2025 update:</strong> The four new Labour Codes became effective November 21, 2025, consolidating 29 prior laws. Basic salary must now be at least 50% of total CTC. Gratuity eligibility for fixed-term employees reduced from 5 years to 1 year of service.</div>
+    </div>
+
+    <div class="table-scroll"><table class="statutory-table">
+      <thead>
+        <tr>
+          <th>Scheme</th>
+          <th>Who it applies to</th>
+          <th>Employer contribution</th>
+          <th>Employee contribution</th>
+          <th>What it covers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EPF</strong><br><span style="font-size:11px;color:var(--ink-muted)">Employees' Provident Fund</span></td>
+          <td>Establishments with 20+ employees. Employees earning basic+DA up to ₹15,000/month</td>
+          <td>12% of basic+DA (8.33% → EPS, balance → EPF)</td>
+          <td>12% of basic+DA</td>
+          <td>Retirement savings, withdrawable for housing/medical</td>
+        </tr>
+        <tr>
+          <td><strong>ESI</strong><br><span style="font-size:11px;color:var(--ink-muted)">Employees' State Insurance</span></td>
+          <td>Establishments with 10+ employees. Employees earning ≤₹21,000/month gross</td>
+          <td>3.25% of gross wages</td>
+          <td>0.75% of gross wages</td>
+          <td>Medical care, sickness cash benefit, maternity, occupational injury. <em>Note: ESI replaces employer obligation for group health for in-scope employees.</em></td>
+        </tr>
+        <tr>
+          <td><strong>Gratuity</strong><br><span style="font-size:11px;color:var(--ink-muted)">Payment of Gratuity Act, 1972</span></td>
+          <td>Establishments with 10+ employees. Employee eligible after 5 continuous years (1 year for fixed-term post-2025 reforms)</td>
+          <td>15 days' last drawn salary × years of service. Capped at ₹20 lakh</td>
+          <td>Nil</td>
+          <td>Lump-sum on resignation, retirement, death, or disability</td>
+        </tr>
+        <tr>
+          <td><strong>Workmen's Compensation / EC</strong><br><span style="font-size:11px;color:var(--ink-muted)">Employees' Compensation Act, 1923</span></td>
+          <td>All employees not covered by ESI — typically those earning above the ESI threshold or in non-ESI-notified areas</td>
+          <td>Employer bears full cost of insurance premium</td>
+          <td>Nil</td>
+          <td>Compensation for occupational injury, partial/permanent disability, death in course of employment</td>
+        </tr>
+        <tr>
+          <td><strong>EDLI</strong><br><span style="font-size:11px;color:var(--ink-muted)">Employees' Deposit Linked Insurance</span></td>
+          <td>All EPF-covered employees (administered via EPFO)</td>
+          <td>0.5% of basic wages (capped at ₹75/month per employee)</td>
+          <td>Nil</td>
+          <td>Life insurance cover of up to ₹7 lakh payable to nominee on death in service</td>
+        </tr>
+        <tr>
+          <td><strong>Maternity benefit</strong><br><span style="font-size:11px;color:var(--ink-muted)">Maternity Benefit Act, 1961</span></td>
+          <td>Establishments with 10+ employees. Women employees with 80+ days of work in past 12 months</td>
+          <td>Full pay for 26 weeks (first two children); 12 weeks for third child onwards</td>
+          <td>Nil (ESI-covered employees receive benefit via ESIC instead)</td>
+          <td>Paid maternity leave; nursing breaks; crèche obligation for 50+ employee establishments</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </section>
+
+
+  <!-- PART 2: VOLUNTARY EB -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="voluntary-eb">
+    <div class="section-label">Part 2 — Voluntary Employee Benefits</div>
+    <h2>Recommended EB insurance for MNCs</h2>
+    <p class="section-intro">Not legally mandatory, but market-standard for any MNC or GCC hiring professional talent in India. These benefits are a primary lever for retention — and candidates from IT, BFSI, and consulting sectors arrive with clear expectations about what a credible employer carries.</p>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon teal">🏥</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Group Health Insurance (GHI)</div>
+          <div class="policy-tagline">Floater or individual sum insured; employee + dependants</div>
+        </div>
+        <div class="policy-badges">
+          <span class="badge badge-recommended">Recommended</span>
+          <span class="badge badge-gc">GCC standard</span>
+        </div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>Who needs it</label>
+          <p>Any employer not relying solely on ESI. Virtually mandatory for employees above the ₹21,000/month ESI threshold — which covers most MNC white-collar hires.</p>
+        </div>
+        <div class="policy-field">
+          <label>Minimum group size</label>
+          <p>7 employees to qualify for a standard group policy. Below this, insurers require individual retail policies (30–50% higher premium, with waiting periods).</p>
+        </div>
+        <div class="policy-field">
+          <label>Typical coverage</label>
+          <p>Hospitalisation (inpatient), pre-existing conditions covered from day one, maternity, daycare procedures, cashless claim at insurer's network hospitals. Family floater commonly covers spouse + 2 children; parents can be added as top-up.</p>
+        </div>
+        <div class="policy-field">
+          <label>Market benchmarks (2025–26)</label>
+          <p>India median sum insured: ₹5,00,000. Global startups operating in India: ₹10,00,000. Top 10 percentile companies: ₹8,00,000 and above, regardless of headcount.</p>
+        </div>
+        <div class="policy-field">
+          <label>Key IRDAI 2024–25 changes</label>
+          <p>Pre-existing condition waiting period capped at 36 months (down from 48). Moratorium period reduced from 8 to 5 years. No upper age limit for enrolment in new policies.</p>
+        </div>
+        <div class="policy-field">
+          <label>Tax treatment</label>
+          <p>Premium deductible for employer under Section 37(1) of the Income Tax Act. 18% GST applies on group policies. Not included in employee's perquisite income under Section 17(2).</p>
+        </div>
+        <div class="policy-field full">
+          <label>Insurer options</label>
+          <p>
+            <span class="trigger-tag">ICICI Lombard</span>
+            <span class="trigger-tag">HDFC ERGO</span>
+            <span class="trigger-tag">Bajaj Allianz</span>
+            <span class="trigger-tag">Star Health</span>
+            <span class="trigger-tag">Niva Bupa</span>
+            <span class="trigger-tag">Aditya Birla Health Insurance</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon coral">🛡️</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Group Personal Accident (GPA)</div>
+          <div class="policy-tagline">Accidental death, disability, income replacement</div>
+        </div>
+        <div class="policy-badges"><span class="badge badge-recommended">Recommended</span></div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Accidental death (typically 5–10× annual salary), permanent total disability, permanent partial disability. Often includes weekly compensation for temporary disablement and medical expense reimbursement.</p>
+        </div>
+        <div class="policy-field">
+          <label>Relation to WC/EC</label>
+          <p>GPA provides broader cover than mandatory Workmen's Compensation — covers non-occupational accidents and is not restricted to the workplace. MNCs typically hold both.</p>
+        </div>
+        <div class="policy-field full">
+          <label>Why MNCs carry this</label>
+          <p>EDLI under EPF provides a maximum of ₹7 lakh death benefit. GPA fills the gap for senior employees and those with global pay structures where EDLI cover is structurally insufficient. At the 90th percentile, companies offer GPA of ₹50,00,000 or higher / 3–5× CTC.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon blue">💼</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Group Term Life (GTL)</div>
+          <div class="policy-tagline">Death benefit; employer-paid life cover</div>
+        </div>
+        <div class="policy-badges">
+          <span class="badge badge-recommended">Recommended</span>
+          <span class="badge badge-gc">GCC standard</span>
+        </div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>Typical structure</label>
+          <p>Death benefit of 3–5× annual CTC. No medical underwriting for group of sufficient size. Often extended to include critical illness and accidental death rider.</p>
+        </div>
+        <div class="policy-field">
+          <label>Adoption by headcount</label>
+          <p>Offered by 36% of 2–100 employee companies; 52% at 101–250; 75% at 251–750; 76% at 750+. Global startups in India: 30% adoption — lagging their GHI provision.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon amber">🩺</div>
+        <div class="policy-title-block">
+          <div class="policy-name">OPD / Wellness Benefits</div>
+          <div class="policy-tagline">Outpatient, mental health, preventive care</div>
+        </div>
+        <div class="policy-badges"><span class="badge badge-recommended">Recommended</span></div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it includes</label>
+          <p>Outpatient consultations, diagnostics, pharmacy reimbursements. Mental health support (EAP), telemedicine access, preventive health check-ups.</p>
+        </div>
+        <div class="policy-field">
+          <label>Adoption context</label>
+          <p>Only 9% of companies at 2–100 employees offer OPD; 14% at 101–250; 35% at 251–750; 60% at 750+. Global startups in India: 60% adoption — well above the India median of 16%.</p>
+        </div>
+        <div class="policy-field full">
+          <label>Why it matters beyond hospitalisation</label>
+          <p>Group health insurance primarily covers inpatient events — but Plum's telehealth data shows mental health (19% of consultations), dermatology (18%), and OB-GYN (10%) as the top day-to-day needs. These are overwhelmingly OPD interactions that a standard GHI policy does not address.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PART 2B: GLOBAL BENCHMARK -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="global-benchmark">
+    <div class="section-label">Part 2B — Global Standard</div>
+    <h2>What global MNC standard actually means, dimension by dimension</h2>
+    <p class="section-intro">Data from Plum's analysis of 4,500+ employee healthcare plans. "Global startups in India" are international companies that have set up operations in India and bring global benefit benchmarks with them. This is the cohort your India talent pool will increasingly compare you against.</p>
+
+    <div class="callout callout-blue">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>The budget gap is smaller than it looks:</strong> India's benefits budget is typically 2% of total CTC, compared to 7% in the USA, 10–25% in Europe, and 8–15% in other APAC countries. Closing the EB gap does not require closing the budget gap — it requires better plan design and broker selection.</div>
+    </div>
+
+    <div class="table-scroll"><table class="data-table">
+      <thead>
+        <tr>
+          <th class="col-dim">Dimension</th>
+          <th class="col-india">India Inc (median)</th>
+          <th class="col-global">Global startups in India</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Median sum insured</strong></td>
+          <td class="col-india">₹5,00,000</td>
+          <td class="col-global">₹10,00,000</td>
+        </tr>
+        <tr>
+          <td><strong>Policy structure</strong></td>
+          <td class="col-india">Employee, Spouse, Child</td>
+          <td class="col-global">Employee, Spouse, Child, Parents</td>
+        </tr>
+        <tr>
+          <td><strong>Maternity benefits</strong></td>
+          <td class="col-india">60% of companies offer it; avg cover ₹60,000</td>
+          <td class="col-global">95% of companies offer it; avg cover ₹1,00,000</td>
+        </tr>
+        <tr>
+          <td><strong>OPD &amp; pharmacy</strong></td>
+          <td class="col-india">16% of companies offer it</td>
+          <td class="col-global">60% of companies offer it</td>
+        </tr>
+        <tr>
+          <td><strong>Modern treatments</strong></td>
+          <td class="col-india">70% include them</td>
+          <td class="col-global">95% include them</td>
+        </tr>
+        <tr>
+          <td><strong>Inclusive benefits</strong><br><span style="font-size:11px;color:var(--ink-muted)">LGBTQ+, gender affirmation, infertility</span></td>
+          <td class="col-india">&lt;10% of companies</td>
+          <td class="col-global">80% of companies</td>
+        </tr>
+        <tr>
+          <td><strong>Employer-sponsored primary healthcare</strong></td>
+          <td class="col-india">18% of companies</td>
+          <td class="col-global">80% of companies</td>
+        </tr>
+        <tr>
+          <td><strong>Group personal accident</strong></td>
+          <td class="col-india">45% of companies</td>
+          <td class="col-global">60% of companies</td>
+        </tr>
+        <tr>
+          <td><strong>Group term life</strong></td>
+          <td class="col-india">14% of companies</td>
+          <td class="col-global">30% of companies</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Analysis of 4,500+ employee healthcare plans.</p>
+
+    <div style="margin-top:28px;">
+      <h2 style="margin-bottom:10px;">Benefits adoption by headcount band</h2>
+      <p class="section-intro">How the market actually looks at each stage — so you know what your candidates have been offered by previous employers.</p>
+
+      <div class="table-scroll"><table class="bench-table">
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th class="b1">2–100 employees</th>
+            <th class="b2">101–250 employees</th>
+            <th class="b3">251–750 employees</th>
+            <th class="b4">750+ employees</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Median sum insured</td>
+            <td>₹5,00,000</td>
+            <td>₹5,00,000</td>
+            <td>₹5,00,000</td>
+            <td>₹5,00,000</td>
+          </tr>
+          <tr>
+            <td>90th percentile SI</td>
+            <td>₹10,00,000</td>
+            <td>₹10,00,000</td>
+            <td>₹8,00,000</td>
+            <td>₹8,00,000</td>
+          </tr>
+          <tr>
+            <td>Family structure (most common)</td>
+            <td>ESC (45%)</td>
+            <td>ESC (47%)</td>
+            <td>ESC (42%)</td>
+            <td>ESCP (64%)</td>
+          </tr>
+          <tr>
+            <td>Maternity cover offered</td>
+            <td>59% of companies; limit ₹50,000</td>
+            <td>83% of companies; limit ₹75,000</td>
+            <td>94% of companies; limit ₹75,000</td>
+            <td>67% of companies; limit ₹50,000</td>
+          </tr>
+          <tr>
+            <td>OPD benefits offered</td>
+            <td>9%</td>
+            <td>14%</td>
+            <td>35%</td>
+            <td>60%</td>
+          </tr>
+          <tr>
+            <td>Group personal accident</td>
+            <td>36%</td>
+            <td>52%</td>
+            <td>75%</td>
+            <td>76%</td>
+          </tr>
+          <tr>
+            <td>Group term life</td>
+            <td>8% · ₹10–25L range</td>
+            <td>15% · ₹25–50L range</td>
+            <td>60% · ₹30–50L range</td>
+            <td>76% · ₹30L–₹1Cr range</td>
+          </tr>
+          <tr>
+            <td>No copay on GHI</td>
+            <td>79%</td>
+            <td>74%</td>
+            <td>62%</td>
+            <td>80%</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. ESC = Employee + Spouse + Children. ESCP = ESC + Parents.</p>
+    </div>
+  </section>
+
+
+  <!-- PART 2C: CLAIMS REALITY -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="claims-reality">
+    <div class="section-label">Part 2C — Claims Reality</div>
+    <h2>What group health insurance actually pays for in India</h2>
+    <p class="section-intro">Most MNCs buy GHI thinking of it as employee health cover. In practice, nearly half the claim value on a typical group policy flows to employees' parents — a dependency structure that has direct implications for how you structure your plan and sub-limits. Data from 18,000+ claims on Plum's platform (Jan 2023–Jan 2024).</p>
+
+    <div class="claims-grid">
+      <div class="claims-card">
+        <h4>Claims by relationship to employee</h4>
+        <div class="claims-row">
+          <span class="claims-label">Parent</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:100%;background:var(--accent-coral)"></div></div>
+          <span class="claims-pct">40%</span>
+          <span class="claims-amt">avg ₹73,000</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Self</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:72%"></div></div>
+          <span class="claims-pct">29%</span>
+          <span class="claims-amt">avg ₹58,000</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Spouse</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:44%"></div></div>
+          <span class="claims-pct">18%</span>
+          <span class="claims-amt">avg ₹55,000</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Sibling</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:27%"></div></div>
+          <span class="claims-pct">11%</span>
+          <span class="claims-amt">avg ₹59,000</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Child</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:5%"></div></div>
+          <span class="claims-pct">2%</span>
+          <span class="claims-amt">avg ₹41,000</span>
+        </div>
+      </div>
+
+      <div class="claims-card">
+        <h4>Top five causes of employee claims</h4>
+        <div class="claims-row">
+          <span class="claims-label">Delivery &amp; postnatal complications</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:100%;background:var(--accent-purple)"></div></div>
+          <span class="claims-pct">12%</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Infectious &amp; viral diseases</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:67%;background:var(--accent-purple)"></div></div>
+          <span class="claims-pct">8%</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Cancer</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:42%;background:var(--accent-purple)"></div></div>
+          <span class="claims-pct">5%</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Cataracts</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:33%;background:var(--accent-purple)"></div></div>
+          <span class="claims-pct">4%</span>
+        </div>
+        <div class="claims-row">
+          <span class="claims-label">Respiratory illnesses</span>
+          <div class="claims-bar-wrap"><div class="claims-bar-fill" style="width:25%;background:var(--accent-purple)"></div></div>
+          <span class="claims-pct">3%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-amber" style="margin-top:16px;">
+      <span class="callout-icon">⚠</span>
+      <div><strong>The parental cover decision:</strong> 40% of claims on ESCP (employee + spouse + children + parents) policies are for parents — and parents generate the highest average claim at ₹73,000. Removing parental cover to cut costs results in considerable out-of-pocket spending for employees. The recommended approach is to introduce voluntary parental cover (employee-funded, employer-facilitated) rather than removing it entirely — less expensive than a default ESCP plan, more comprehensive than a retail policy the employee would buy independently.</div>
+    </div>
+  </section>
+
+
+  <!-- PART 2D: MATERNITY -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="maternity">
+    <div class="section-label">Part 2D — Maternity</div>
+    <h2>Why maternity cover is the most mispriced benefit in India</h2>
+    <p class="section-intro">Delivery and postnatal complications are the single largest cause of group health claims in India, at 12% of all claims. Yet most corporate policies offer sub-limits that don't cover actual delivery costs, let alone complications. This is the benefit MNCs most frequently get wrong.</p>
+
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-num">₹1L</div>
+        <div class="stat-label">Average cost of normal delivery in urban India</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">₹1.25L</div>
+        <div class="stat-label">Average cost of C-section in urban India</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">₹10K+</div>
+        <div class="stat-label">NICU costs per day in urban private hospitals</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">15%</div>
+        <div class="stat-label">Of women develop life-threatening pregnancy complications</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">&lt;15%</div>
+        <div class="stat-label">Of Indian companies offer maternity cover above ₹1,00,000</div>
+      </div>
+    </div>
+
+    <div class="table-scroll"><table class="statutory-table" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Benefit</th>
+          <th>Market median</th>
+          <th>Top 1% in India</th>
+          <th>Why it matters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Maternity sub-limit</strong></td>
+          <td>₹50,000</td>
+          <td>₹1,00,000+</td>
+          <td>Median limit doesn't cover a normal delivery; MNCs should target ₹1L (normal) / ₹1.25L (C-section)</td>
+        </tr>
+        <tr>
+          <td><strong>Newborn cover</strong></td>
+          <td>60% of companies include it</td>
+          <td>Covered from day one</td>
+          <td>NICU costs exceed ₹10,000/day in urban hospitals; India's neonatal mortality rate is among the world's highest</td>
+        </tr>
+        <tr>
+          <td><strong>Maternity complications</strong></td>
+          <td>&lt;20% of companies</td>
+          <td>Covered up to full sum insured</td>
+          <td>15% of pregnancies develop life-threatening complications — not covered unless explicitly called out in the policy</td>
+        </tr>
+        <tr>
+          <td><strong>Pre &amp; post-natal expenses</strong></td>
+          <td>50% of companies</td>
+          <td>Up to ₹1,00,000 OPD + IPD basis</td>
+          <td>Checkups, medicines, therapy, vaccinations over 9 months add up significantly</td>
+        </tr>
+        <tr>
+          <td><strong>Infertility treatments (IVF, egg freezing)</strong></td>
+          <td>&lt;5% of companies</td>
+          <td>Included in policy construct</td>
+          <td>1 in 15 Indian couples experience infertility; IVF costs average ₹1,50,000 per cycle</td>
+        </tr>
+        <tr>
+          <td><strong>Miscarriage &amp; abortion</strong></td>
+          <td>&lt;10% of companies</td>
+          <td>Covered within maternity limit</td>
+          <td>Abortion costs up to ₹40,000; 67% of abortions in India are unsafe, largely due to cost barriers</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout callout-teal" style="margin-top:16px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>MNC benchmark for maternity:</strong> Global startups in India target 95% maternity benefit adoption with an average ₹1,00,000 sub-limit. If 30% or more of your workforce is in the maternity-age band, maternity sub-limits matter more than headline sum insured. Ask your broker specifically for the normal delivery vs C-section sub-limit, newborn cover from day one, and whether complications are covered to full sum insured.</div>
+    </div>
+  </section>
+
+
+  <!-- PART 3: BUSINESS INSURANCE -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="business">
+    <div class="section-label">Part 3 — Business Insurance (Non-EB)</div>
+    <h2>Commercial &amp; liability insurance</h2>
+    <p class="section-intro">Separate from the EB stack. These protect the MNC entity, its directors, its property, and its third-party obligations. Several are contractually required by clients, landlords, or parent-company risk frameworks before India operations begin.</p>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon purple">⚖️</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Directors &amp; Officers Liability (D&amp;O)</div>
+          <div class="policy-tagline">Personal liability protection for leadership</div>
+        </div>
+        <div class="policy-badges">
+          <span class="badge badge-recommended">Recommended</span>
+          <span class="badge badge-gc">GCC standard</span>
+        </div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Defense costs, settlements, and judgments arising from claims by employees, shareholders, creditors, or regulators alleging wrongful acts — mismanagement, breach of duty, employment practices violations.</p>
+        </div>
+        <div class="policy-field">
+          <label>Indian regulatory basis</label>
+          <p>Under the Companies Act 2013, there is no bar on companies indemnifying directors and officers. Premium paid is not remuneration unless the director is proven guilty of negligence or misfeasance.</p>
+        </div>
+        <div class="policy-field">
+          <label>Key exclusions</label>
+          <p>Fraud, wilful criminal acts, fines and penalties, anti-competitive behaviour, bodily injury to employees (covered under WC), professional errors by the entity (covered under PI).</p>
+        </div>
+        <div class="policy-field">
+          <label>Why MNCs buy early</label>
+          <p>India-incorporated subsidiary directors are personally exposed under the Companies Act from the CIN date. MNCs often extend a global D&O policy to India via a difference-in-conditions (DIC) local placement.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon teal">📋</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Professional Indemnity (PI) / E&amp;O</div>
+          <div class="policy-tagline">Errors, omissions, professional negligence</div>
+        </div>
+        <div class="policy-badges">
+          <span class="badge badge-sector">Sector-specific</span>
+          <span class="badge badge-gc">GCC standard</span>
+        </div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Claims arising from professional negligence, errors, or omissions in service delivery. Covers legal defense costs, settlements, and damages. Also typically covers intellectual property infringement and unintentional defamation.</p>
+        </div>
+        <div class="policy-field">
+          <label>Critical distinction</label>
+          <p>CGL (below) explicitly excludes professional advice and service failures. PI fills that gap. IT services, consulting, BPO, financial services, legal, and engineering firms all require PI — CGL alone is insufficient.</p>
+        </div>
+        <div class="policy-field full">
+          <label>Who mandates it</label>
+          <p>Client contracts (especially Fortune 500 or public sector), RBI for regulated entities, SEBI for market intermediaries, and sectoral licensing requirements under IRDAI for insurance intermediaries.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon coral">🏢</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Commercial General Liability (CGL)</div>
+          <div class="policy-tagline">Third-party bodily injury &amp; property damage</div>
+        </div>
+        <div class="policy-badges"><span class="badge badge-recommended">Recommended</span></div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Third-party bodily injury on premises, property damage caused by the business, product liability (for manufacturers), completed operations liability.</p>
+        </div>
+        <div class="policy-field">
+          <label>Key exclusions</label>
+          <p>Does NOT cover employee injuries (requires WC/EC) or professional advice errors (requires PI). CGL is always paired with WC cover for complete protection.</p>
+        </div>
+        <div class="policy-field">
+          <label>Trigger for MNCs</label>
+          <p>MNC clients routinely require a valid CGL certificate before vendor or supplier onboarding. Leased office space landlords may also require it as a condition of the lease.</p>
+        </div>
+        <div class="policy-field">
+          <label>Insurer ICR guidance</label>
+          <p>IRDAI's target ICR: 70–90%. Avoid insurers with ICR above 95% (claims management risk) or below 50% (potentially underpaying claims).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon blue">🔐</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Cyber Liability Insurance</div>
+          <div class="policy-tagline">Data breaches, ransomware, regulatory fines</div>
+        </div>
+        <div class="policy-badges">
+          <span class="badge badge-recommended">Recommended</span>
+          <span class="badge badge-gc">GCC standard</span>
+        </div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Data breach response costs, forensic investigation, notification to affected parties, regulatory fines under DPDP Act 2023 / IT Act, business interruption from cyber incidents, ransomware payments (subject to conditions), third-party liability from data leaks.</p>
+        </div>
+        <div class="policy-field">
+          <label>Regulatory trigger</label>
+          <p>India's DPDP Act 2023 creates significant financial exposure for data fiduciaries. Average cost of a data breach in India: ₹195 million (IBM, 2024). MNCs processing employee or customer data in India need standalone cyber cover — CGL does not cover cyber events.</p>
+        </div>
+        <div class="policy-field full">
+          <label>GCC / IT context</label>
+          <p>43–46% of businesses in India faced at least one cyberattack in 2024. For GCCs processing global data flows, parent-company cyber programs may not extend to India operations; a local policy or endorsed global coverage is essential.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon amber">🏗️</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Property / Fire &amp; Allied Perils</div>
+          <div class="policy-tagline">Physical assets, office contents, equipment</div>
+        </div>
+        <div class="policy-badges"><span class="badge badge-mandatory">Often contractual</span></div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>What it covers</label>
+          <p>Building structure (if owned), office contents, IT equipment, furniture, stock. Allied perils include earthquake, flood, storm, riot, and business interruption.</p>
+        </div>
+        <div class="policy-field">
+          <label>Regulatory note</label>
+          <p>Not a standalone statutory requirement for most sectors, but lenders, landlords, and lease agreements typically make this a condition precedent. Standard Market Fire Policy (SMF) is the base form; "all risks" endorsements available.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="policy-card">
+      <div class="policy-card-head">
+        <div class="policy-icon purple">🔍</div>
+        <div class="policy-title-block">
+          <div class="policy-name">Crime / Fidelity &amp; Trade Credit</div>
+          <div class="policy-tagline">Internal fraud, employee dishonesty, credit risk</div>
+        </div>
+        <div class="policy-badges"><span class="badge badge-sector">Sector-specific</span></div>
+      </div>
+      <div class="policy-divider"></div>
+      <div class="policy-body">
+        <div class="policy-field">
+          <label>Crime / Fidelity covers</label>
+          <p>Employee theft, fraud, forgery, and computer crime. Mandatory for BFSI-sector MNCs under RBI operational risk guidelines. Recommended for any entity with cash handling, treasury functions, or access to customer funds.</p>
+        </div>
+        <div class="policy-field">
+          <label>Trade credit covers</label>
+          <p>Default by B2B buyers on invoiced receivables. Relevant for MNCs with large Indian distribution networks or credit-extended channel partners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PART 4: BY SETUP STAGE -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="by-setup">
+    <div class="section-label">Part 4 — Setup Stage</div>
+    <h2>What to buy, and when</h2>
+    <p class="section-intro">Insurance sequencing follows your entity and headcount milestones. Buying out of sequence creates coverage gaps and compliance risk.</p>
+
+    <div class="checklist-grid">
+      <div class="checklist-block">
+        <h3><span class="phase-dot p1"></span> Phase 1 — Entity registration (Day 1–90)</h3>
+        <ul>
+          <li>D&amp;O Liability — directors are exposed from CIN date</li>
+          <li>Professional Indemnity — if client contracts already signed</li>
+          <li>CGL — required by landlord or client before operations commence</li>
+          <li>Cyber Liability — if any data processing begins</li>
+          <li>Property / Fire — required by lease agreement</li>
+          <li>Workmen's Compensation — any contract / blue-collar workers on-site</li>
+        </ul>
+      </div>
+      <div class="checklist-block">
+        <h3><span class="phase-dot p2"></span> Phase 2 — First employees hired (7–19 employees)</h3>
+        <ul>
+          <li>Group Health Insurance — minimum 7 for group policy eligibility</li>
+          <li>Group Personal Accident — recommended from first hire; only 36% of small companies carry it, but GCCs are expected to</li>
+          <li>Group Term Life — standard with GHI for white-collar hiring</li>
+          <li>WC / EC mandatory for employees above ESI threshold</li>
+          <li>EDLI auto-enrolls via EPFO when EPF registration triggers</li>
+        </ul>
+      </div>
+      <div class="checklist-block">
+        <h3><span class="phase-dot p3"></span> Phase 3 — Scale (20+ employees)</h3>
+        <ul>
+          <li>EPF mandatory — register with EPFO within 30 days of crossing 20</li>
+          <li>ESI mandatory — register with ESIC within 15 days of crossing 10</li>
+          <li>Gratuity fund or LIC gratuity scheme for provisioning</li>
+          <li>Crèche facility required at 50+ employees (Maternity Benefit Act)</li>
+          <li>OPD / wellness — 35% adoption at 251–750; competitive expectation from ~100 employees in GCC context</li>
+          <li>Review GHI sum insured: 90th percentile target is ₹10L at any headcount</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-amber" style="margin-top:20px;">
+      <span class="callout-icon">⚠</span>
+      <div><strong>EOR / PEO route:</strong> If setting up via an Employer of Record before entity incorporation, group insurance can be provided through the EOR's master policy, bypassing minimum group size thresholds. Confirm that the EOR's policy explicitly names the MNC and covers all in-scope employees.</div>
+    </div>
+  </section>
+
+
+  <!-- PART 5: SECTOR NOTES -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="sector">
+    <div class="section-label">Part 5 — Sector Notes</div>
+    <h2>Sector-specific requirements and EB benchmarks</h2>
+    <p class="section-intro">Beyond the universal insurance stack, each sector carries regulatory obligations and candidate expectations shaped by what existing employers in that space already offer.</p>
+
+    <div class="table-scroll"><table class="statutory-table">
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>Regulatory insurance requirement</th>
+          <th>EB benchmark (% offering family GHI cover)</th>
+          <th>Regulator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Software development / IT services</strong></td>
+          <td>PI (E&amp;O) mandatory in most client contracts; Cyber cover required by parent-company governance; CGL certificate required for SEZ registration</td>
+          <td>86% / 84% — highest of any sector. Median SI ₹5L.</td>
+          <td>Client contract, SEZ authority</td>
+        </tr>
+        <tr>
+          <td><strong>BFSI</strong> (banks, NBFCs, fintechs)</td>
+          <td>Bankers Blanket Bond / Crime insurance; Cyber mandatory under RBI IT guidelines; D&amp;O and PI standard across SEBI-regulated entities</td>
+          <td>85% family GHI cover. Maternity offered by 79%.</td>
+          <td>RBI, SEBI</td>
+        </tr>
+        <tr>
+          <td><strong>Manufacturing / Industrial</strong></td>
+          <td>Public Liability mandatory under Public Liability Insurance Act, 1991 for hazardous industries; Product Liability; Erection All Risk (EAR) during construction phase</td>
+          <td>73% family GHI cover. Median SI ₹3L — below the cross-sector median.</td>
+          <td>Ministry of Environment, DISH</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare / Pharma</strong></td>
+          <td>Clinical Trials insurance (CDSCO requirement); Medical Professional Indemnity; Product Liability for device/pharma manufacturers</td>
+          <td>68% family GHI cover. Maternity offered by 47%.</td>
+          <td>CDSCO, MoH</td>
+        </tr>
+        <tr>
+          <td><strong>SaaS / Business consulting</strong></td>
+          <td>PI (E&amp;O) standard; Cyber cover for any SaaS processing customer data in India under DPDP Act 2023</td>
+          <td>84% / 72% family GHI cover. Maternity offered by 74% / 65%.</td>
+          <td>Client contract, DPDP regulator</td>
+        </tr>
+        <tr>
+          <td><strong>Transportation / Logistics</strong></td>
+          <td>Aviation Third-Party Liability (Aircraft Act 1934); Cargo insurance; Marine Open Policy for freight forwarders; WC/EC critical for field operations</td>
+          <td>81% family GHI cover. Maternity offered by 66%.</td>
+          <td>DGCA, MoCA</td>
+        </tr>
+        <tr>
+          <td><strong>Insurance intermediaries</strong></td>
+          <td>PI insurance mandatory for IRDAI-licensed brokers and corporate agents; minimum net worth requirements backed by security deposits</td>
+          <td>Median SI ₹5L. Maternity expected.</td>
+          <td>IRDAI</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">EB benchmark data: Plum State of Employee Benefits 2024.</p>
+  </section>
+
+
+  <!-- PART 6: CITY GUIDE -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="city">
+    <div class="section-label">Part 6 — City Guide</div>
+    <h2>GHI benchmarks and claims data by city</h2>
+    <p class="section-intro">The competitive context for group health insurance varies materially by city. An MNC hiring in Mumbai operates in a higher-cost claims environment than one hiring in Ahmedabad. These figures shape both the sum insured you need to be competitive and the premium you should budget for. Data from Plum's plan analysis by geography.</p>
+
+    <div class="table-scroll"><table class="city-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>% companies at ₹5L+ sum insured</th>
+          <th>Avg claim size</th>
+          <th>% offering maternity</th>
+          <th>Avg maternity claim</th>
+          <th>Competitive context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mumbai</strong></td>
+          <td><span class="city-bar" style="width:63px"></span>63%</td>
+          <td style="font-weight:600;color:var(--accent-coral)">₹92,796</td>
+          <td>63%</td>
+          <td>₹1,20,000</td>
+          <td>Highest avg claim of any city. Expensive hospital network. ₹10L+ SI benchmark for competitive positioning.</td>
+        </tr>
+        <tr>
+          <td><strong>Delhi</strong></td>
+          <td><span class="city-bar" style="width:68px"></span>68%</td>
+          <td>₹62,375</td>
+          <td>60%</td>
+          <td>₹1,00,000 est.</td>
+          <td>Above-median SI adoption. Dense hospital network. Strong IT and consulting sector expectations.</td>
+        </tr>
+        <tr>
+          <td><strong>Bangalore</strong></td>
+          <td><span class="city-bar" style="width:72px"></span>72%</td>
+          <td>₹73,000</td>
+          <td>70%</td>
+          <td>₹1,12,000</td>
+          <td>Highest GHI adoption. GCC capital — global benchmark expected. Strong maternity adoption driven by tech sector demographics.</td>
+        </tr>
+        <tr>
+          <td><strong>Chennai</strong></td>
+          <td><span class="city-bar" style="width:72px"></span>72%</td>
+          <td>₹69,000</td>
+          <td>60%</td>
+          <td>₹85,000</td>
+          <td>High SI adoption, mid-range claims. Manufacturing and IT services mix. Competitive maternity floor is ₹75K+.</td>
+        </tr>
+        <tr>
+          <td><strong>Hyderabad</strong></td>
+          <td><span class="city-bar" style="width:63px"></span>63%</td>
+          <td>₹83,000</td>
+          <td>61%</td>
+          <td>₹1,50,000</td>
+          <td>Highest average maternity claim of any city. MNCs expanding to Hyderabad should budget for a higher maternity sub-limit than the ₹50K national median.</td>
+        </tr>
+        <tr>
+          <td><strong>Pune</strong></td>
+          <td><span class="city-bar" style="width:64px"></span>64%</td>
+          <td>₹60,794</td>
+          <td>64%</td>
+          <td>₹85,000</td>
+          <td>Below-average claim size; above-average maternity adoption. Manufacturing and IT services mix.</td>
+        </tr>
+        <tr>
+          <td><strong>Ahmedabad</strong></td>
+          <td><span class="city-bar" style="width:49px"></span>49%</td>
+          <td>₹60,500</td>
+          <td>27%</td>
+          <td>₹1,20,000</td>
+          <td>Lowest GHI adoption and maternity coverage rate. An MNC entering here with a ₹5L plan and maternity cover immediately exceeds local market norms.</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Maternity claim figures are city-level plan averages.</p>
+
+    <div class="callout callout-blue" style="margin-top:16px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>City planning implication:</strong> If your India entity is hiring across multiple cities simultaneously — common for GCCs — use a single group policy with a sum insured calibrated to your highest-cost city (typically Mumbai or Hyderabad). A city-tiered approach adds administration complexity and is rarely worth the modest premium saving.</div>
+    </div>
+  </section>
+
+
+  <!-- PART 7: CHECKLIST -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="checklist">
+    <div class="section-label">Quick Reference</div>
+    <h2>Complete policy checklist for MNCs</h2>
+    <p class="section-intro">Use this as a pre-operations audit. Each item should have a policy number, renewal date, and local contact assigned before your India entity goes live.</p>
+
+    <div class="table-scroll"><table class="statutory-table">
+      <thead>
+        <tr>
+          <th>Policy</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Threshold / Trigger</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EPF registration &amp; contributions</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>20+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>ESI registration &amp; contributions</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>10+ employees; wages ≤₹21k</td>
+        </tr>
+        <tr>
+          <td><strong>Gratuity provisioning</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>10+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>Workmen's / Employee Compensation</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>Employees above ESI threshold or non-ESI areas</td>
+        </tr>
+        <tr>
+          <td><strong>EDLI (via EPFO)</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>Auto with EPF registration</td>
+        </tr>
+        <tr>
+          <td><strong>Group Health Insurance</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹5L min; ₹10L for global benchmark</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>7+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>Group Personal Accident</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 5–10× CTC; 90th percentile is ₹50L+</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>First hire onwards</td>
+        </tr>
+        <tr>
+          <td><strong>Group Term Life</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 3–5× CTC; 90th percentile is ₹50L–₹1Cr</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Alongside GHI</td>
+        </tr>
+        <tr>
+          <td><strong>Maternity sub-limit</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹1L normal / ₹1.25L C-section</span></td>
+          <td>Voluntary EB (within GHI)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Within GHI — check at policy design stage</td>
+        </tr>
+        <tr>
+          <td><strong>D&amp;O Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Entity registration / director appointment</td>
+        </tr>
+        <tr>
+          <td><strong>Professional Indemnity (PI / E&amp;O)</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Sector-required</span></td>
+          <td>Client contracts / service-based sectors</td>
+        </tr>
+        <tr>
+          <td><strong>Commercial General Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Operations / client onboarding</td>
+        </tr>
+        <tr>
+          <td><strong>Cyber Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Any data processing; DPDP Act obligations</td>
+        </tr>
+        <tr>
+          <td><strong>Property / Fire &amp; Allied</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Contractual</span></td>
+          <td>Office lease; owned assets</td>
+        </tr>
+        <tr>
+          <td><strong>Crime / Fidelity</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
+          <td>BFSI; entities with treasury/cash functions</td>
+        </tr>
+        <tr>
+          <td><strong>Public Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
+          <td>Hazardous manufacturing (Public Liability Insurance Act, 1991)</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout callout-teal" style="margin-top:24px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>Broker recommendation:</strong> MNCs entering India should work with an IRDAI-licensed composite broker — one licensed for both life and general (including health) products. This allows the EB and non-EB stack to be placed through a single broker relationship, with consolidated renewal management and claims support. When evaluating brokers, ask specifically for their median cashless pre-authorisation TAT and their endorsement turnaround time — these are the operational metrics that determine whether your employees actually experience the benefit.</div>
+    </div>
+  </section>
+
+
+  <!-- PART 8: BEYOND INSURANCE -->
+  
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="beyond">
+    <div class="section-label">Part 8 — Beyond Insurance</div>
+    <h2>The benefits your employees will notice every day</h2>
+    <p class="section-intro">Insurance is what you need. But daily-use benefits are what your employees actually feel. Hospitalisation happens once in a few years. A mental health consultation, an OPD visit, a telehealth call at 11pm — these are the interactions that determine whether your benefits programme is real to your team or an invisible line on their offer letter.</p>
+
+    <div class="pull-quote">
+      "76% of employees believe the quality of their benefits directly impacts their decision to stay at a company — yet more than half aren't aware of what benefits they have."
+      <div style="font-size:13px;font-style:normal;color:var(--ink-muted);margin-top:8px;font-family:'Sora',sans-serif;">Plum State of Employee Benefits 2024</div>
+    </div>
+
+    <!-- WHO YOUR TEAM ACTUALLY IS -->
+    <h2 style="margin-bottom:8px;margin-top:32px;">Your India team is not one person</h2>
+    <p class="section-intro">The most common benefits mistake MNCs make is designing for a single employee archetype. A 50-person GCC has a 28-year-old single engineer, a 35-year-old manager planning a family, and a 42-year-old senior hire with elderly parents. One plan built around the median serves all three poorly.</p>
+
+    <div class="persona-strip">
+      <div class="persona-card p-a">
+        <span class="persona-emoji">👩‍💻</span>
+        <div style="height:18px;"></div>
+        <div class="persona-name">Reema, 26</div>
+        <div class="persona-role">Software engineer · single · Bangalore</div>
+        <ul class="persona-needs">
+          <li>Telehealth and mental health access</li>
+          <li>Annual preventive check-up</li>
+          <li>Dermatology (18% of all Plum telehealth consultations)</li>
+          <li>Dental and vision — not typically in base GHI</li>
+          <li>Gym / wellness allowance</li>
+        </ul>
+      </div>
+      <div class="persona-card p-b">
+        <span class="persona-emoji">👨‍👩‍👧</span>
+        <div style="height:18px;"></div>
+        <div class="persona-name">Arjun, 34</div>
+        <div class="persona-role">Engineering manager · married · Mumbai</div>
+        <ul class="persona-needs">
+          <li>Family floater GHI with maternity ≥ ₹1L sub-limit</li>
+          <li>Newborn cover from day one</li>
+          <li>OB-GYN teleconsults (10% of all Plum telehealth)</li>
+          <li>Parental cover for ageing parents — opt-in at minimum</li>
+          <li>GTL at 4–5× CTC to cover EMI exposure</li>
+        </ul>
+      </div>
+      <div class="persona-card p-c">
+        <span class="persona-emoji">👩‍💼</span>
+        <div style="height:18px;"></div>
+        <div class="persona-name">Priya, 43</div>
+        <div class="persona-role">Head of operations · senior hire · Hyderabad</div>
+        <ul class="persona-needs">
+          <li>ESCP cover — parents are her primary dependants</li>
+          <li>Higher sum insured (₹15–25L) — benchmarking against MNC offers</li>
+          <li>Modern treatments covered (cancer, robotic surgery)</li>
+          <li>D&amp;O coverage as a named director</li>
+          <li>GTL at 5× CTC minimum</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-blue">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>What this means in practice:</strong> 75% of employees want the freedom to choose their own benefits. Among Plum's enterprise clients that have moved to flex-care plans, 60% of employees chose their own dependant configuration — deviating from the default ESCP structure — and employee satisfaction scores increased by 15%. Flex benefits are not just a nice-to-have; they are a more efficient use of the same budget.</div>
+    </div>
+
+    <!-- THREE BENEFIT DIMENSIONS -->
+    <h2 style="margin-top:36px;margin-bottom:8px;">Three benefit areas where MNCs can move fast</h2>
+    <p class="section-intro">These sit at the boundary of insurance and broader employee health — Plum places and administers all three. Each has real adoption data, clear benchmarks, and a meaningful gap between what most India employers offer and what global startups in India offer.</p>
+
+    <!-- OPD & TELEHEALTH -->
+    <div class="benefit-dimension">
+      <div class="bd-head">
+        <div class="bd-icon" style="background:var(--accent-teal-light)">🩺</div>
+        <div>
+          <div class="bd-title">OPD, telehealth &amp; preventive care</div>
+          <div class="bd-sub">The layer that makes insurance feel real day-to-day</div>
+        </div>
+        <span class="bd-plum-badge">Plum covers this</span>
+      </div>
+      <div class="bd-body">
+        <div class="bd-col">
+          <h4>What the data says</h4>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">19%</span>
+            <span class="bd-stat-label">of all Plum telehealth consultations are mental health — the single largest category</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">18%</span>
+            <span class="bd-stat-label">of consultations are dermatology — rarely covered in base GHI</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">4×</span>
+            <span class="bd-stat-label">surge in companies offering OPD benefits seen on Plum's platform in 2024</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">34%</span>
+            <span class="bd-stat-label">of employees who used healthcare reported taking fewer sick days as a result</span>
+          </div>
+          <div style="margin-top:14px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-bottom:4px;">
+              <span>India median adoption</span><span>16%</span>
+            </div>
+            <div class="adoption-bar-wrap"><div class="adoption-bar" style="width:16%"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin:8px 0 4px;">
+              <span>Global startups in India</span><span>60%</span>
+            </div>
+            <div class="adoption-bar-wrap"><div class="adoption-bar" style="width:60%"></div></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin:8px 0 4px;">
+              <span>750+ employee companies</span><span>60%</span>
+            </div>
+            <div class="adoption-bar-wrap"><div class="adoption-bar" style="width:60%"></div></div>
+          </div>
+        </div>
+        <div class="bd-col">
+          <h4>OPD readiness checklist</h4>
+          <ul class="bd-check-list">
+            <li>Telehealth access included in GHI plan (24/7 GP, specialist triage)</li>
+            <li>Annual preventive health check-up — employer-sponsored</li>
+            <li>Mental health: therapy sessions or EAP programme covered</li>
+            <li>Dermatology consultations accessible (telehealth or OPD wallet)</li>
+            <li>OB-GYN access for female employees — telehealth minimum</li>
+            <li>Pharmacy reimbursement or OPD wallet for medicines</li>
+            <li>Dental and vision check-up — often bundled at low cost</li>
+            <li>Diagnostic tests covered within OPD sum or as employer-sponsored camps</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- MENTAL HEALTH -->
+    <div class="benefit-dimension">
+      <div class="bd-head">
+        <div class="bd-icon" style="background:var(--accent-purple-light)">🧠</div>
+        <div>
+          <div class="bd-title">Mental health benefits</div>
+          <div class="bd-sub">The fastest-growing gap between Indian median and global standard</div>
+        </div>
+        <span class="bd-plum-badge">Plum covers this</span>
+      </div>
+      <div class="bd-body">
+        <div class="bd-col">
+          <h4>What the data says</h4>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">10%</span>
+            <span class="bd-stat-label">of Indian companies currently offer dedicated mental health cover — despite it being the top telehealth use case</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">57%</span>
+            <span class="bd-stat-label">of HR leaders report improvement in employee morale directly attributable to good benefits</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">80%</span>
+            <span class="bd-stat-label">of global startups in India offer inclusive benefits including mental health — vs &lt;15% India median</span>
+          </div>
+          <div style="margin-top:14px;">
+            <div style="font-size:11px;color:var(--ink-muted);margin-bottom:6px;font-weight:600;">IRDAI 2024 change</div>
+            <div style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;background:var(--surface);padding:10px 12px;border-radius:6px;border:1px solid var(--rule);">Group health policies are now required to include mental health parity — psychiatric ailments must be covered in hospitalisation on par with physical conditions. An EAP or therapy benefit remains a voluntary add-on, but the direction of travel is clear.</div>
+          </div>
+        </div>
+        <div class="bd-col">
+          <h4>Mental health readiness checklist</h4>
+          <ul class="bd-check-list">
+            <li>Psychiatric hospitalisation covered within GHI sum insured (now IRDAI-required)</li>
+            <li>EAP (Employee Assistance Programme) — confidential counselling access</li>
+            <li>Therapy sessions covered — minimum 6–10 sessions per year</li>
+            <li>Teleconsultation with therapist or psychologist available</li>
+            <li>Manager training on mental health conversations — HR programme, not insurance</li>
+            <li>Anonymous utilisation reporting to HR — not individual data</li>
+            <li>Mental health parity in leave policy — mental health sick days treated as medical sick days</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLEX BENEFITS -->
+    <div class="benefit-dimension">
+      <div class="bd-head">
+        <div class="bd-icon" style="background:var(--accent-amber-light)">🎛️</div>
+        <div>
+          <div class="bd-title">Flex benefits</div>
+          <div class="bd-sub">Letting employees choose makes the same budget go further</div>
+        </div>
+        <span class="bd-plum-badge">Plum covers this</span>
+      </div>
+      <div class="bd-body">
+        <div class="bd-col">
+          <h4>What the data says</h4>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">75%</span>
+            <span class="bd-stat-label">of employees want the freedom to choose their own benefits</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">60%</span>
+            <span class="bd-stat-label">of HR leaders see a strong correlation between flexible benefits and employee happiness</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">15%</span>
+            <span class="bd-stat-label">jump in employee satisfaction scores at Plum enterprise clients that adopted flex-care</span>
+          </div>
+          <div class="bd-stat-row">
+            <span class="bd-stat-num">40%</span>
+            <span class="bd-stat-label">of employees voluntarily upgraded or customised their own policy when flex options were available</span>
+          </div>
+        </div>
+        <div class="bd-col">
+          <h4>How to structure flex for an MNC</h4>
+          <ul class="bd-check-list">
+            <li checked class="checked">Base GHI plan: employer-funded, non-negotiable for all employees</li>
+            <li checked class="checked">Flex wallet: annual allowance (₹15,000–₹40,000 typical range) for employees to allocate</li>
+            <li>Parental cover: opt-in via flex wallet — employee-funded, employer-facilitated, group rates</li>
+            <li>Super top-up: employee can upgrade sum insured using flex budget</li>
+            <li>Wellness: gym, mental health, nutrition — chosen per employee</li>
+            <li>OPD add-on: optional, higher utilisation when employee-chosen</li>
+            <li>Annual review: reset flex allocations at renewal based on utilisation data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- OUTSIDE PLUM'S LANE -->
+    <h2 style="margin-top:36px;margin-bottom:8px;">Benefits Plum doesn't place — but you still need a view on</h2>
+    <p class="section-intro">An MNC's India EB programme goes beyond what any insurance broker places. These are the non-insurance benefits your global CHRO, your PEO, or your India HR lead should own. They're not in Plum's scope — but they belong in your India setup plan.</p>
+
+    <div class="outside-lane">
+      <h3>The non-insurance benefits layer</h3>
+      <p>Each of these is either a regulatory requirement, a competitive necessity, or both. Global startups in India typically align these with their home-country standards — which sets the bar your local-hire candidates will increasingly know about.</p>
+      <div class="outside-grid">
+        <div class="outside-item">
+          <div class="outside-item-label">Leave policy</div>
+          <div class="outside-item-value">Statutory: 12–15 earned leave days. Global MNC standard: 20–25 days + sick leave + public holidays. Unlimited leave is rare but growing in GCCs.</div>
+        </div>
+        <div class="outside-item">
+          <div class="outside-item-label">ESOPs / equity</div>
+          <div class="outside-item-value">Not a legal requirement, but effectively mandatory for senior GCC hires benchmarking against global comp. Indian ESOP taxation changed in 2021 — verify with a tax advisor.</div>
+        </div>
+        <div class="outside-item">
+          <div class="outside-item-label">Learning &amp; development</div>
+          <div class="outside-item-value">₹20,000–₹60,000 annual L&D budget per employee is common in IT and GCC sector. Global startups in India often extend access to global L&D platforms (Coursera, LinkedIn Learning).</div>
+        </div>
+        <div class="outside-item">
+          <div class="outside-item-label">Hybrid / remote policy</div>
+          <div class="outside-item-value">Not regulated, but a significant offer-letter factor in Bangalore, Mumbai, and Hyderabad tech markets. Most GCCs offer 2–3 WFH days. Full-remote is still rare but increasing for senior specialist roles.</div>
+        </div>
+        <div class="outside-item">
+          <div class="outside-item-label">Food &amp; transport</div>
+          <div class="outside-item-value">Meal allowance: ₹2,200/month is the tax-exempt limit. Transport allowance: ₹1,600/month tax-exempt. Both are standard in the Indian CTC structure — often included as allowances rather than cash reimbursements.</div>
+        </div>
+        <div class="outside-item">
+          <div class="outside-item-label">Internet &amp; WFH stipend</div>
+          <div class="outside-item-value">Post-pandemic standard in tech companies. ₹1,500–₹3,000/month for internet reimbursement. One-time WFH setup allowance (₹10,000–₹25,000) offered by global startups entering India.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-teal" style="margin-top:20px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>The 1% reallocation test:</strong> If your total compensation budget is ₹20.2 crore, the difference between spending 1% on benefits (₹20L) and 2% (₹40L) is roughly 1 percentage point on annual salary increments — going from a 12% hike to an 11% hike. For that 1 percentage point, you move from a plan with ₹5L sum insured and no parental cover to one with ₹7–10L sum insured, parental cover, progressive maternity benefits, and primary healthcare access. 70% of employees would choose better benefits and a slightly lower salary over the reverse. Run this calculation before your next renewal conversation.</div>
+    </div>
+  </section>
+
+</main>
+
+</div>
+
+<footer class="page-footer">
+  <div>
+    <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
+-31 -3 -1595 c-2 -1503 -1 -1597 15 -1629 10 -19 31 -44 46 -55 28 -20 41 -21
+500 -24 319 -2 484 0 509 8 23 7 48 24 65 47 l28 36 3 1666 c2 1156 0 1677 -8
+1703 -16 57 -61 88 -123 87 -29 0 -247 -34 -486 -75z M1968 3456 c-406 -72
+-636 -329 -774 -870 -15 -56 -31 -107 -36 -113 -16 -20 -73 -16 -93 7 -18 19
+-17 32 29 407 26 212 45 400 42 418 -4 17 -20 45 -37 61 l-30 29 -494 0 -493
+0 -27 -25 c-59 -55 -55 58 -55 -1667 0 -1519 1 -1590 18 -1622 10 -19 34 -43
+53 -53 31 -17 68 -18 524 -18 527 0 519 0 559 53 19 25 21 44 24 180 3 136 -2
+191 -47 532 -28 209 -54 397 -57 417 -7 45 21 78 65 78 37 0 43 -8 89 -123 55
+-137 125 -248 212 -337 85 -87 138 -125 248 -180 160 -80 346 -120 553 -120
+263 0 475 72 625 213 183 171 290 423 346 822 18 123 18 727 0 850 -36 252
+-82 419 -162 580 -119 240 -307 398 -555 466 -66 18 -112 22 -265 25 -124 2
+-211 -1 -262 -10z m-133 -1026 c138 -67 184 -183 192 -480 9 -336 -44 -510
+-182 -595 -47 -29 -52 -30 -174 -30 -116 0 -131 2 -196 29 -75 31 -242 128
+-276 159 -20 19 -21 27 -16 256 5 258 12 304 68 419 17 35 57 91 89 126 101
+107 203 148 356 142 70 -2 103 -9 139 -26z M10073 3455 c-161 -29 -276 -85
+-376 -183 -127 -124 -209 -292 -278 -572 -39 -155 -51 -180 -91 -180 -10 0
+-27 9 -39 21 -17 17 -20 29 -16 58 3 20 22 187 42 371 41 369 40 375 -17 410
+-32 19 -51 20 -513 20 -458 0 -481 -1 -512 -20 -18 -10 -40 -34 -50 -52 -17
+-31 -18 -101 -18 -1338 0 -1287 0 -1305 20 -1339 11 -18 36 -42 55 -52 32 -18
+66 -19 515 -19 536 0 528 -1 570 70 19 34 20 55 26 740 4 496 9 717 17 747 36
+128 112 232 207 281 44 24 61 27 150 27 84 0 107 -4 141 -22 51 -27 101 -83
+127 -141 43 -99 46 -159 47 -887 l0 -691 23 -44 c41 -82 25 -80 572 -80 458 0
+481 1 512 20 72 43 67 -4 74 775 6 761 7 768 65 891 56 120 143 174 292 182
+88 5 95 3 157 -27 82 -40 124 -99 157 -216 21 -78 22 -96 27 -810 6 -682 7
+-732 24 -757 40 -59 39 -59 576 -56 477 3 490 4 518 24 15 11 36 36 45 55 17
+31 18 89 18 775 0 420 -4 797 -10 870 -43 537 -187 864 -455 1036 -158 102
+-291 133 -539 125 -251 -7 -397 -49 -537 -154 -155 -117 -267 -321 -345 -631
+-18 -74 -39 -140 -45 -148 -15 -19 -74 -18 -93 1 -8 8 -18 41 -21 72 -13 104
+-45 259 -69 331 -96 280 -305 474 -560 521 -80 15 -304 12 -393 -4z M4945
+3391 c-27 -12 -62 -50 -74 -84 -15 -40 -15 -1500 0 -1639 21 -195 86 -406 169
+-549 197 -336 552 -538 1055 -600 130 -16 482 -16 610 0 621 78 998 349 1160
+834 70 209 68 181 72 1116 4 933 8 870 -60 911 -31 19 -54 20 -522 20 -468 0
+-491 -1 -522 -20 -72 -44 -67 12 -73 -845 l-5 -770 -23 -50 c-31 -67 -62 -98
+-135 -132 -58 -26 -70 -28 -192 -28 -147 0 -205 14 -268 66 -46 38 -72 87 -86
+164 -7 39 -11 302 -11 782 0 784 2 750 -55 803 l-27 25 -496 2 c-273 1 -506
+-2 -517 -6z"/></svg></div>
+    <div class="footer-brand">The India Benefits Stack — A Guide for MNC Decision-Makers</div>
+    <div>Prepared for HR, legal, and finance teams of MNCs and GCCs setting up India operations.</div>
+    <div style="margin-top:4px;">Regulations current as of 2025–26. Verify thresholds against the latest IRDAI, EPFO, and ESIC circulars before purchase.</div>
+  </div>
+  <div>Sources: IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025.</div>
+</footer>
+
+
+<script is:inline>
+  // Mark the section currently being read in the TOC rail. Uses a scroll
+  // position probe rather than plain IntersectionObserver visibility, so the
+  // "current" item stays stable through tall sections and never flickers
+  // between two entries at a boundary.
+  (function () {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll('.toc-bar a[href^="#"]')
+    );
+    if (!links.length) return;
+
+    var targets = links
+      .map(function (a) {
+        return { link: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
+      })
+      .filter(function (t) { return t.el; });
+
+    var current = null;
+    function update() {
+      var probe = window.innerHeight * 0.25;
+      var found = targets[0];
+      for (var i = 0; i < targets.length; i++) {
+        // viewport-relative: correct regardless of offsetParent nesting
+        if (targets[i].el.getBoundingClientRect().top <= probe) found = targets[i];
+      }
+      // at the very bottom the last section wins even if it is short
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        found = targets[targets.length - 1];
+      }
+      if (found === current) return;
+      if (current) current.link.removeAttribute('aria-current');
+      found.link.setAttribute('aria-current', 'true');
+      current = found;
+    }
+
+    var queued = false;
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }
+
+    update();
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+  })();
+</script>
+</body>
+</html>
