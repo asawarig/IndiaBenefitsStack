@@ -45,6 +45,54 @@
   font-style: italic;
   font-display: swap;
 }
+/* Passenger Sans — brand sans, licensed webfont (woff) builds.
+
+   The web kit supplies Regular, Bold and Black. It does NOT include Medium,
+   so the eight rules at font-weight: 500 resolve up to Bold (600) by CSS
+   weight matching. The kit's "Bold" is usWeightClass 600, i.e. it fills the
+   Semibold slot the design was drawn against. */
+@font-face {
+  font-family: 'Passenger Sans';
+  src: url('fonts/PassengerSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Passenger Sans';
+  src: url('fonts/PassengerSans-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Passenger Sans';
+  src: url('fonts/PassengerSans-Black.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Rupee sign. No Passenger Sans file supplied - web or desktop, any weight -
+   contains U+20B9, and the page uses it 103 times. Rather than let all of
+   them fall back to whatever system font the visitor happens to have, this
+   face pins U+20B9 to Figtree. It is listed FIRST in --font-sans: a face is
+   only eligible for codepoints inside its unicode-range, so every other
+   character falls straight through to Passenger Sans. Figtree is variable, so
+   the rupee sign tracks the surrounding weight instead of being stuck at one.
+
+   If a Passenger Sans build with U+20B9 ever arrives, delete this block and
+   drop 'Plum Rupee' from the token below. */
+@font-face {
+  font-family: 'Plum Rupee';
+  src: url('fonts/Figtree-Variable-latin-ext.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+20B9;
+}
+
+/* Figtree also stays as the fallback behind Passenger Sans. */
 @font-face {
   font-family: 'Figtree';
   src: url('fonts/Figtree-Variable-latin.woff2') format('woff2');
@@ -52,14 +100,6 @@
   font-style: normal;
   font-display: swap;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Figtree';
-  src: url('fonts/Figtree-Variable-latin-ext.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
@@ -114,7 +154,7 @@
 
   /* Typography */
   --font-display:   'GT Alpina', Georgia, serif;
-  --font-sans:      'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:      'Plum Rupee', 'Passenger Sans', 'Figtree', system-ui, sans-serif;
 
   /* Shadows */
   --shadow-cta:     0 4px 24px rgba(58,14,43,.10);
