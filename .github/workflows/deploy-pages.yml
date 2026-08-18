@@ -41,6 +41,10 @@ jobs:
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
+        with:
+          # Turn Pages on if it has never been enabled for this repo, rather
+          # than failing with "Get Pages site failed / Not Found".
+          enablement: true
 
       - name: Build
         env:
