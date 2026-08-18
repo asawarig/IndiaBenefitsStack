@@ -25,16 +25,27 @@ request.
 
 ## Mount path
 
-`MOUNT_PATH` in `astro.config.mjs` **must match the mount path of the Webflow
-Cloud environment this repo is wired to.** It is currently:
+**Webflow Cloud sets this itself — `MOUNT_PATH` here does not control it.**
+
+The Webflow Cloud builder renames `astro.config.mjs` to
+`clouduser.astro.config.mjs` and generates its own from a template, taking the
+base path from its `COSMIC_MOUNT_PATH` environment variable (the mount path set
+in the Webflow Cloud UI). It also discards `wrangler.json` in favour of its own
+template. So on Webflow Cloud the mount path cannot drift out of sync with this
+file — their value always wins.
+
+`MOUNT_PATH` in `astro.config.mjs` therefore only affects:
+
+- `npm run dev` / `npm run preview` locally
+- GitHub Pages, where the workflow overrides it with `BASE_PATH=/<repo>`
 
 ```js
 const MOUNT_PATH = '/india-benefits-stack';
 ```
 
-Astro needs this at build time to emit correct asset URLs, so it cannot be
-inferred at runtime. If a deploy serves HTML but 404s on `guide.css` and the
-fonts, this value and the Webflow Cloud mount path have diverged.
+Keeping it equal to the Webflow Cloud mount path is still worth doing, so local
+preview reproduces production URLs — but it is a convenience, not a
+requirement.
 
 ## Local development
 
