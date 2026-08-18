@@ -1,57 +1,75 @@
-/* ── PLUM DESIGN SYSTEM — REAL FONTS + TOKENS ────────────────────────
-   GT Alpina (serif display) + Passenger Sans (humanist sans)
+/* ── PLUM DESIGN SYSTEM — TOKENS ─────────────────────────────────────
+   Newsreader (serif display) + Figtree (humanist sans) — see note below
    Tokens: plum-design.md
    ──────────────────────────────────────────────────────────────────── */
 
+/* FONTS — open-licensed (SIL OFL 1.1) substitutes, self-hosted.
+
+   GT Alpina and Passenger Sans are commercial fonts and Plum does not hold
+   a webfont licence for them, so they cannot be served from here. These are
+   the closest OFL equivalents:
+
+       GT Alpina      -> Newsreader  (editorial serif, true italics)
+       Passenger Sans -> Figtree     (humanist sans)
+
+   Both are variable fonts, so one file per style covers the whole weight
+   range. Self-hosted rather than linked from Google Fonts: no third-party
+   request, no dependency on an external host, and it keeps visitor data off
+   Google's servers. latin-ext is included because the page uses the rupee
+   sign (U+20B9) throughout.
+
+   To restore the real brand fonts once a webfont licence is in place: swap
+   these blocks for the GT Alpina / Passenger Sans ones and repoint the two
+   --font-* tokens below. The originals are in git history at commit ae46c6c.
+   ──────────────────────────────────────────────────────────────────────── */
+
 @font-face {
-  font-family: 'GT Alpina';
-  src: url('fonts/GT-Alpina-Standard-Regular.woff2') format('woff2'),
-       url('fonts/GT-Alpina-Standard-Regular.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'Figtree';
+  src: url('fonts/Figtree-Variable-latin-ext.woff2') format('woff2');
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: 'GT Alpina';
-  src: url('fonts/GT-Alpina-Standard-Light-Italic.woff2') format('woff2'),
-       url('fonts/GT-Alpina-Standard-Light-Italic.ttf') format('truetype');
-  font-weight: 300;
+  font-family: 'Figtree';
+  src: url('fonts/Figtree-Variable-latin.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Newsreader';
+  src: url('fonts/Newsreader-Italic-Variable-latin-ext.woff2') format('woff2');
+  font-weight: 300 600;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Passenger Sans';
-  src: url('fonts/PassengerSans-Regular.woff2') format('woff2'),
-       url('fonts/PassengerSans-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
+  font-family: 'Newsreader';
+  src: url('fonts/Newsreader-Italic-Variable-latin.woff2') format('woff2');
+  font-weight: 300 600;
+  font-style: italic;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Passenger Sans';
-  src: url('fonts/PassengerSans-Semibold.woff2') format('woff2'),
-       url('fonts/PassengerSans-Semibold.otf') format('opentype');
-  font-weight: 600;
+  font-family: 'Newsreader';
+  src: url('fonts/Newsreader-Variable-latin-ext.woff2') format('woff2');
+  font-weight: 300 600;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-
 @font-face {
-  font-family: 'Passenger Sans';
-  src: url('fonts/PassengerSans-Medium.woff2') format('woff2'),
-       url('fonts/PassengerSans-Medium.otf') format('opentype');
-  font-weight: 500;
+  font-family: 'Newsreader';
+  src: url('fonts/Newsreader-Variable-latin.woff2') format('woff2');
+  font-weight: 300 600;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: 'Passenger Sans';
-  src: url('fonts/PassengerSans-Black.woff2') format('woff2'),
-       url('fonts/PassengerSans-Black.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
@@ -105,8 +123,8 @@
   --recommended-bg:      #E6F5EF;
 
   /* Typography */
-  --font-display:   'GT Alpina', Georgia, serif;
-  --font-sans:      'Passenger Sans', system-ui, sans-serif;
+  --font-display:   'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:      'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* Shadows */
   --shadow-cta:     0 4px 24px rgba(58,14,43,.10);
@@ -121,8 +139,8 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--fg-1);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
@@ -166,33 +184,73 @@ body {
 .nav-cta:active { background: var(--plum-red-press); }
 
 /* ── SECTION NAV (sticky TOC) ────────────────────────────────────────── */
+/* ── LAYOUT: sticky TOC rail + reading column ────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
+  align-items: start;
+}
+
 .toc-bar {
-  background: var(--cream);
-  border-bottom: 1px solid var(--line-lav);
-  padding: 0 clamp(20px,5vw,64px);
   position: sticky;
   top: 0;
-  z-index: 100;
-  overflow-x: auto;
+  align-self: start;
+  /* min == max so the dividing rule reads as a full-height column edge
+     rather than stopping wherever the list happens to end */
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 40px 0 32px;
+  border-right: 1px solid var(--line-lav-2);
 }
-.toc-bar ul {
-  display: flex;
-  list-style: none;
-  white-space: nowrap;
+.toc-inner { padding-right: 20px; }
+
+.toc-heading {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 12px;
+  padding-left: 13px;
 }
+
+.toc-bar ul { list-style: none; }
+.toc-bar li { margin: 0; }
+
 .toc-bar a {
   display: block;
-  padding: 14px 14px;
+  padding: 7px 12px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: .03em;
+  line-height: 1.4;
+  letter-spacing: 0;
   text-decoration: none;
-  color: var(--fg-muted);
-  border-bottom: 1.5px solid transparent;
-  transition: color .15s, border-color .15s;
+  color: var(--fg-2);
+  border-left: 2px solid transparent;
+  transition: color .15s, border-color .15s, background-color .15s;
 }
-.toc-bar a:hover { color: var(--fg-1); border-bottom-color: var(--plum-red); }
+.toc-bar a:hover {
+  color: var(--fg-1);
+  border-left-color: var(--line-lav);
+  background: rgba(58, 14, 43, .035);
+}
+/* current section, set by the observer in index.astro */
+.toc-bar a[aria-current="true"] {
+  color: var(--plum-red-deep);
+  border-left-color: var(--plum-red);
+  font-weight: 600;
+}
+
+/* anchor jumps must clear the sticky rail */
+section[id] { scroll-margin-top: 24px; }
 
 /* ── HERO — full-bleed red ───────────────────────────────────────────── */
 .masthead {
@@ -280,10 +338,17 @@ body {
 
 /* ── LAYOUT ──────────────────────────────────────────────────────────── */
 .page-body {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 clamp(20px,5vw,64px) 80px;
+  min-width: 0;
+  padding: 48px 0 80px;
 }
+
+/* Prose measure. Body copy is capped near 70 characters for comfortable
+   reading, while tables, card grids and callouts keep the full column. */
+.page-body p:not([class]),
+.section-intro,
+.callout > div,
+.outside-item-value,
+.intro-card-value { max-width: 68ch; }
 
 /* ── SECTION HEADER ──────────────────────────────────────────────────── */
 section { margin-bottom: 0; }
@@ -305,19 +370,21 @@ section { margin-bottom: 0; }
 section { padding-top: 48px; }
 
 h2 {
+  text-wrap: balance;
   font-family: var(--font-display);
   font-size: clamp(24px, 3.2vw, 36px);
   font-weight: 400;
-  letter-spacing: -.04em;
+  letter-spacing: -.02em;
   line-height: 1.15;
   color: var(--fg-1);
   margin-bottom: 10px;
 }
 
 .section-intro {
+  text-wrap: pretty;
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.78;
   color: var(--fg-2);
   max-width: 620px;
   margin-bottom: 28px;
@@ -922,8 +989,6 @@ h2 {
 @media (max-width: 640px) {
   .nav-top { padding: 0 16px; }
   .masthead { padding: 40px 20px 36px; }
-  .page-body { padding-left: 16px; padding-right: 16px; }
-  .toc-bar { padding: 0 16px; }
   .policy-body, .claims-grid, .bd-body { grid-template-columns: 1fr; }
   .policy-card-head { flex-wrap: wrap; }
   .policy-badges { justify-content: flex-start; margin-top: 8px; }
@@ -940,4 +1005,53 @@ h2 {
   .rule-section { margin: 40px 0 0; }
   .claims-grid { grid-template-columns: 1fr; }
   .section-label { font-size: 11px; }
+}
+
+
+/* ── TOC RAIL: collapse below the two-column threshold ───────────────────
+   Under 1024px the rail becomes a horizontal scroller pinned under the nav,
+   which is the behaviour the page had before the rail existed. */
+@media (max-width: 1024px) {
+  .layout {
+    display: block;
+    padding: 0 clamp(16px, 5vw, 48px);
+  }
+  .toc-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 0;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0 calc(-1 * clamp(16px, 5vw, 48px));
+    background: var(--cream);
+    border-right: 0;
+    border-bottom: 1px solid var(--line-lav);
+  }
+  .toc-inner {
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(16px, 5vw, 48px);
+  }
+  .toc-heading { display: none; }
+  .toc-bar ul { display: flex; white-space: nowrap; }
+  .toc-bar a {
+    padding: 13px 13px;
+    font-size: 12.5px;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+  }
+  .toc-bar a:hover {
+    background: none;
+    border-left-color: transparent;
+    border-bottom-color: var(--line-lav);
+  }
+  .toc-bar a[aria-current="true"] {
+    border-left-color: transparent;
+    border-bottom-color: var(--plum-red);
+  }
+  .page-body { padding-top: 36px; }
+  section[id] { scroll-margin-top: 60px; }
 }

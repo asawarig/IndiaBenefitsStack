@@ -50,23 +50,47 @@ how Webflow Cloud serves it.
 
 ## Fonts
 
-All six declared faces are present, so no weight falls back:
+Plum's brand fonts are **GT Alpina** (display serif) and **Passenger Sans**
+(humanist sans). Both are commercial, and self-hosting them as webfonts needs
+a webfont licence. Until one is confirmed for each, the page uses the closest
+open-licensed (SIL OFL 1.1) substitutes, self-hosted from `public/fonts/`:
 
-| Family | Weight | File |
+| Role | Brand font | Current substitute |
 |---|---|---|
-| GT Alpina | 400 | `GT-Alpina-Standard-Regular` |
-| GT Alpina | 300 italic | `GT-Alpina-Standard-Light-Italic` |
-| Passenger Sans | 400 | `PassengerSans-Regular` |
-| Passenger Sans | 500 | `PassengerSans-Medium` |
-| Passenger Sans | 600 | `PassengerSans-Semibold` |
-| Passenger Sans | 700 | `PassengerSans-Black` |
+| `--font-display` | GT Alpina | **Newsreader** (variable, 300–600, true italics) |
+| `--font-sans` | Passenger Sans | **Figtree** (variable, 400–700) |
 
-Each is served as woff2 with the original ttf/otf as a fallback source.
+Both are variable fonts, so one file per style covers the whole weight range —
+six files, 229KB total, `latin` + `latin-ext`. The `latin-ext` subset is
+required: the page uses the rupee sign (U+20B9) throughout.
 
-> **Licensing:** GT Alpina (Grilli Type) and Passenger Sans are commercial
-> fonts, and the files here are desktop builds. Self-hosting them as webfonts
-> on a public domain needs a webfont licence — confirm this is held before
-> publishing, and prefer vendor-supplied woff2 files if available.
+Self-hosted rather than linked from Google Fonts, so the page makes **no
+external requests at all** — no third-party dependency, and no visitor data
+sent to Google.
+
+### Restoring the brand fonts
+
+Designed to be a swap, not a rewrite:
+
+1. Put the licensed woff2 files in `public/fonts/`.
+2. In `public/guide.css`, replace the `@font-face` blocks with the brand ones.
+3. Repoint `--font-display` / `--font-sans` in the same file.
+4. Update the two `<link rel="preload">` hints in `src/pages/index.astro`.
+
+The original GT Alpina / Passenger Sans `@font-face` blocks and font files are
+in git history at commit `ae46c6c` if useful as a starting point. Note that
+`h2` letter-spacing was relaxed from `-.04em` to `-.02em` for Newsreader and
+should go back to `-.04em` with GT Alpina.
+
+## Layout
+
+The table of contents is a **sticky left rail** on screens wider than 1024px,
+and collapses to a horizontal scroller pinned under the nav below that. The
+current section is marked with `aria-current="true"` by a small inline script
+in `src/pages/index.astro`, which drives the highlight in the rail.
+
+Body copy is capped near 68 characters for readability; tables, card grids and
+callouts keep the full column width.
 
 ## Notes
 

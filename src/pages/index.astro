@@ -20,9 +20,10 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The India Benefits Stack — A Guide for MNC Decision-Makers | Plum</title>
+<meta name="description" content="What your insurance, employee benefits, and compliance programme should look like in India — from entity registration to full operations." />
 <link rel="stylesheet" href={href('guide.css')} />
-<link rel="preload" as="font" type="font/woff2" crossorigin href={href('fonts/PassengerSans-Regular.woff2')} />
-<link rel="preload" as="font" type="font/woff2" crossorigin href={href('fonts/GT-Alpina-Standard-Regular.woff2')} />
+<link rel="preload" as="font" type="font/woff2" crossorigin href={href('fonts/Figtree-Variable-latin.woff2')} />
+<link rel="preload" as="font" type="font/woff2" crossorigin href={href('fonts/Newsreader-Variable-latin.woff2')} />
 </head>
 <body>
 
@@ -83,7 +84,11 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <a href="https://www.plumhq.com/get-quote" class="nav-cta" target="_top">get a quote</a>
 </nav>
 
-<nav class="toc-bar" aria-label="Page sections">
+<div class="layout">
+
+<nav class="toc-bar" aria-label="On this page">
+  <div class="toc-inner">
+  <p class="toc-heading">On this page</p>
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#statutory">Statutory (EB)</a></li>
@@ -98,9 +103,10 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <li><a href="#checklist">Checklist</a></li>
     <li><a href="#beyond">Beyond Insurance</a></li>
   </ul>
+  </div>
 </nav>
 
-<main class="page-body" style="padding-top:48px;">
+<main class="page-body">
 
   <!-- OVERVIEW -->
   <section id="overview" style="margin-top:0;margin-bottom:48px;">
@@ -1429,6 +1435,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
 </main>
 
+</div>
+
 <footer class="page-footer">
   <div>
     <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
@@ -1475,5 +1483,53 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <div>Sources: IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025.</div>
 </footer>
 
+
+<script is:inline>
+  // Mark the section currently being read in the TOC rail. Uses a scroll
+  // position probe rather than plain IntersectionObserver visibility, so the
+  // "current" item stays stable through tall sections and never flickers
+  // between two entries at a boundary.
+  (function () {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll('.toc-bar a[href^="#"]')
+    );
+    if (!links.length) return;
+
+    var targets = links
+      .map(function (a) {
+        return { link: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
+      })
+      .filter(function (t) { return t.el; });
+
+    var current = null;
+    function update() {
+      var probe = window.innerHeight * 0.25;
+      var found = targets[0];
+      for (var i = 0; i < targets.length; i++) {
+        // viewport-relative: correct regardless of offsetParent nesting
+        if (targets[i].el.getBoundingClientRect().top <= probe) found = targets[i];
+      }
+      // at the very bottom the last section wins even if it is short
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        found = targets[targets.length - 1];
+      }
+      if (found === current) return;
+      if (current) current.link.removeAttribute('aria-current');
+      found.link.setAttribute('aria-current', 'true');
+      current = found;
+    }
+
+    var queued = false;
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }
+
+    update();
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+  })();
+</script>
 </body>
 </html>
