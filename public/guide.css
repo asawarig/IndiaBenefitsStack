@@ -279,8 +279,35 @@ body {
   font-weight: 600;
 }
 
+/* Nested levels. Each step indents and steps down in size/weight, so depth
+   reads at a glance without needing bullets or connector lines. The border-left
+   stays on the link (not the list) so the active marker lines up across levels. */
+.toc-bar ul ul { margin: 2px 0 4px; }
+.toc-bar ul ul a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 24px;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--fg-muted);
+}
+.toc-bar ul ul ul a {
+  padding-left: 36px;
+  font-size: 12px;
+}
+.toc-bar ul ul a:hover { color: var(--fg-1); }
+
+/* A sub-entry being read also marks its parents, so the reader can see which
+   top-level section they are inside without hunting. */
+.toc-bar a[data-ancestor] {
+  color: var(--fg-1);
+  border-left-color: var(--line-lav);
+}
+
 /* anchor jumps must clear the sticky rail */
-section[id] { scroll-margin-top: 24px; }
+section[id],
+.toc-bar ~ .page-body h2[id],
+.toc-bar ~ .page-body h3[id] { scroll-margin-top: 24px; }
 
 /* ── HERO — full-bleed red ───────────────────────────────────────────── */
 .masthead {
@@ -1038,6 +1065,297 @@ h2 {
 }
 
 
+
+/* ── DEEP-DIVE ACCORDION SECTIONS ───────────────────────────────────── */
+
+/* Section accordion — distinct from the existing broker questions accordion */
+.deep-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin-top: 28px;
+}
+.deep-accordion details {
+  border-bottom: 1px solid var(--line-lav);
+  background: var(--cream);
+}
+.deep-accordion details:last-child { border-bottom: none; }
+.deep-accordion details[open] { background: var(--cream-deep); }
+
+.deep-accordion summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  list-style: none;
+  gap: 16px;
+  transition: color .15s;
+}
+.deep-accordion summary::-webkit-details-marker { display: none; }
+.deep-accordion summary:hover { color: var(--plum-red); }
+
+.acc-summary-inner { flex: 1; }
+.acc-summary-label {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--plum-red);
+  margin-bottom: 4px;
+}
+.acc-summary-title {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2.2vw, 22px);
+  font-weight: 400;
+  letter-spacing: -.02em;
+  color: var(--fg-1);
+  line-height: 1.25;
+}
+.acc-summary-sub {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--fg-muted);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.deep-acc-indicator {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border: 1px solid var(--plum-red);
+  color: var(--plum-red);
+  font-size: 18px;
+  font-weight: 300;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .2s ease-out, background .15s;
+  border-radius: 0;
+  line-height: 1;
+}
+.deep-accordion details[open] .deep-acc-indicator {
+  transform: rotate(45deg);
+  background: var(--plum-red);
+  color: var(--fg-on-red);
+}
+
+.deep-acc-body {
+  padding: 24px 24px 28px;
+  border-top: 0.5px solid var(--line-lav);
+}
+
+/* Body prose inside deep accordion */
+.deep-acc-body p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--fg-2);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+.deep-acc-body p:last-child { margin-bottom: 0; }
+.deep-acc-body p strong { color: var(--fg-1); font-weight: 600; }
+
+/* Two-column grid inside accordion body */
+.acc-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line-lav);
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin: 20px 0;
+}
+.acc-grid-cell {
+  background: var(--cream);
+  padding: 18px 20px;
+}
+.acc-grid-cell h4 {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 10px;
+}
+.acc-grid-cell p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--fg-1);
+  line-height: 1.6;
+  margin-bottom: 0 !important;
+}
+
+/* Tax table inside accordion */
+.tax-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  background: var(--cream);
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin: 20px 0;
+}
+.tax-table thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid var(--line-lav);
+}
+.tax-table thead th:first-child { background: var(--cream-deep); color: var(--fg-muted); width: 24%; }
+.tax-table thead th.th-employer { background: var(--fg-1); color: rgba(255,250,242,.75); }
+.tax-table thead th.th-old { background: var(--accent-amber-light); color: var(--accent-amber); }
+.tax-table thead th.th-new { background: var(--sev-blush); color: var(--plum-red); }
+.tax-table tbody td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--line-lav-2);
+  color: var(--fg-1);
+  vertical-align: top;
+  line-height: 1.55;
+  font-size: 13.5px;
+}
+.tax-table tbody tr:last-child td { border-bottom: none; }
+.tax-table tbody td:first-child { font-weight: 600; background: var(--cream-deep); color: var(--fg-2); }
+.tax-table tbody tr:nth-child(even) td:not(:first-child) { background: rgba(255,250,242,.6); }
+.tax-exempt { color: var(--accent-teal); font-weight: 600; }
+.tax-taxable { color: var(--plum-red); font-weight: 600; }
+.tax-partial { color: var(--accent-amber); font-weight: 600; }
+
+/* Regime callout */
+.regime-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line-lav);
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin: 16px 0 20px;
+}
+.regime-card { padding: 18px 20px; }
+.regime-card.old { background: var(--accent-amber-light); }
+.regime-card.new { background: var(--sev-blush); }
+.regime-label {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.regime-card.old .regime-label { color: var(--accent-amber); }
+.regime-card.new .regime-label { color: var(--plum-red); }
+.regime-card p {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.65;
+  margin-bottom: 0 !important;
+}
+.regime-card.old p { color: #5C3A00; }
+.regime-card.new p { color: #7A1020; }
+
+/* Leave table */
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  background: var(--cream);
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin: 20px 0;
+}
+.leave-table thead th {
+  background: var(--fg-1);
+  color: rgba(255,250,242,.75);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.leave-table tbody td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--line-lav-2);
+  color: var(--fg-1);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.leave-table tbody tr:last-child td { border-bottom: none; }
+.leave-table tbody td:first-child { font-weight: 600; color: var(--fg-2); background: var(--cream-deep); width: 22%; }
+.leave-table tbody tr:nth-child(even) td:not(:first-child) { background: var(--cream-deep); }
+
+/* Allowance cards */
+.allowance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--line-lav);
+  border: 1px solid var(--line-lav);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  margin: 20px 0;
+}
+.allowance-card { background: var(--cream); padding: 18px 18px 16px; }
+.allowance-card:hover { background: var(--cream-deep); }
+.allowance-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  color: var(--fg-1);
+  margin-bottom: 4px;
+}
+.allowance-abbr {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--plum-red);
+  margin-bottom: 10px;
+}
+.allowance-rows { list-style: none; }
+.allowance-rows li {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--fg-2);
+  padding: 5px 0;
+  border-bottom: 0.5px solid var(--line-lav-2);
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.allowance-rows li:last-child { border-bottom: none; }
+.allowance-rows .row-key {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+@media (max-width: 640px) {
+  .acc-grid-2 { grid-template-columns: 1fr; }
+  .regime-split { grid-template-columns: 1fr; }
+  .allowance-grid { grid-template-columns: 1fr 1fr; }
+  .tax-table { font-size: 12px; }
+  .tax-table th, .tax-table td { padding: 9px 10px; }
+  .deep-acc-body p { font-size: 14px; }
+}
+
 /* ── TOC RAIL: collapse below the two-column threshold ───────────────────
    Under 1024px the rail becomes a horizontal scroller pinned under the nav,
    which is the behaviour the page had before the rail existed. */
@@ -1066,7 +1384,9 @@ h2 {
     padding: 0 clamp(16px, 5vw, 48px);
   }
   .toc-heading { display: none; }
-  .toc-bar ul { display: flex; white-space: nowrap; }
+  .toc-bar > .toc-inner > ul { display: flex; white-space: nowrap; }
+  /* 23 entries in a horizontal scroller is unusable — show only the sections */
+  .toc-bar ul ul { display: none; }
   .toc-bar a {
     padding: 13px 13px;
     font-size: 12.5px;
@@ -1083,5 +1403,5 @@ h2 {
     border-bottom-color: var(--plum-red);
   }
   .page-body { padding-top: 36px; }
-  section[id] { scroll-margin-top: 60px; }
+  section[id], h2[id], h3[id] { scroll-margin-top: 60px; }
 }
