@@ -106,9 +106,13 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <p class="toc-heading">On this page</p>
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#statutory">Statutory (EB)</a></li>
-    <li><a href="#voluntary-eb">Voluntary EB</a></li>
-    <li><a href="#global-benchmark">Global Benchmark</a></li>
+    <li><a href="#statutory">Statutory Employee Benefits</a></li>
+    <li><a href="#voluntary-eb">Voluntary Employee Benefits</a></li>
+    <li><a href="#global-benchmark">Global Benchmark</a>
+      <ul>
+        <li><a href="#benchmark-headcount">By headcount stage</a></li>
+      </ul>
+    </li>
     <li><a href="#claims-reality">Claims Reality</a></li>
     <li><a href="#maternity">Maternity</a></li>
     <li><a href="#business">Business Insurance</a></li>
@@ -116,7 +120,20 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <li><a href="#sector">Sector Notes</a></li>
     <li><a href="#city">City Guide</a></li>
     <li><a href="#checklist">Checklist</a></li>
-    <li><a href="#beyond">Beyond Insurance</a></li>
+    <li><a href="#beyond">Beyond Insurance</a>
+      <ul>
+        <li><a href="#beyond-personas">Team personas</a></li>
+        <li><a href="#beyond-gaps">Where gaps are widest</a></li>
+        <li><a href="#beyond-outside">Outside insurance</a>
+          <ul>
+            <li><a href="#beyond-non-insurance">The non-insurance layer</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tax">Tax Guide</a></li>
+    <li><a href="#leave">Leave &amp; Policies</a></li>
+    <li><a href="#allowances">Allowances</a></li>
   </ul>
   </div>
 </nav>
@@ -443,7 +460,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Analysis of 4,500+ employee healthcare plans.</p>
 
     <div style="margin-top:28px;">
-      <h2 style="margin-bottom:10px;">What the market looks like at each headcount stage</h2>
+      <h2 id="benchmark-headcount" style="margin-bottom:10px;">What the market looks like at each headcount stage</h2>
       <p class="section-intro">Your candidates have worked at Indian companies before. This is what those companies were carrying. Now you know what you're being measured against.</p>
 
       <div class="table-scroll"><table class="bench-table">
@@ -872,7 +889,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="checklist-grid">
       <div class="checklist-block">
-        <h3><span class="phase-dot p1"></span> Phase 1 — Entity registration (Day 1–90)</h3>
+        <h3 id="phase-1"><span class="phase-dot p1"></span> Phase 1 — Entity registration (Day 1–90)</h3>
         <ul>
           <li>D&amp;O Liability: directors are exposed from CIN date</li>
           <li>Professional Indemnity: if client contracts already signed</li>
@@ -883,7 +900,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </ul>
       </div>
       <div class="checklist-block">
-        <h3><span class="phase-dot p2"></span> Phase 2 — First employees hired (7–19 employees)</h3>
+        <h3 id="phase-2"><span class="phase-dot p2"></span> Phase 2 — First employees hired (7–19 employees)</h3>
         <ul>
           <li>Group Health Insurance: minimum 7 for group policy eligibility</li>
           <li>Group Personal Accident: recommended from first hire. Only 36% of small companies carry it, but GCCs are expected to.</li>
@@ -893,7 +910,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </ul>
       </div>
       <div class="checklist-block">
-        <h3><span class="phase-dot p3"></span> Phase 3 — Scale (20+ employees)</h3>
+        <h3 id="phase-3"><span class="phase-dot p3"></span> Phase 3 — Scale (20+ employees)</h3>
         <ul>
           <li>EPF mandatory: register with EPFO within 30 days of crossing 20 employees</li>
           <li>ESI mandatory: register with ESIC within 15 days of crossing 10 employees</li>
@@ -1203,7 +1220,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <!-- WHO YOUR TEAM ACTUALLY IS -->
-    <h2 style="margin-bottom:8px;margin-top:32px;">A 50-person team has at least three different benefit needs</h2>
+    <h2 id="beyond-personas" style="margin-bottom:8px;margin-top:32px;">A 50-person team has at least three different benefit needs</h2>
     <p class="section-intro">Most India-entry benefit plans are designed for a single archetype — usually a mid-30s male employee with two children. That employee exists, but so does a 26-year-old living alone in Bangalore, a 43-year-old with elderly parents in Hyderabad, and everyone in between. A plan built around the median undersells the value to almost everyone.</p>
 
     <div class="persona-strip">
@@ -1254,7 +1271,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <!-- THREE BENEFIT DIMENSIONS -->
-    <h2 style="margin-top:36px;margin-bottom:8px;">Three areas where the gap between median and global standard is widest</h2>
+    <h2 id="beyond-gaps" style="margin-top:36px;margin-bottom:8px;">Three areas where the gap between median and global standard is widest</h2>
     <p class="section-intro">Plum places and administers all three. Each one has a large adoption gap between India Inc's median and what global startups in India actually carry — which means moving on any of them immediately differentiates your offer.</p>
 
     <!-- OPD & TELEHEALTH -->
@@ -1408,11 +1425,11 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <!-- OUTSIDE PLUM'S LANE -->
-    <h2 style="margin-top:36px;margin-bottom:8px;">What sits outside insurance — and who should own it</h2>
+    <h2 id="beyond-outside" style="margin-top:36px;margin-bottom:8px;">What sits outside insurance — and who should own it</h2>
     <p class="section-intro">These aren't insurance products, so they're outside Plum's scope. But they're part of your total offer, and senior candidates will ask about them. Your CHRO, PEO, or India HR lead should have a view on each one before your first senior hire conversation.</p>
 
     <div class="outside-lane">
-      <h3>The non-insurance layer</h3>
+      <h3 id="beyond-non-insurance">The non-insurance layer</h3>
       <p>Some of these are statutory; some are market expectations. All of them come up in senior hire conversations sooner than most MNCs expect.</p>
       <div class="outside-grid">
         <div class="outside-item">
@@ -1447,6 +1464,474 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       <div><strong>Run this calculation before your next renewal:</strong> on a ₹20.2 crore total compensation budget, moving from 1% to 2% on benefits costs 1 percentage point on salary increments — a 12% hike becomes 11%. For that difference, you go from ₹5L sum insured with no parental cover to ₹7–10L, parental cover, progressive maternity, and primary healthcare. 70% of employees say they'd take the better benefits over the better hike. Most HR teams haven't shown this maths to their CFO.</div>
     </div>
   </section>
+
+  <!-- PART 9: TAX CONSIDERATIONS -->
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+  <section id="tax">
+    <div class="section-label">Part 9 — Tax Guide</div>
+    <h2>Tax treatment of employee benefits in India</h2>
+    <p class="section-intro">India runs two parallel income tax regimes simultaneously, and the tax treatment of almost every benefit differs between them. Most MNC finance teams discover this in month two of India payroll. Understanding it at setup saves a lot of retrospective restructuring.</p>
+
+    <div class="deep-accordion">
+
+      <details open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">The foundation</div>
+            <div class="acc-summary-title">Old regime vs new regime — what every HR and finance lead needs to know</div>
+            <div class="acc-summary-sub">The default has changed. Most employees are now on the new regime.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>India has operated two parallel income tax regimes since 2020. The new regime became the default in FY2023-24. Employees can still opt into the old regime when filing their annual return, but they must actively choose to do so. In practice, many employees — particularly those earning below ₹15 LPA — now find the new regime more beneficial, since the lower rates outweigh the lost deductions.</p>
+          <p>For MNC HR and finance teams, the practical consequence is that several benefits which were tax-efficient under the old regime are now taxable for a significant portion of your workforce. Salary structure decisions that made sense three years ago may no longer serve your employees well.</p>
+          <div class="regime-split">
+            <div class="regime-card old">
+              <div class="regime-label">Old regime</div>
+              <p>Higher income tax rates but generous exemptions and deductions. House rent allowance (HRA), leave travel allowance (LTA), meal allowance, standard deduction (₹50,000), and most benefit-related deductions are available. Beneficial for employees with significant deductions — home loans, children's school fees, insurance premiums, HRA.</p>
+            </div>
+            <div class="regime-card new">
+              <div class="regime-label">New regime (default)</div>
+              <p>Lower income tax rates but almost all exemptions and deductions removed. HRA, LTA, meal allowance exemptions, and most Section 80C deductions are not available. Standard deduction is ₹75,000 (increased from ₹50,000 in Budget 2024). Beneficial for most employees earning below ₹15 LPA with few deductions, and for those without a home loan.</p>
+            </div>
+          </div>
+          <p>The implication for benefits design: many allowances and benefit structures that were built around old-regime tax efficiency (LTA, HRA, meal vouchers) now deliver less value to new-regime employees. Flex benefit wallets — where employees allocate a budget to categories that suit their regime choice — are increasingly the more rational structure.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Insurance benefits</div>
+            <div class="acc-summary-title">Tax treatment of GHI, GTL, GPA, and statutory schemes</div>
+            <div class="acc-summary-sub">Most employer-paid insurance is a deductible business expense — but the employee-side treatment varies.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>The good news for MNCs: group health insurance premiums paid by the employer are deductible under Section 37(1) as a business expense, and are not treated as a perquisite in the employee's hands. This makes GHI one of the most tax-efficient benefits in the India stack — valuable to both employer and employee regardless of which tax regime the employee has chosen.</p>
+          <div class="table-scroll"><table class="tax-table">
+            <thead>
+              <tr>
+                <th>Benefit</th>
+                <th class="th-employer">Employer: tax treatment</th>
+                <th class="th-old">Employee: old regime</th>
+                <th class="th-new">Employee: new regime</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Group Health Insurance (GHI)</td>
+                <td>Deductible under Section 37(1). 18% GST on premium.</td>
+                <td><span class="tax-exempt">Not a perquisite.</span> Not included in taxable income.</td>
+                <td><span class="tax-exempt">Not a perquisite.</span> Not included in taxable income.</td>
+              </tr>
+              <tr>
+                <td>Group Term Life (GTL)</td>
+                <td>Deductible under Section 37(1).</td>
+                <td><span class="tax-partial">Perquisite</span> if employer pays premium. Taxable as salary. Employee can claim deduction under Section 80C on their portion.</td>
+                <td><span class="tax-taxable">Perquisite.</span> Taxable as salary. No Section 80C deduction available.</td>
+              </tr>
+              <tr>
+                <td>Group Personal Accident (GPA)</td>
+                <td>Deductible under Section 37(1).</td>
+                <td><span class="tax-exempt">Generally not a perquisite</span> when provided uniformly to all employees for business purpose.</td>
+                <td><span class="tax-exempt">Generally not a perquisite</span> when provided uniformly. If selective or personal benefit, treated as perquisite.</td>
+              </tr>
+              <tr>
+                <td>EPF contributions (employer)</td>
+                <td>Deductible as business expense. Contribution above 12% of basic is a perquisite.</td>
+                <td>Employee contribution deductible under Section 80C up to ₹1.5L. Interest exempt up to ₹9.5% on contributions ≤ ₹2.5L/year.</td>
+                <td>No Section 80C deduction. Interest and withdrawal treatment same as old regime.</td>
+              </tr>
+              <tr>
+                <td>EDLI (life cover via EPFO)</td>
+                <td>Deductible as part of EPF contribution.</td>
+                <td><span class="tax-exempt">Payout is tax-free</span> in the hands of the nominee.</td>
+                <td><span class="tax-exempt">Payout is tax-free</span> in the hands of the nominee.</td>
+              </tr>
+              <tr>
+                <td>Gratuity (employer-funded)</td>
+                <td>Deductible as business expense. Provisioning via group gratuity policy is preferred.</td>
+                <td><span class="tax-exempt">Tax-free up to ₹20 lakh</span> for private sector employees. Amount above ₹20L is taxable as salary.</td>
+                <td><span class="tax-exempt">Tax-free up to ₹20 lakh.</span> Same treatment as old regime.</td>
+              </tr>
+              <tr>
+                <td>ESI contributions (employer)</td>
+                <td>Deductible as business expense.</td>
+                <td><span class="tax-exempt">Not taxable</span> for employee. Statutory scheme, not a perquisite.</td>
+                <td><span class="tax-exempt">Not taxable</span> for employee.</td>
+              </tr>
+            </tbody>
+          </table></div>
+          <p>Claim payouts from GHI (hospitalisation reimbursements and cashless claims) are not taxable income for the employee. GTL payouts on death are exempt from tax under Section 10(10D). GPA payouts on accidental death or disability are also generally tax-free.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Perquisites</div>
+            <div class="acc-summary-title">What counts as a perquisite — and how it's valued for tax</div>
+            <div class="acc-summary-sub">Perquisites are employer-provided benefits included in taxable income. The valuation rules matter as much as the classification.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>A perquisite is any benefit provided by the employer that has a monetary value and is not specifically exempt under the Income Tax Act. For MNC finance teams used to simpler tax systems, this concept is often the first India payroll surprise: the same benefit can be a deductible business expense for the employer and taxable income for the employee simultaneously.</p>
+          <p>The Income Tax Rules (Rule 3) prescribe specific valuation methods for common perquisites. The most relevant for MNCs:</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>Company car / car leasing</h4>
+              <p>If the car is in the employer's name and used partly for personal travel, the perquisite value is ₹1,800/month for cars under 1,600cc engine capacity, or ₹2,400/month for cars above 1,600cc. An additional ₹900/month applies if a driver is provided. This is significantly lower than the actual cost of the car, making car leasing one of the most tax-efficient benefits in India for senior employees — particularly under the old regime.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Accommodation (company-provided housing)</h4>
+              <p>Valued at 15% of salary for cities with a population above 25 lakh, 10% for cities between 10–25 lakh, and 7.5% for other cities. If the employer leases the accommodation (rather than owning it), the perquisite value is the lower of 15%/10%/7.5% of salary or the actual lease rent paid. Furnished accommodation adds 10% of the cost of furniture per year.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>ESOPs and equity</h4>
+              <p>ESOPs are taxed as a perquisite at the time of exercise — not at grant or vesting. The perquisite value is the fair market value on the date of exercise minus the exercise price paid. This amount is added to salary and taxed at the applicable income tax rate. A second tax event occurs when shares are eventually sold, where capital gains tax applies on the difference between the sale price and the FMV on exercise date. For eligible startups, the perquisite tax at exercise can be deferred up to 5 years.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Interest-free or concessional loans</h4>
+              <p>If the employer provides a loan to an employee at an interest rate below the State Bank of India's (SBI) lending rate, the difference is treated as a perquisite. The SBI rate used is the rate as of the first day of the financial year. Small loans up to ₹20,000 in aggregate are exempt. Medical treatment loans for specified diseases are also exempt. This is particularly relevant for MNCs offering home loan advance schemes or emergency financial assistance.</p>
+            </div>
+          </div>
+          <p>Benefits provided uniformly to all employees for business purposes — uniforms, health screenings, vaccination drives, EAP services — are generally not treated as perquisites. The test is whether the benefit is personal in nature and has a measurable monetary value attributable to a specific employee.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Employer obligations</div>
+            <div class="acc-summary-title">TDS, Form 16, and payroll compliance for MNCs</div>
+            <div class="acc-summary-sub">Tax deduction at source on salary and perquisites is an employer responsibility from the first payroll run.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>Indian employers are required to deduct tax at source (TDS) on all salary payments, including the value of perquisites, under Section 192 of the Income Tax Act. The obligation begins with the first payroll run — there is no grace period for new India entities.</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>TDS on salary (Section 192)</h4>
+              <p>Employers must deduct TDS monthly, calculated as an estimate of the employee's annual tax liability divided by 12. At the start of the year, employees should declare their regime choice and expected deductions to HR. The employer uses this to compute the TDS amount. Perquisite values (car, accommodation, interest-free loans) are added to the salary for TDS calculation. The employer must deposit deducted TDS to the government by the 7th of the following month.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Form 16 — annual tax certificate</h4>
+              <p>Employers must issue Form 16 to all employees by 15 June following the financial year end (31 March). Form 16 has two parts: Part A shows the TDS deposited; Part B shows the salary and perquisite breakdown. For MNC employees with global income or equity from a foreign parent entity, accurate Form 16 preparation requires close coordination between India payroll and the parent company's equity administration team.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Quarterly TDS returns (Form 24Q)</h4>
+              <p>Employers must file quarterly TDS returns for salary in Form 24Q. Deadlines: Q1 (Apr–Jun) by 31 July; Q2 (Jul–Sep) by 31 October; Q3 (Oct–Dec) by 31 January; Q4 (Jan–Mar) by 31 May. Late filing attracts a fee of ₹200/day. Errors in TDS returns affect employee tax filings, so accuracy is critical — particularly for perquisite valuations which are often missed or miscalculated.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>PAN collection and reporting</h4>
+              <p>Employers must collect the Permanent Account Number (PAN) from every employee before the first salary payment. If PAN is not provided, TDS must be deducted at 20% (or the applicable rate, whichever is higher). For foreign nationals joining the India entity, PAN application should be initiated before or immediately upon joining — it takes 2–4 weeks to process and affects the first payroll run.</p>
+            </div>
+          </div>
+          <div class="callout callout-amber" style="margin-top:4px;">
+            <span class="callout-icon">⚠</span>
+            <div><strong>ESOP complexity for global MNCs:</strong> if your India employees receive ESOPs or RSUs from a foreign parent company, the perquisite value at exercise must be included in India TDS calculations. Many India payroll teams miss this because the equity is granted and tracked by the parent entity. The employee ends up with a tax liability that wasn't withheld, which they discover at filing. Coordinate explicitly between your India HR and the parent's equity team from the first grant.</div>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /deep-accordion tax -->
+  </section>
+
+
+  <!-- PART 10: LEAVE & POLICIES -->
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+  <section id="leave">
+    <div class="section-label">Part 10 — Leave &amp; Policies</div>
+    <h2>Leave entitlements and what global MNCs typically add on top</h2>
+    <p class="section-intro">India's statutory leave framework is state-governed and more fragmented than most MNCs expect. The floor is lower than in most countries your HR team has operated in. The gap between statutory minimum and what you'll need to offer to compete for talent is where most of the design work happens.</p>
+
+    <div class="deep-accordion">
+
+      <details open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">The statutory floor</div>
+            <div class="acc-summary-title">What Indian law actually mandates on leave</div>
+            <div class="acc-summary-sub">Less than most MNCs assume — and varies significantly by state.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>India does not have a single national leave statute for private sector employees. Leave entitlements are governed by a combination of central laws (Factories Act, Maternity Benefit Act) and state-level Shops and Establishments Acts, which vary by state. The Code on Social Security 2020 will eventually harmonise some of this, but implementation across states is uneven.</p>
+          <div class="table-scroll"><table class="leave-table">
+            <thead>
+              <tr>
+                <th>Leave type</th>
+                <th>Statutory entitlement</th>
+                <th>Key conditions</th>
+                <th>Global MNC market standard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Earned / Privilege leave</td>
+                <td>12 days/year minimum (factory workers); 1 day per 20 worked. State rules vary for non-factory workers.</td>
+                <td>Accrual-based. Unused days can be carried forward up to 30–45 days depending on state. Leave encashment on exit is taxable (partially exempt on retirement).</td>
+                <td>20–25 days. Many MNCs and GCCs offer 24 days as a standard. Some offer unlimited leave for senior roles.</td>
+              </tr>
+              <tr>
+                <td>Casual leave</td>
+                <td>7–12 days/year (state-governed). Not available in all states.</td>
+                <td>For short-term unforeseen needs. Generally not carried forward or encashed. Complements earned leave in most state frameworks.</td>
+                <td>Statutory is standard. Most MNCs absorb casual leave into a combined earned leave balance for simplicity.</td>
+              </tr>
+              <tr>
+                <td>Sick leave</td>
+                <td>12 days/year (ESI-covered employees: 70% wages for up to 91 days; 80% for chronic conditions up to 2 years).</td>
+                <td>May require medical certificate beyond 2–3 days. State rules vary. ESI benefit only covers those below the ₹21,000 wage threshold.</td>
+                <td>Statutory is standard. Most MNCs operate on trust-based sick leave with no certificate requirement for short absences.</td>
+              </tr>
+              <tr>
+                <td>Public holidays</td>
+                <td>3 national holidays mandatory (Republic Day, Independence Day, Gandhi Jayanti). Remaining holidays set at state level — typically 18 total.</td>
+                <td>State public holiday lists vary. Companies must publish an annual holiday list at the start of each year. Some states allow optional holiday substitution.</td>
+                <td>Most MNCs follow local state holidays plus the 3 national holidays. Some offer a "floating holiday" to allow employees to substitute one public holiday.</td>
+              </tr>
+              <tr>
+                <td>Maternity leave</td>
+                <td>26 weeks full pay for first two children. 12 weeks from third child. 12 weeks for adoption (age restriction removed per Supreme Court, March 2026). 6 weeks for miscarriage/medical termination.</td>
+                <td>Applies to establishments with 10+ employees. Employee must have worked 80 days in the 12 months preceding delivery. ESI-covered employees receive maternity benefit via ESIC.</td>
+                <td>Statutory is the standard. Some MNCs extend to 32 weeks or offer a phased return programme. Paid paternity leave (2–4 weeks) is increasingly offered as market standard.</td>
+              </tr>
+              <tr>
+                <td>Paternity leave</td>
+                <td>No statutory requirement for private sector. Central government employees: 15 days paid.</td>
+                <td>Entirely at employer discretion for private sector. There is no obligation.</td>
+                <td>2–4 weeks paid paternity leave is the MNC market standard. Global startups in India typically offer 2 weeks minimum. Some offer equal primary/secondary carer leave.</td>
+              </tr>
+              <tr>
+                <td>Bereavement leave</td>
+                <td>No statutory requirement. Entirely at employer discretion.</td>
+                <td>Common market practice: 3–5 days paid leave for immediate family.</td>
+                <td>5–10 days for immediate family. Extended bereavement leave (up to 2 weeks) is offered by top-quartile MNCs and tech companies.</td>
+              </tr>
+            </tbody>
+          </table></div>
+          <div class="callout callout-teal" style="margin-top:4px;">
+            <span class="callout-icon">ℹ</span>
+            <div><strong>March 2026 Supreme Court ruling on adoption leave:</strong> the Supreme Court of India ruled that the 12-week paid adoption leave entitlement under the Maternity Benefit Act applies regardless of the adopted child's age. A previous rule limiting the benefit to adoptions of children under three months old was struck down. Private sector employers are expected to align policies accordingly. Check your maternity/adoption leave policy wording if it contains an age restriction on the adopted child.</div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Flexible working</div>
+            <div class="acc-summary-title">Hybrid, remote, and flexible working in India</div>
+            <div class="acc-summary-sub">No statutory framework — but a major factor in competitive hiring.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>India has no statutory right to request flexible working in the private sector. There is no equivalent of the UK's right to request or the US FMLA flexible work provisions. Flexible working arrangements are entirely at employer discretion and governed by employment contracts and internal policy.</p>
+          <p>In practice, hybrid work has become a de facto expectation in India's tech and GCC markets. A policy that requires full five-day office attendance is a meaningful disadvantage in Bangalore, Hyderabad, and Pune hiring markets, where candidates benchmark offers against companies with 2–3 WFH days as standard.</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What the market actually offers</h4>
+              <p>Most large Indian IT companies and MNCs operate on a hybrid model: 3 days office, 2 days WFH is the most common configuration. Full remote is rare outside senior specialist roles and is more common in product companies than in GCCs. Flexible start/finish times are offered by roughly half of large MNCs. Compressed working weeks (4 days) are emerging but not yet mainstream.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Nursing mothers provision</h4>
+              <p>The Maternity Benefit Act includes a specific provision allowing nursing mothers to work from home if the nature of work permits, in a format agreed with the employer. This applies after the 26-week maternity leave period expires. It is one of the few explicit remote working rights in Indian labour law and applies regardless of company size. Ensure your return-to-work policy acknowledges this provision.</p>
+            </div>
+          </div>
+          <p>For MNCs establishing India entities: define your hybrid policy before your first hire, not after. It appears in offer letters, and changing a policy after employees have been hired around it creates retention risk. If your global policy is stricter than the India market norm, consider India-specific flexibility carve-outs — particularly for GCC roles where the talent market is most competitive.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">What top-quartile MNCs offer above statutory</div>
+            <div class="acc-summary-title">The leave stack that differentiates in the GCC talent market</div>
+            <div class="acc-summary-sub">Beyond the legal minimum, this is what candidates from top Indian employers expect.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>The companies consistently cited as preferred employers in India's GCC market do not just meet statutory leave requirements. They redesign the leave structure as a talent signal. These are the additions that appear most frequently in offer letters from companies competing for senior engineering and operations talent:</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>Paid paternity leave (2–4 weeks)</h4>
+              <p>The single highest-signal addition for talent-conscious MNCs. India has no statutory private-sector paternity leave, so any provision stands out. Global startups in India typically offer 2 weeks minimum. Equal primary/secondary carer leave (matching maternity at 26 weeks regardless of gender) is offered by a small but growing number of progressive MNCs and is increasingly used as a recruitment signal.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Mental health days</h4>
+              <p>Distinct from sick leave — designated days employees can take without a medical certificate and without giving a reason. 2–5 mental health days per year is the emerging standard among tech and GCC employers. The framing matters: calling them "wellness days" or "personal days" has higher uptake than "mental health days" in most India contexts.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Volunteer leave</h4>
+              <p>1–3 days of paid leave per year for volunteering or community activity. Popular among employees in the 25–35 age band and increasingly expected by candidates who filter employers on ESG credentials. Low cost to the employer; high signal value to candidates.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Extended bereavement leave</h4>
+              <p>5–10 days for immediate family is the MNC standard. Top-quartile employers extend to secondary family (grandparents, in-laws, close friends) with 3–5 days, and offer a phased return-to-work protocol for significant bereavement. Grief leave as a named category — distinct from sick leave — is emerging in the most progressive benefits packages.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /deep-accordion leave -->
+  </section>
+
+
+  <!-- PART 11: ALLOWANCES & CTC STRUCTURE -->
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+  <section id="allowances">
+    <div class="section-label">Part 11 — Allowances &amp; CTC</div>
+    <h2>India CTC structure and allowances — what MNCs need to know</h2>
+    <p class="section-intro">India's cost-to-company (CTC) structure is more complex than most countries your payroll team has operated in. The split between basic salary and allowances has direct consequences for statutory contributions, tax liability, and what employees actually take home. Getting this structure right at incorporation saves significant rework later.</p>
+
+    <div class="deep-accordion">
+
+      <details open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">The structure</div>
+            <div class="acc-summary-title">How India CTC is typically built — and why the basic salary ratio matters</div>
+            <div class="acc-summary-sub">The Labour Code 2025 changed the rules on basic salary. Many historic structures are now non-compliant.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>A typical India CTC package is not simply a salary. It is a structured bundle of components: basic salary, dearness allowance (DA, typically nil in private sector), house rent allowance (HRA), leave travel allowance (LTA), special allowance, and employer contributions to EPF and gratuity. The ratio of basic salary to total CTC matters significantly because EPF contributions, gratuity, and the Labour Code 2025 "50% rule" are all calculated on basic salary.</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>The 50% rule (Labour Code 2025)</h4>
+              <p>The Code on Social Security 2020, effective November 2025, requires that basic salary plus dearness allowance be at least 50% of total CTC. This was introduced specifically to close the practice of inflating allowances (which don't attract EPF or gratuity) while suppressing basic salary. Many pre-2025 India salary structures were built to keep basic at 30–40% of CTC. These are now non-compliant. If your India entity inherited salary structures from an EOR or a pre-2025 template, review them before your first independent payroll run.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Practical CTC split example (₹24 LPA)</h4>
+              <p>Basic salary: ₹12,00,000 (50% of CTC). HRA: ₹4,80,000 (40% of basic, for metro city). LTA: ₹48,000. Special allowance: ₹3,96,000. Employer EPF: ₹1,44,000 (12% of basic). Employer NPS (optional): ₹48,000. Gratuity provision: ₹57,692. Total CTC: ₹24,00,000. The employee's gross salary (excluding employer's statutory contributions) is approximately ₹21.4 LPA. Take-home varies significantly based on regime choice and individual deductions.</p>
+            </div>
+          </div>
+          <p>The practical consequence of the 50% rule: for a ₹24 LPA CTC, EPF now applies on ₹12L/year basic rather than ₹6–7L that was common before. Employer EPF contribution increases from ~₹72,000/year to ₹1,44,000/year per employee. Budget for this cost increase when modelling headcount in India for the first time.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Standard allowances</div>
+            <div class="acc-summary-title">HRA, LTA, meal allowance, transport, and WFH stipend</div>
+            <div class="acc-summary-sub">The standard allowance components, what's tax-exempt, and how the new regime changed the picture.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="allowance-grid">
+            <div class="allowance-card">
+              <div class="allowance-name">House Rent Allowance</div>
+              <div class="allowance-abbr">HRA</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">Typical amount</span>40–50% of basic salary for metro cities; 40% elsewhere</li>
+                <li><span class="row-key">Old regime</span>Partially exempt. The exempt amount is the lowest of: actual HRA received; actual rent paid minus 10% of basic; 50% of basic (metro) or 40% (non-metro)</li>
+                <li><span class="row-key">New regime</span>No exemption. Full HRA is taxable as salary.</li>
+                <li><span class="row-key">MNC note</span>Employees on the new regime get no benefit from HRA as a salary component. Consider offering a higher basic and lower HRA for new-regime employees, or using a flex wallet for rent support.</li>
+              </ul>
+            </div>
+            <div class="allowance-card">
+              <div class="allowance-name">Leave Travel Allowance</div>
+              <div class="allowance-abbr">LTA</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">Typical amount</span>₹30,000–₹60,000/year</li>
+                <li><span class="row-key">Old regime</span>Exempt for domestic travel (air, rail, or public transport) for employee and family, for 2 trips in a 4-year block. Travel receipts required.</li>
+                <li><span class="row-key">New regime</span>No exemption. Fully taxable.</li>
+                <li><span class="row-key">MNC note</span>LTA is one of the clearest examples of a benefit that has lower value for new-regime employees. Worth retaining as a CTC component for old-regime employees but may not justify the admin complexity for a young, new-regime workforce.</li>
+              </ul>
+            </div>
+            <div class="allowance-card">
+              <div class="allowance-name">Meal Allowance</div>
+              <div class="allowance-abbr">Food</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">Tax-exempt amount</span>₹50/meal, typically ₹2,200/month (2 meals/working day × 22 days)</li>
+                <li><span class="row-key">Old regime</span>₹2,200/month exempt if provided via meal vouchers or prepaid cards (not cash).</li>
+                <li><span class="row-key">New regime</span>No exemption. Fully taxable if provided as allowance.</li>
+                <li><span class="row-key">MNC note</span>Meal vouchers and prepaid meal cards (Sodexo, Zeta, Zaggle) are the standard delivery mechanism. Cash meal allowance is taxable regardless of regime. Applicable for in-office employees; WFH employees rarely claim this.</li>
+              </ul>
+            </div>
+            <div class="allowance-card">
+              <div class="allowance-name">Transport Allowance</div>
+              <div class="allowance-abbr">Travel</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">Common amount</span>₹1,600–₹3,200/month</li>
+                <li><span class="row-key">Old regime</span>Transport allowance was explicitly exempt up to ₹1,600/month (replaced by standard deduction in 2018). No specific transport exemption now; subsumed into the ₹50,000 standard deduction under the old regime.</li>
+                <li><span class="row-key">New regime</span>Standard deduction of ₹75,000 available. No separate transport exemption.</li>
+                <li><span class="row-key">MNC note</span>Company-provided transport between home and office is not a taxable perquisite if organised as a group commute. Cab reimbursements for individual commuting are taxable. Many MNCs offer a fixed transport allowance within the CTC structure.</li>
+              </ul>
+            </div>
+            <div class="allowance-card">
+              <div class="allowance-name">WFH Stipend</div>
+              <div class="allowance-abbr">Remote</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">Common amounts</span>One-time setup: ₹10,000–₹25,000. Monthly: ₹1,500–₹3,000 for internet</li>
+                <li><span class="row-key">Tax treatment</span>WFH stipends and internet reimbursements are generally taxable as salary. No specific exemption exists in either regime. One-time equipment purchases by the employer (laptop, chair, monitor) provided as business tools are typically not perquisites if used primarily for work.</li>
+                <li><span class="row-key">MNC note</span>Global startups in India increasingly offer a WFH setup allowance at joining. Budget it as a taxable benefit or structure it as an employer asset loan (employee uses equipment; employer retains ownership) to reduce the tax impact.</li>
+              </ul>
+            </div>
+            <div class="allowance-card">
+              <div class="allowance-name">Special Allowance</div>
+              <div class="allowance-abbr">SA</div>
+              <ul class="allowance-rows">
+                <li><span class="row-key">What it is</span>A residual CTC component used to make up the total package after all other allowances are accounted for</li>
+                <li><span class="row-key">Tax treatment</span>Fully taxable as salary under both regimes. No exemption.</li>
+                <li><span class="row-key">MNC note</span>Special allowance typically forms 15–30% of CTC in compliant salary structures. It attracts full income tax and all statutory deductions proportionally. Minimising special allowance in favour of other more tax-efficient components is standard India salary structuring practice — within the constraints of the 50% basic salary rule.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Common MNC mistakes</div>
+            <div class="acc-summary-title">India payroll errors that appear in the first year</div>
+            <div class="acc-summary-sub">Based on the patterns Plum's team sees when onboarding MNC clients from EOR to independent entity.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>The following are the most common structural errors Plum's team encounters when MNCs move from an Employer of Record to their own India entity, or when they first build out India payroll independently.</p>
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>Basic salary below 50% of CTC</h4>
+              <p>The most common inherited compliance problem. EOR templates and pre-2025 salary letters frequently have basic at 30–40% of CTC. Under the Labour Code 2025, this is non-compliant. It also means EPF and gratuity provisioning has been understated. Correct before running your first independent payroll — not at renewal.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>ESOP perquisite not included in TDS</h4>
+              <p>Foreign parent ESOPs or RSUs are exercised and tracked outside India payroll systems. The perquisite value at exercise must be included in Form 24Q and TDS calculations in the month of exercise. Most India payroll teams don't receive automatic notification from the parent equity system. Build a manual notification process between the equity team and India HR before the first grant vests.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>GTL premium included in CTC but not added to Form 16</h4>
+              <p>Group term life insurance premiums paid by the employer are a perquisite and must appear in Part B of Form 16. Many India payroll setups include GTL in CTC calculations but omit it from the perquisite schedule, creating a gap between declared and actual taxable income. Employees discover this when filing their return.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Gratuity not provisioned from day one</h4>
+              <p>Gratuity accrues from the first day of employment, not from the 5-year eligibility date. Many first-time India entities start provisioning only when an employee approaches the 5-year mark. By then the liability is ₹15–20 lakh per senior employee. Set up a Group Gratuity policy or internal provisioning from the first payroll run.</p>
+            </div>
+          </div>
+          <div class="callout callout-coral" style="margin-top:4px;">
+            <span class="callout-icon">⚑</span>
+            <div><strong>Get an India payroll audit before your first independent payroll run.</strong> If you're transitioning from an EOR, request a full salary structure review — every employee's CTC components, statutory deductions, and perquisite schedule — before you take payroll in-house. The errors are easier and cheaper to fix before the first payroll than after Form 16 has been issued.</div>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /deep-accordion allowances -->
+  </section>
+
 
 </main>
 
@@ -1495,42 +1980,69 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <div>Prepared for HR, legal, and finance teams of MNCs and GCCs setting up India operations.</div>
     <div style="margin-top:4px;">Regulations current as of 2025–26. Verify thresholds against the latest IRDAI, EPFO, and ESIC circulars before purchase.</div>
   </div>
-  <div>Sources: IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025.</div>
+  <div>Sources: IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025; Income Tax Act 1961 (as amended); Code on Social Security 2020; Maternity Benefit Act 1961 (as amended per Supreme Court ruling, March 2026); state-level Shops and Establishments Acts.</div>
 </footer>
 
 
 <script is:inline>
-  // Mark the section currently being read in the TOC rail. Uses a scroll
-  // position probe rather than plain IntersectionObserver visibility, so the
-  // "current" item stays stable through tall sections and never flickers
-  // between two entries at a boundary.
+  // Mark the entry currently being read in the TOC rail, and mark its parent
+  // entries too, so a reader deep in a sub-section can still see which
+  // top-level section they are in.
+  //
+  // Uses a scroll-position probe rather than plain IntersectionObserver
+  // visibility, so the "current" entry stays stable through tall sections and
+  // never flickers between two entries at a boundary.
   (function () {
     var links = Array.prototype.slice.call(
       document.querySelectorAll('.toc-bar a[href^="#"]')
     );
     if (!links.length) return;
 
+    // Document order of the targets is the order they appear on the page,
+    // which is what the probe walks. Nesting does not change that.
     var targets = links
       .map(function (a) {
         return { link: a, el: document.getElementById(a.getAttribute('href').slice(1)) };
       })
       .filter(function (t) { return t.el; });
 
-    var current = null;
+    // For each link, the chain of ancestor links (parent <li> -> its <a>).
+    function ancestorsOf(a) {
+      var out = [], li = a.parentElement;
+      while (li) {
+        var ul = li.parentElement;
+        if (!ul || !ul.closest) break;
+        var parentLi = ul.parentElement;
+        if (!parentLi || parentLi.tagName !== 'LI') break;
+        var pa = parentLi.querySelector(':scope > a');
+        if (pa) out.push(pa);
+        li = parentLi;
+      }
+      return out;
+    }
+
+    var current = null, marked = [];
     function update() {
-      var probe = window.innerHeight * 0.25;
+      // Fixed, small offset rather than a share of the viewport: sibling
+      // headings can sit ~220px apart, and a 25%-of-viewport probe (225px at
+      // 900px tall) would skip past the nearer one to the next.
+      var probe = 96;
       var found = targets[0];
       for (var i = 0; i < targets.length; i++) {
         // viewport-relative: correct regardless of offsetParent nesting
         if (targets[i].el.getBoundingClientRect().top <= probe) found = targets[i];
       }
-      // at the very bottom the last section wins even if it is short
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
         found = targets[targets.length - 1];
       }
       if (found === current) return;
+
       if (current) current.link.removeAttribute('aria-current');
+      marked.forEach(function (a) { a.removeAttribute('data-ancestor'); });
+
       found.link.setAttribute('aria-current', 'true');
+      marked = ancestorsOf(found.link);
+      marked.forEach(function (a) { a.setAttribute('data-ancestor', ''); });
       current = found;
     }
 

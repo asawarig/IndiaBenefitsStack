@@ -68,9 +68,29 @@ Webflow Cloud serves it.
 ## Layout
 
 The table of contents is a **sticky left rail** above 1024px, collapsing to a
-horizontal scroller pinned under the nav below that. The section being read is
-marked `aria-current="true"` by a small inline script in `src/pages/index.astro`,
-which drives the highlight in the rail.
+horizontal scroller pinned under the nav below that.
+
+It nests three levels deep: sections, then additional `h2`s within a section,
+then `h3`s beneath those. Sub-entries need an `id` on the heading to link to —
+`benchmark-headcount`, `beyond-personas`, `beyond-gaps`, `beyond-outside`,
+`beyond-non-insurance`. Below 1024px only the top-level entries show, since 20
+items in a horizontal scroller is unusable.
+
+A small inline script in `src/pages/index.astro` marks the entry being read with
+`aria-current="true"` and its parents with `data-ancestor`, so a reader deep in a
+sub-section can still see which section they are in.
+
+Two constraints on that script, both learned the hard way:
+
+- **The probe is a fixed 96px from the top, not a share of the viewport.** At
+  25% of a 900px viewport the probe sat at 225px, which skipped past any two
+  headings closer than that — `beyond-outside` and `beyond-non-insurance` are
+  222px apart.
+- **`by-setup`'s three Phase headings are deliberately not in the rail.** They
+  are laid out as side-by-side columns at one identical scroll offset (same `y`,
+  x = 491/755/1018), so all three would jump to the same place and no
+  scroll-tracker could distinguish them. The `phase-1/2/3` ids remain on the
+  headings for direct linking.
 
 Body copy is capped near 68 characters for readability; tables, card grids and
 callouts keep the full column width.
