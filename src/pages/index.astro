@@ -37,6 +37,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 <title>The India Employee Benefits Stack — A Guide for MNC Decision-Makers | Plum</title>
 <meta name="description" content="What your insurance, employee benefits, and compliance programme should look like in India — from entity registration to full operations." />
 <link rel="stylesheet" href={href('guide.css')} />
+<link rel="stylesheet" href={href('chrome.css')} />
 <link rel="preload" as="font" type="font/woff" crossorigin href={href('fonts/PassengerSans-Regular.woff')} />
 <link rel="preload" as="font" type="font/woff" crossorigin href={href('fonts/GT-Alpina-Standard-Regular.woff')} />
 </head>
@@ -50,48 +51,112 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   </div>
 </header>
 
-<nav class="nav-top" aria-label="Site navigation">
-  <a href="https://www.plumhq.com" class="nav-logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
--31 -3 -1595 c-2 -1503 -1 -1597 15 -1629 10 -19 31 -44 46 -55 28 -20 41 -21
-500 -24 319 -2 484 0 509 8 23 7 48 24 65 47 l28 36 3 1666 c2 1156 0 1677 -8
-1703 -16 57 -61 88 -123 87 -29 0 -247 -34 -486 -75z M1968 3456 c-406 -72
--636 -329 -774 -870 -15 -56 -31 -107 -36 -113 -16 -20 -73 -16 -93 7 -18 19
--17 32 29 407 26 212 45 400 42 418 -4 17 -20 45 -37 61 l-30 29 -494 0 -493
-0 -27 -25 c-59 -55 -55 58 -55 -1667 0 -1519 1 -1590 18 -1622 10 -19 34 -43
-53 -53 31 -17 68 -18 524 -18 527 0 519 0 559 53 19 25 21 44 24 180 3 136 -2
-191 -47 532 -28 209 -54 397 -57 417 -7 45 21 78 65 78 37 0 43 -8 89 -123 55
--137 125 -248 212 -337 85 -87 138 -125 248 -180 160 -80 346 -120 553 -120
-263 0 475 72 625 213 183 171 290 423 346 822 18 123 18 727 0 850 -36 252
--82 419 -162 580 -119 240 -307 398 -555 466 -66 18 -112 22 -265 25 -124 2
--211 -1 -262 -10z m-133 -1026 c138 -67 184 -183 192 -480 9 -336 -44 -510
--182 -595 -47 -29 -52 -30 -174 -30 -116 0 -131 2 -196 29 -75 31 -242 128
--276 159 -20 19 -21 27 -16 256 5 258 12 304 68 419 17 35 57 91 89 126 101
-107 203 148 356 142 70 -2 103 -9 139 -26z M10073 3455 c-161 -29 -276 -85
--376 -183 -127 -124 -209 -292 -278 -572 -39 -155 -51 -180 -91 -180 -10 0
--27 9 -39 21 -17 17 -20 29 -16 58 3 20 22 187 42 371 41 369 40 375 -17 410
--32 19 -51 20 -513 20 -458 0 -481 -1 -512 -20 -18 -10 -40 -34 -50 -52 -17
--31 -18 -101 -18 -1338 0 -1287 0 -1305 20 -1339 11 -18 36 -42 55 -52 32 -18
-66 -19 515 -19 536 0 528 -1 570 70 19 34 20 55 26 740 4 496 9 717 17 747 36
-128 112 232 207 281 44 24 61 27 150 27 84 0 107 -4 141 -22 51 -27 101 -83
-127 -141 43 -99 46 -159 47 -887 l0 -691 23 -44 c41 -82 25 -80 572 -80 458 0
-481 1 512 20 72 43 67 -4 74 775 6 761 7 768 65 891 56 120 143 174 292 182
-88 5 95 3 157 -27 82 -40 124 -99 157 -216 21 -78 22 -96 27 -810 6 -682 7
--732 24 -757 40 -59 39 -59 576 -56 477 3 490 4 518 24 15 11 36 36 45 55 17
-31 18 89 18 775 0 420 -4 797 -10 870 -43 537 -187 864 -455 1036 -158 102
--291 133 -539 125 -251 -7 -397 -49 -537 -154 -155 -117 -267 -321 -345 -631
--18 -74 -39 -140 -45 -148 -15 -19 -74 -18 -93 1 -8 8 -18 41 -21 72 -13 104
--45 259 -69 331 -96 280 -305 474 -560 521 -80 15 -304 12 -393 -4z M4945
-3391 c-27 -12 -62 -50 -74 -84 -15 -40 -15 -1500 0 -1639 21 -195 86 -406 169
--549 197 -336 552 -538 1055 -600 130 -16 482 -16 610 0 621 78 998 349 1160
-834 70 209 68 181 72 1116 4 933 8 870 -60 911 -31 19 -54 20 -522 20 -468 0
--491 -1 -522 -20 -72 -44 -67 12 -73 -845 l-5 -770 -23 -50 c-31 -67 -62 -98
--135 -132 -58 -26 -70 -28 -192 -28 -147 0 -205 14 -268 66 -46 38 -72 87 -86
-164 -7 39 -11 302 -11 782 0 784 2 750 -55 803 l-27 25 -496 2 c-273 1 -506
--2 -517 -6z"/></svg>
-  </a>
-  <a href="https://www.plumhq.com/get-quote" class="nav-cta" target="_top">get a quote</a>
-</nav>
+<!-- site chrome: nav lifted from plumhq.com -->
+<div data-animation="over-right" class="navbar w-nav" data-easing2="ease-in" fs-scrolldisable-element="smart-nav" data-easing="ease-out" data-collapse="all" role="banner" data-duration="400" data-wf--navbar-v2--variant="base"><div class="nav"><div class="nav-blur"></div><div class="nav-bg"></div><div class="nav-container-3"><div class="nav-brand-wp"><a href="https://www.plumhq.com/" aria-current="page" class="nav-logo-link-2 w-inline-block w--current"><div class="nav-logo w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 95 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.3586 15.6742C23.3586 18.3096 23.0657 20.4138 22.4799 21.9869C21.8941 23.5607 21.0762 24.6805 20.0261 25.3477C18.976 26.0149 17.7054 26.3482 16.2134 26.3482C14.3345 26.3482 12.7261 25.9007 11.3889 25.0057C10.14 24.1697 9.22875 22.871 8.65452 21.1087C8.58437 20.8933 8.36525 20.7645 8.14395 20.8111L8.07524 20.8257C7.84961 20.8737 7.69846 21.0883 7.72956 21.3183L8.50049 27.1354C8.50338 27.1551 8.5041 27.1747 8.5041 27.1944V28.9493C8.5041 29.5824 8.16564 30 7.4598 30H1.0443C0.474419 30 0 29.5947 0 28.9493V6.36749C0 5.72647 0.500454 5.31683 1.0443 5.31683H7.23633C7.82285 5.31683 8.29799 5.70465 8.20036 6.44898L7.56033 11.7008C7.5314 11.9358 7.69195 12.1527 7.9241 12.1927L7.97255 12.2007C8.20325 12.24 8.42455 12.0908 8.4759 11.8616C8.86281 10.1437 9.36326 8.7824 9.97871 7.77686C10.6419 6.69273 11.4569 5.92584 12.4238 5.47545C13.3908 5.02506 14.5761 4.80024 15.9798 4.80024C20.9106 4.79951 23.3695 8.42442 23.3586 15.6742ZM14.0756 19.4767C14.4958 18.7877 14.7055 17.6919 14.7055 16.1908C14.7055 14.7342 14.5009 13.6952 14.0923 13.0723C13.6829 12.4495 13.0147 12.1381 12.0861 12.1381C11.4895 12.1381 10.9254 12.2909 10.3953 12.5965C9.86444 12.9021 9.42835 13.3692 9.08555 13.9971C8.74276 14.6258 8.54966 15.4007 8.50555 16.324V18.7571C8.50555 18.9055 8.58004 19.0438 8.70226 19.1267C9.45149 19.6324 10.0633 19.9853 10.5363 20.1847C11.0505 20.4015 11.5943 20.5099 12.1693 20.5099C13.0198 20.5106 13.6555 20.1665 14.0756 19.4767Z" fill="currentColor"></path>
+<path d="M33.2255 0.961445V24.7802C33.2255 25.3674 32.7684 25.8309 32.1812 25.8309H25.8488C25.2811 25.8309 24.8045 25.3849 24.8045 24.7802V2.24566C24.8045 1.68104 25.1459 1.22993 25.7201 1.10769L32.1399 0.0141079C32.7706 -0.0877563 33.2255 0.375725 33.2255 0.961445Z" fill="currentColor"></path>
+<path d="M40.0924 25.1968C38.4349 24.4074 37.1968 23.2701 36.3788 21.7858C35.5609 20.3015 35.1523 18.5145 35.1523 16.4234V6.36721C35.1523 5.76694 35.5905 5.31655 36.1966 5.31655H42.6121C43.221 5.31655 43.6564 5.79895 43.6564 6.36721V16.2408C43.6564 17.2194 43.8777 17.8917 44.3196 18.2591C44.7614 18.6258 45.4138 18.8092 46.2758 18.8092C47.1379 18.8092 47.7924 18.6171 48.24 18.2337C48.6877 17.8502 48.9111 17.1859 48.9111 16.2408V6.36721C48.9111 5.78949 49.3234 5.31655 49.9554 5.31655H56.3709C56.9669 5.31655 57.4152 5.69854 57.4152 6.2457V16.4241C57.4152 18.5145 57.0059 20.3015 56.1887 21.7865C55.3708 23.2709 54.1334 24.4081 52.4751 25.1975C50.8175 25.987 48.7506 26.3821 46.2751 26.3821C43.8119 26.3814 41.7507 25.9863 40.0924 25.1968Z" fill="currentColor"></path>
+<path d="M93.2513 7.33478C94.4171 9.02499 95 11.7157 95 15.4068V24.7798C95 25.3611 94.5733 25.8304 93.9557 25.8304H87.5236C86.9465 25.8304 86.4793 25.4542 86.4793 24.7798V15.8914C86.4793 14.5686 86.2862 13.6234 85.8993 13.0559C85.5123 12.4891 84.9374 12.2053 84.1752 12.2053C83.2357 12.2053 82.5451 12.5248 82.1032 13.1643C81.6613 13.8039 81.4292 14.8131 81.4067 16.1911V24.7805C81.4067 25.3349 81.0039 25.8311 80.3624 25.8311H73.9636C73.3763 25.8311 72.9193 25.3895 72.9193 24.7805V15.8914C72.9193 14.5795 72.7313 13.6373 72.3559 13.0646C71.9798 12.492 71.4056 12.2061 70.6318 12.2061C69.803 12.2061 69.1341 12.5371 68.6256 13.1985C68.1172 13.8599 67.8576 14.8414 67.8468 16.1424V24.7819C67.8468 25.396 67.4439 25.8326 66.8025 25.8326H60.387C59.8214 25.8326 59.3427 25.4186 59.3427 24.7819V6.36779C59.3427 5.77698 59.7505 5.31714 60.387 5.31714H66.5848C67.2111 5.31714 67.65 5.64165 67.5806 6.22664L67.0266 11.2398C67.0028 11.4588 67.1416 11.6626 67.3543 11.7186C67.6009 11.7833 67.8496 11.624 67.8981 11.3722C68.1997 9.79261 68.6025 8.53823 69.1066 7.61054C69.6591 6.59335 70.3664 5.87084 71.2284 5.44228C72.0905 5.01445 73.1847 4.79981 74.511 4.79981C76.1245 4.79981 77.4479 5.36152 78.4814 6.48421C79.4555 7.5436 80.0392 9.17051 80.233 11.3671C80.2532 11.5956 80.4435 11.7717 80.672 11.7717H80.7624C80.9714 11.7717 81.1529 11.624 81.1941 11.4181C81.5196 9.79625 81.9549 8.5164 82.5017 7.57707C83.0875 6.57079 83.8331 5.85629 84.74 5.43355C85.6461 5.01082 86.8011 4.79981 88.2048 4.79981C90.4026 4.79981 92.0855 5.64528 93.2513 7.33478Z" fill="currentColor"></path>
+</svg>
+
+
+<style>
+	@media (min-width: 992px) {
+  .nav-item:hover .nav-item-dropdown {
+    display: block;
+  }
+}
+
+	.nav-subitem-link:hover .nav-subitem-link-hoverline{
+			transform:scale(1, 1);
+	}
+
+	.nav-subitem-link:hover .nav-subitem-link-arrow{
+			transform:translate(0);
+	}
+  
+  .h:hover .nav-menu{
+		display:flex;
+	}
+  
+  .nav-blur{
+		mask-image: linear-gradient(to top, transparent 0%, black 100%);
+	}
+</style></div></a><div class="hr-perks-brand">HR Partner Directory</div></div><div class="nav-hamburger"><div class="nav-hamburger-line _1"></div><div class="nav-hamburger-line _2"></div><div class="nav-hamburger-line _3"></div></div><div class="nav-menu"><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Product</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _4col"><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Employee insurance</div><div class="nav-subitem-image ei"></div><div class="nav-subitem-link-container"><a href="https://www.plumhq.com/buy-group-health-insurance" class="nav-subitem-link w-inline-block"><div>Group Health Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-group-term-life-insurance" class="nav-subitem-link w-inline-block"><div>Group Term Life Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-group-personal-accident-insurance" class="nav-subitem-link w-inline-block"><div>Group Personal Accident Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/flexcare" class="nav-subitem-link w-inline-block"><div>FlexCare</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a></div></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Healthcare for teams</div><div class="nav-subitem-image hft"></div><div class="nav-subitem-link-container"><a href="https://www.plumhq.com/plum-care" class="nav-subitem-link w-inline-block"><div>Care Program</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/telehealth" class="nav-subitem-link w-inline-block"><div>TeleHealth</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/health-checkups" class="nav-subitem-link w-inline-block"><div>Health Checkups</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/mental-health" class="nav-subitem-link w-inline-block"><div>Mental Health</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a></div></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Personal insurance</div><div class="nav-subitem-image personal"></div><div class="nav-subitem-link-container"><a href="https://www.plumhq.com/personal-health-insurance" class="nav-subitem-link w-inline-block"><div>Personal Health Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/personal-term-life-insurance" class="nav-subitem-link w-inline-block"><div>Personal Term Life Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/super" class="nav-subitem-link w-inline-block"><div>Super Top-Up</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a></div></div><div class="nav-seprator"></div><div class="nav-subitem"><a href="https://www.plumhq.com/business" class="nav-subitem-title subtitle-serif-medium bi-link">Business insurance</a><div class="nav-subitem-image business"></div><div class="nav-subitem-link-container"><a href="https://www.plumhq.com/buy-cyber-insurance" class="nav-subitem-link w-inline-block"><div>Cyber Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-directors-and-officers-insurance" class="nav-subitem-link w-inline-block"><div>Directors and Officers Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-errors-and-omissions-insurance" class="nav-subitem-link w-inline-block"><div>Errors and Omissions Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-employee-dishonesty-insurance" class="nav-subitem-link w-inline-block"><div>Employee Dishonesty Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-general-liability-insurance" class="nav-subitem-link w-inline-block"><div>Commercial General Liability Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/buy-asset-insurance" class="nav-subitem-link w-inline-block"><div>Asset Insurance</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Experience</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><div class="nav-subitem-link-wrapper"><a href="https://www.plumhq.com/admin-experience" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Admin Experience</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">Admin Experience ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://www.plumhq.com/employee-experience" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Employee Experience</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">Employee Experience ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://www.plumhq.com/care-experience" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Plum Care</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">Plum Care From ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://claims.plumhq.com/" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Claims Experience</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">Plum Care From ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a></div><div class="nav-subitem-testimonial"><div class="nav-testimonial-text">The difference is dramatic. We’ve seen reimbursement claims that have been stuck for over six months – and now with Plum, everything is settled within a week. With cashless, discharge is sometimes possible within 20 minutes. It’s unheard of.</div><div class="nav-subitem-testimonial-by"><div class="nav-subitem-testimonial-person">Priti Shetty</div><div class="nav-subitem-testimonial-designation">Chief People and Culture Officer</div><div class="nav-subitem-testimonial-logo w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="82" height="18" viewBox="0 0 82 18" fill="none">
+<g style="mix-blend-mode:lighten">
+<path d="M7.01113 8.3813C7.51253 8.3813 7.95016 8.3987 8.33801 8.46916C8.89007 8.56572 9.3574 9.33209 9.3574 9.70615C9.3574 9.89752 9.3574 10.1098 9.27355 10.4195C9.13728 10.8944 8.20086 12.6029 7.81127 13.2457C7.34219 12.4881 6.23806 10.3481 5.85633 9.51477C5.69036 9.16508 5.60651 8.87453 5.60651 8.73187C5.60651 8.46916 6.13062 8.3813 7.01113 8.3813ZM0.7541 8.3813C1.22231 8.497 1.49659 8.59356 1.88094 9.27903C3.23402 11.7521 4.58885 14.4784 5.907 17.1602C6.07297 17.2994 6.26689 17.3307 6.54729 17.3307C6.81808 17.3307 7.01025 17.2994 7.18321 17.1611C7.81127 15.9807 9.46834 12.8125 10.1829 11.5825C11.0145 13.1031 12.4462 15.878 13.0271 17.1611C13.1878 17.3003 13.387 17.3307 13.6586 17.3307C13.9338 17.3307 14.1321 17.2994 14.2919 17.1611C15.4615 14.613 16.6944 12.0942 17.9895 9.60698C18.4315 8.73187 18.6228 8.497 19.5339 8.32824L19.92 8.26039C20.1401 8.04031 20.0834 7.52446 19.8388 7.42529C19.2317 7.47314 18.5154 7.49749 17.7109 7.49749C17.0225 7.49749 16.3657 7.47314 15.452 7.42529C15.1759 7.52446 15.1759 8.09076 15.3445 8.26039L15.8092 8.34999C16.2835 8.44655 16.5002 8.56572 16.5002 8.68664C16.5002 8.85278 16.4163 9.18508 16.2451 9.60698C15.8092 10.7057 15.3768 11.8704 14.7068 13.2457C14.1024 12.1027 13.3319 10.563 12.8323 9.42169C12.6698 9.02067 12.6139 8.87366 12.6139 8.68664C12.6139 8.56572 12.9956 8.44655 13.6342 8.32824L14.0447 8.26039C14.2439 8.16383 14.2648 7.454 13.9626 7.42529C12.336 7.47309 10.7087 7.49716 9.08137 7.49749H3.51093C2.35264 7.49749 1.47213 7.47314 0.341798 7.42529C0.0596509 7.54447 0.0596509 8.0664 0.250952 8.26039L0.7541 8.3813Z" fill="currentColor"></path>
+<path d="M23.78 8.22898C24.7138 8.22898 25.2414 8.74657 25.2414 9.53208C25.2414 9.77043 25.1864 10.0105 25.0492 10.0784C24.7409 10.2454 24.3006 10.2898 23.9154 10.2898H22.8969C22.0094 10.2898 21.6285 10.2724 21.6285 9.93571C21.6285 9.17368 22.6217 8.22811 23.7809 8.22811L23.78 8.22898ZM23.7512 17.2985C25.4047 17.2985 27.4514 16.6086 28.5791 14.5914C28.5791 14.1869 28.1607 13.9955 27.8611 14.0399C27.116 15.1368 26.0642 15.2751 25.2947 15.2751C22.7318 15.2751 21.404 13.5449 21.404 11.7642C21.404 11.3849 21.4617 11.338 22.0976 11.338H27.3868C28.248 11.338 28.3826 11.0057 28.3826 10.5551C28.3826 8.72395 26.8364 7.13379 23.9678 7.13379C20.5261 7.13379 18.0156 9.46249 18.0156 12.4558C18.0156 15.0437 20.0291 17.2985 23.7512 17.2985ZM35.4275 8.38121C35.9315 8.38121 36.3692 8.39861 36.757 8.46907C37.3091 8.56563 37.7773 9.332 37.7773 9.70606C37.7773 9.89743 37.7773 10.1097 37.6952 10.4194C37.5537 10.8943 36.6181 12.6028 36.2338 13.2456C35.7594 12.488 34.6614 10.348 34.2753 9.51468C34.1129 9.16499 34.0264 8.87444 34.0264 8.73178C34.0264 8.46907 34.547 8.38121 35.4275 8.38121ZM29.1714 8.38121C29.6439 8.49691 29.9156 8.59347 30.3017 9.27894C31.6504 11.752 33.0087 14.4783 34.3286 17.1602C34.4963 17.2993 34.6885 17.3307 34.9645 17.3307C35.238 17.3307 35.4275 17.2993 35.597 17.161C36.2346 15.9806 37.8856 12.8124 38.6045 11.5824C39.4343 13.103 40.8617 15.8779 41.4426 17.161C41.6085 17.3002 41.8007 17.3307 42.075 17.3307C42.3537 17.3307 42.5476 17.2993 42.7109 17.161C43.8819 14.6133 45.1154 12.0945 46.4103 9.60689C46.8514 8.73178 47.0418 8.49691 47.9512 8.32815L48.3408 8.2603C48.5583 8.04022 48.5006 7.52437 48.256 7.4252C47.6463 7.47305 46.9335 7.4974 46.1299 7.4974C45.3764 7.49382 44.6231 7.46974 43.871 7.4252C43.5914 7.52437 43.5914 8.09067 43.7609 8.2603L44.2291 8.3499C44.6991 8.44646 44.9174 8.56563 44.9174 8.68655C44.9174 8.85269 44.8345 9.18499 44.672 9.60689C44.2291 10.7056 43.7871 11.8703 43.1232 13.2456C42.5187 12.1026 41.7483 10.5629 41.2521 9.4216C41.0844 9.02058 41.0294 8.87357 41.0294 8.68655C41.0294 8.56563 41.4129 8.44646 42.0514 8.32815L42.462 8.2603C42.6559 8.16374 42.6847 7.45391 42.3799 7.4252C40.6171 7.47305 39.2334 7.4974 37.4986 7.4974H31.9273C30.8705 7.49754 29.8139 7.47347 28.7582 7.4252C28.4848 7.54438 28.4848 8.06631 28.6769 8.2603L29.1714 8.38121Z" fill="currentColor"></path>
+<path d="M52.7863 8.22898C54.3525 8.22898 55.1255 10.2193 55.1561 12.5262C55.1797 14.6644 54.653 16.2068 53.0798 16.2068C51.4873 16.2068 50.5728 14.3748 50.5728 11.8851C50.5728 9.29982 51.5712 8.22811 52.7863 8.22811V8.22898ZM52.7863 17.2985C56.1738 17.2985 59.1271 15.6613 59.1271 12.1896C59.1271 8.84226 56.1991 7.13379 52.9479 7.13379C49.6922 7.13379 46.5755 9.0084 46.6017 12.4071C46.634 15.6813 49.4983 17.2985 52.7863 17.2985Z" fill="currentColor"></path>
+<path d="M63.8208 9.14608C63.9911 9.14608 64.2357 9.17217 64.8672 9.62104C65.221 9.9081 65.553 10.0508 65.9417 10.0508C66.8222 10.0508 67.7088 9.60016 67.7088 8.5067C67.7088 7.60985 66.9366 7.10618 66.1863 7.10618C65.0323 7.10618 64.2357 7.88908 63.4862 8.29097C63.2678 8.24748 63.2102 8.17528 63.2102 8.00739C63.2102 7.79513 63.2669 7.46544 63.3176 6.98613C63.2102 6.84521 63.0407 6.76953 62.8284 6.76953C61.9698 7.25145 60.0681 7.88908 58.7954 8.20137C58.6032 8.34056 58.6032 8.76854 58.7954 8.91207L59.1885 9.12607C59.71 9.41139 59.71 9.69498 59.71 10.6466V14.2306C59.71 15.8921 59.599 16.1052 58.688 16.18L58.163 16.2235C57.9411 16.3662 57.9411 16.9159 58.1918 17.0586C59.2762 17.006 60.3617 16.9816 61.4474 16.9855C62.7402 16.9855 63.8461 17.0064 65.1712 17.0577C65.4193 16.9159 65.4193 16.3662 65.1966 16.2235L64.3143 16.1574C63.4041 16.0817 63.2923 15.8912 63.2923 14.2306V10.5744C63.2923 9.67323 63.4312 9.14608 63.8208 9.14608Z" fill="currentColor"></path>
+<path d="M74.6401 16.1452L74.2828 16.2191C74.0592 16.4323 74.1133 16.9281 74.3902 17.0455C75.1624 16.9985 76.1521 16.9759 77.7865 16.9759C79.385 16.9759 80.4035 16.9985 81.2561 17.0455C81.533 16.9542 81.5898 16.3835 81.3653 16.2191L80.9556 16.1443C80.2402 16.0269 79.717 15.9042 79.3309 15.6006C78.6373 15.0552 76.2098 11.8236 75.7206 11.0641C75.5782 10.8745 75.5197 10.7336 75.5197 10.6596C75.5197 10.5901 75.5485 10.4961 75.6839 10.35C76.0718 10.022 76.4928 9.65928 77.5366 8.97119C78.2783 8.47709 78.8627 8.24048 79.3859 8.14305L80.2647 7.97603C80.4621 7.79075 80.435 7.26011 80.1528 7.14529C78.5298 7.36102 76.2395 7.47759 74.9414 7.47759H74.2828C74.0076 7.57675 73.9771 8.09521 74.2251 8.30833L74.917 8.4075C75.1624 8.42664 75.4376 8.52059 75.4376 8.64237C75.4376 8.78503 75.3048 9.04426 74.7772 9.58707L73.6224 10.7579C73.0686 11.3016 72.4895 11.4208 72.0204 11.4208C71.7208 11.4208 71.6317 11.3495 71.6317 11.0876V3.63354C71.6317 2.13558 71.6666 1.13695 71.7208 0.165279C71.6124 0.0434946 71.4133 0 71.249 0C69.8392 0.517585 68.1612 1.09345 67.0317 1.32484C66.836 1.47099 66.836 1.89984 67.0317 2.03468L67.4999 2.27825C68.0493 2.56444 68.0493 2.82454 68.0493 3.77968V14.2219C68.0493 15.8833 67.9384 16.0739 66.9417 16.1722L66.4176 16.2191C66.2001 16.3583 66.2001 16.9063 66.4456 17.0455C67.567 16.9958 68.6895 16.9726 69.8121 16.9759C71.0822 16.9759 72.2387 16.9985 73.1254 17.0455C73.37 16.9063 73.37 16.3583 73.1516 16.2191L72.7131 16.1722C71.7435 16.0739 71.6317 15.8825 71.6317 14.2219V12.8474C71.6317 12.3925 71.7714 12.2768 71.9618 12.2768C72.2387 12.2768 72.4606 12.3725 72.6572 12.6265L74.6121 15.197C74.8331 15.4788 75.0794 15.8581 75.0794 15.9608C75.0794 16.0486 74.917 16.0939 74.6401 16.1452Z" fill="currentColor"></path>
+</g>
+</svg></div></div></div></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-link-details desktop"></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Solutions</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><div class="nav-subitem-link-wrapper"><a href="https://www.plumhq.com/startup-solution" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link solutions-nav"><div>For Startups</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">For Startup From ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://www.plumhq.com/smb-solution" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link solutions-nav"><div>For Small and Medium Businesses</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">For Small and Medium Businesses From ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://www.plumhq.com/enterprise-solution" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link solutions-nav"><div>For Enterprises</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">For Enterprises From ambitious startups to established enterprises, India's business landscape is transforming rapidly. Your workforce deserves the protection</div></div></a><a href="https://www.plumhq.com/mnc-solution" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link solutions-nav"><div>For MNC</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"><div class="nav-subitem-link-description">Global teams need India benefits that match what local talent actually expects. Plum brings that market knowledge and global-standard delivery together on one platform, so your India entity looks as sharp as the rest of your operation.</div></div></a></div><div class="nav-subitem-testimonial"><div class="nav-testimonial-text">Insurance can't be this easy now, can it? Happily confused but this was too easy. Which is why I recommend you do business with Plum. </div><div class="nav-subitem-testimonial-by"><div class="nav-subitem-testimonial-person">Kuldeep Dhankar</div><div class="nav-subitem-testimonial-designation">Founder, Last9. </div><div class="nav-subitem-testimonial-logo w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" height="" viewBox="0 0 123 51" width="" class="h-10 w-[96.47px] dark:hidden"><g><path d="m0 13h3.01719v26.3495h15.98281v2.6505h-19z"></path><path d="m38.7563 22.116c1.4953 1.4125 2.2437 3.5023 2.2437 6.2712v13.4069h-2.7755v-3.3714c-.6533 1.1243-1.6114 2.0008-2.8779 2.6311-1.2649.6303-2.7688.9462-4.5099.9462-2.3946 0-4.2987-.5761-5.7143-1.7267-1.4154-1.1522-2.1224-2.673-2.1224-4.5638 0-1.8366.6602-3.3172 1.9786-4.4415 1.3186-1.1243 3.422-1.6865 6.305-1.6865h6.8161v-1.3164c0-1.8646-.5164-3.2824-1.5506-4.2565-1.0345-.9726-2.5436-1.4596-4.5309-1.4596-1.36 0-2.6664.227-3.9174.6791-1.2509.4521-2.3268 1.0772-3.2243 1.8717l-1.3064-2.179c1.0881-.9322 2.3944-1.6516 3.9174-2.1596 1.523-.5063 3.129-.7612 4.8149-.7612 2.8085-.0017 4.957.7053 6.4539 2.116zm-3.2641 16.4498c1.1694-.7542 2.0409-1.8435 2.6109-3.2682v-3.5373h-6.7329c-3.673 0-5.5097 1.2885-5.5097 3.8654 0 1.2606.4765 2.2557 1.4277 2.982.9512.7264 2.2853 1.0895 3.9989 1.0895 1.6339 0 3.0337-.3771 4.2051-1.1314z"></path><path d="m50.8217 41.2406c-1.6298-.5063-2.9031-1.1437-3.8217-1.9119l1.337-2.3028c.9187.7124 2.0749 1.2956 3.4671 1.7477 1.3922.4522 2.8411.6791 4.3448.6791 2.0057 0 3.4883-.309 4.4477-.9253.9613-.6163 1.4418-1.4875 1.4418-2.6118 0-.7944-.2643-1.4195-.7946-1.8717-.5283-.4521-1.197-.7944-2.0057-1.0282-.8086-.2323-1.8797-.4593-3.2169-.6793-1.7823-.3281-3.217-.6651-4.3023-1.0074-1.0853-.3421-2.0127-.9253-2.7771-1.7475-.766-.8224-1.1491-1.9607-1.1491-3.4133 0-1.8087.766-3.2893 2.2966-4.4415 1.5304-1.1523 3.662-1.7267 6.3912-1.7267 1.4206 0 2.8411.185 4.2615.5551 1.4205.3702 2.5892.8572 3.5078 1.4595l-1.2945 2.3449c-1.8107-1.2344-3.9689-1.8507-6.4748-1.8507-1.894 0-3.3215.3282-4.2809.9864-.9613.6582-1.4418 1.5225-1.4418 2.5909 0 .8224.2713 1.4806.8139 1.9746.5428.4941 1.2185.8573 2.0254 1.0895.8067.234 1.9205.4732 3.3409.7193 1.754.3283 3.1603.6582 4.2191.9865 1.0586.3282 1.9631.8903 2.7149 1.6865.752.7961 1.128 1.8925 1.128 3.2893 0 1.8908-.8016 3.3922-2.4012 4.5026-1.6014 1.1105-3.8217 1.6656-6.6626 1.6656-1.7806.0017-3.4866-.2514-5.1145-.7594z"></path><path d="m82 40.5101c-.52.4835-1.1639.8526-1.9305 1.1071-.7666.2547-1.5662.3828-2.3991.3828-1.9238 0-3.4055-.5365-4.4453-1.6096-1.0397-1.073-1.5596-2.5887-1.5596-4.5486v-12.7984h-3.6655v-2.4144h3.6655v-4.629h2.7683v4.629h6.2399v2.4144h-6.2399v12.6377c0 1.261.3045 2.2213.9171 2.8775.611.6579 1.4885.986 2.6326.986.5711 0 1.1241-.094 1.6572-.2819.5331-.188.995-.4563 1.3841-.8048z"></path><path clip-rule="evenodd" d="m122.88 28.0004-2.527-.247c.072-.7406.109-1.4924.109-2.2534s-.037-1.5128-.109-2.2534l2.527-.247c.079.8227.12 1.6567.12 2.5004s-.041 1.6777-.12 2.5004zm-.967-9.9051-2.429.7393c-.437-1.45-1.013-2.8397-1.714-4.1533l2.238-1.2041c.778 1.4602 1.419 3.0054 1.905 4.6181zm-4.673-8.77266-1.961 1.61896c-.951-1.16219-2.012-2.22905-3.169-3.18386l1.611-1.9702c1.285 1.06017 2.463 2.24464 3.519 3.5351zm-7.654-6.31619-1.198 2.24783c-1.308-.70365-2.691-1.28282-4.134-1.72205l.736-2.44051c1.605.48864 3.143 1.13268 4.596 1.91473zm-9.477-2.885484-.2464 2.538044c-.7371-.07203-1.4853-.10901-2.2428-.10901-.7574 0-1.5057.03698-2.2428.10901l-.2459-2.538044c.8189-.0800062 1.649-.120966 2.4887-.120966.8398 0 1.6699.0409598 2.4892.120966zm-9.8591.970754.7359 2.44051c-1.4432.43923-2.8264 1.0184-4.1338 1.72205l-1.1985-2.24783c1.4534-.78205 2.9913-1.42609 4.5964-1.91473zm-8.7314 4.69582 1.6113 1.9702c-1.1567.95481-2.2185 2.02167-3.1689 3.18386l-1.9609-1.6188c1.0552-1.29062 2.2341-2.47509 3.5185-3.53526zm4.135 42.20596 1.1985-2.2478c1.3074.7037 2.6906 1.2828 4.1338 1.7221l-.7359 2.4405c-1.6051-.4887-3.143-1.1327-4.5964-1.9148zm9.4776 2.8855.2459-2.538c.7371.072 1.4854.109 2.2428.109.7575 0 1.5057-.037 2.2428-.109l.2464 2.538c-.8193.08-1.6494.121-2.4892.121-.8397 0-1.6698-.041-2.4887-.121zm9.8589-.9707-.736-2.4405c1.443-.4393 2.826-1.0184 4.134-1.7221l1.198 2.2478c-1.453.7821-2.991 1.4261-4.596 1.9148zm8.731-4.6958-1.611-1.9702c1.157-.9549 2.218-2.0217 3.169-3.1839l1.961 1.6188c-1.056 1.2906-2.234 2.4751-3.519 3.5353zm6.287-7.6897-2.238-1.2041c.701-1.3136 1.277-2.7033 1.714-4.1533l2.429.7393c-.486 1.6127-1.127 3.1579-1.905 4.6181z" fill-rule="evenodd"></path><path d="m88 20.8064c0 5.5038 3.9851 9.3174 9.6 9.3174.8444 0 1.6444-.1397 2.3851-.3212l-7.3481 10.1974h6.4445l7.0225-9.8064c2.607-3.6599 3.866-6.4957 3.896-9.513.015-6.1464-5.081-9.6806-11.1111-9.6806-6.3259 0-10.8889 3.9253-10.8889 9.8064zm6.163-.2095c0-2.8358 1.9555-4.8753 4.7555-4.8753 2.8145 0 4.7995 2.0395 4.7995 4.9032 0 2.8357-1.985 4.8473-4.7995 4.8473-2.8 0-4.7555-2.0116-4.7555-4.8752z"></path></g></svg></div></div></div></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-link-details desktop"></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Explore</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><a href="https://www.plumhq.com/blog" class="nav-subitem-link w-inline-block"><div>Blogs</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/case-study" class="nav-subitem-link w-inline-block"><div>Customer Stories</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.plumhq.com/resources" class="nav-subitem-link w-inline-block"><div>E-Books &amp; Reports</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a><a href="https://www.humanise.co.in/" target="_blank" class="nav-subitem-link w-inline-block"><div>Humanise</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></a></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Featured Resources</div><div class="nav-subitem-featured-resources-container"><a href="https://www.plumhq.com/autumn-2025" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Autumn release</div></a><a href="https://datalabs.plumhq.com/" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Datalabs</div></a><a href="https://www.plumhq.com/employee-health-report-2025" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Employee Health Report’25</div></a></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Company</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><div class="nav-subitem-link-wrapper"><a href="https://www.plumhq.com/about" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>About Us</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"></div></a><a href="https://www.plumhq.com/careers" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Careers</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"></div></a><a href="mailto:media@plumhq.com" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Media Enquires</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"></div></a><a href="https://www.plumhq.com/newsroom" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Newsroom</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
+</svg></div></div></div><div class="nav-subitem-link-details mobile"></div></a></div></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-link-details desktop"></div></div></div></div></div><div class="button-wrapper nav-button"><a href="https://app.plumhq.com/" target="_blank" class="button-4 nav-stroke-light--hover-red w-inline-block"><div class="button-hover-circle strok-light" style="transform: translate3d(-50%, 34%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div><div class="button-text-2">Log In</div></a></div><div class="button-wrapper nav-button"><a href="https://www.plumhq.com/get-quote" class="button-4 nav-solid-red--hover-light get-quote-button w-inline-block"><div class="button-text-2">Get a Quote</div><div class="button-hover-circle nav-solid-red--hover-light" style="transform: translate3d(-50%, 34%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div></a></div></div></div></div><div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
 
 <div class="layout">
 
@@ -1927,13 +1992,21 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   </section>
 
 
+  <div class="guide-colophon">
+    <p><strong>Prepared for</strong> HR, legal, and finance teams of MNCs and GCCs setting up India operations.</p>
+    <p>Regulations current as of 2025–26. Verify thresholds against the latest IRDAI, EPFO, and ESIC circulars before purchase.</p>
+    <p class="guide-colophon-sources"><strong>Sources:</strong> IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025; Income Tax Act 1961 (as amended); Code on Social Security 2020; Maternity Benefit Act 1961 (as amended per Supreme Court ruling, March 2026); state-level Shops and Establishments Acts.</p>
+  </div>
 </main>
 
 </div>
 
-<footer class="page-footer">
-  <div>
-    <div class="footer-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
+<!-- site chrome: footer lifted from plumhq.com -->
+<section data-nav="0" data-wf--footer-v2--variant="base" class="footer-section"><div class="padding-global-2 padding-section-ex-med"><div class="w-layout-blockcontainer u-container w-container"><div class="footer-top-2"><div class="footer-title max-700"><h2 class="heading-2-2">The new <br>standard <span class="text-highlight text-normal">of</span> &nbsp;health <br>benefits is waiting&nbsp;&nbsp;<span class="text-highlight text-normal">for</span> your team</h2></div><div class="button-wrapper final-cta-wrap"><a href="https://www.plumhq.com/get-quote" class="button-3 solid-red-hover-light w-inline-block"><div class="button-text-2 solid-red-hover-light-6">Start Now</div><div class="button-arrow-wrapper solid-red-hover-light-3"><div class="button-arrow-container"><div class="button-arrow default w-embed" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 21L21 1M21 1H1M21 1V21" stroke="currentColor" stroke-width="2"></path>
+</svg></div><div class="button-arrow hover w-embed" style="transform: translate3d(0%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 21L21 1M21 1H1M21 1V21" stroke="currentColor" stroke-width="2"></path>
+</svg></div></div></div><div class="button-hover-circle solid-red-hover-light-4" style="transform: translate3d(-50%, 34%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div></a></div></div><div class="footer-bottom-wrap"><div id="w-node-_338ee2f9-7430-09fe-437c-4f55f58f0b6d-bc8c6fd0" class="footer-bottom-2col-2"><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">products</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/buy-group-health-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Group Health Insurance</div></a><a href="https://www.plumhq.com/buy-group-term-life-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Group Term Life Insurance</div></a><a href="https://www.plumhq.com/buy-group-personal-accident-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Group Personal Accident Insurance</div></a><a href="https://www.plumhq.com/flexcare" class="footer-link-2 w-inline-block"><div class="body-small-2">FlexCare</div></a></div></div><div class="footer-link-container-2 hide-tab-all"><div class="footer-label"><div class="blt-small">Healthcare for teams</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/plum-care" class="footer-link-2 w-inline-block"><div class="body-small-2">Care Program</div></a><a href="https://www.plumhq.com/health-checkups" class="footer-link-2 w-inline-block"><div class="body-small-2">Health Checkup</div></a><a href="https://www.plumhq.com/telehealth" class="footer-link-2 w-inline-block"><div class="body-small-2">TeleHealth</div></a><a href="https://www.plumhq.com/mental-health" class="footer-link-2 w-inline-block"><div class="body-small-2">Mental Health</div></a></div></div><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">Personal insurance</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/personal-health-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Health Insurance</div></a><a href="https://www.plumhq.com/personal-term-life-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Life Insurance</div></a><a href="https://www.plumhq.com/super" class="footer-link-2 w-inline-block"><div class="body-small-2">Super Top-up</div></a></div></div><div class="footer-link-container-2 hide-tab-all"><div class="footer-label"><div class="blt-small">Solutions</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/startup-solution" class="footer-link-2 w-inline-block"><div class="body-small-2">For Startups</div></a><a href="https://www.plumhq.com/smb-solution" class="footer-link-2 w-inline-block"><div class="body-small-2">For SMBs</div></a><a href="https://www.plumhq.com/enterprise-solution" class="footer-link-2 w-inline-block"><div class="body-small-2">For Enterprise</div></a></div></div><div class="footer-link-container-2 hide-tab-all hide-tab"><div class="footer-label"><div class="blt-small">Resources</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/case-study" class="footer-link-2 w-inline-block"><div class="body-small-2">Case Studies</div></a><a href="https://www.plumhq.com/blog" class="footer-link-2 w-inline-block"><div class="body-small-2">Blog</div></a><a href="https://www.plumhq.com/resources" class="footer-link-2 w-inline-block"><div class="body-small-2">E-books</div></a><a href="https://www.humanise.co.in/" target="_blank" class="footer-link-2 w-inline-block"><div class="body-small-2">Humanise</div></a></div></div></div><div id="w-node-_338ee2f9-7430-09fe-437c-4f55f58f0ba6-bc8c6fd0" class="footer-bottom-2col-2"><div class="t-m-hide"><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">Experience</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/care-experience" class="footer-link-2 w-inline-block"><div class="body-small-2">Plum Care</div></a><a href="https://www.plumhq.com/employee-experience" class="footer-link-2 w-inline-block"><div class="body-small-2">Employee</div></a><a href="https://www.plumhq.com/admin-experience" class="footer-link-2 w-inline-block"><div class="body-small-2">Admin</div></a></div></div></div><div class="t-m-hide"><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">Business Insurance</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/buy-directors-and-officers-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Directors and Officers Insurance</div></a><a href="https://www.plumhq.com/buy-cyber-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Cyber Insurance</div></a><a href="https://www.plumhq.com/buy-general-liability-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Commercial General Liability Insurance</div></a><a href="https://www.plumhq.com/buy-errors-and-omissions-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Errors and Omissions Insurance</div></a><a href="https://www.plumhq.com/buy-employee-dishonesty-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Employee Dishonesty Insurance</div></a><a href="https://www.plumhq.com/buy-asset-insurance" class="footer-link-2 w-inline-block"><div class="body-small-2">Asset Insurance</div></a></div></div></div><div class="footer-link-container-2 hide-tab-all hide-dsktop-all"><div class="footer-label"><div class="blt-small">Resources</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/case-study" class="footer-link-2 w-inline-block"><div class="body-small-2">Case Studies</div></a><a href="https://www.plumhq.com/blog" class="footer-link-2 w-inline-block"><div class="body-small-2">Blog</div></a><a href="https://www.plumhq.com/resources" class="footer-link-2 w-inline-block"><div class="body-small-2">E-books</div></a><a href="https://www.humanise.co.in/" target="_blank" class="footer-link-2 w-inline-block"><div class="body-small-2">Humanise</div></a></div></div><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">Company</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/about" class="footer-link-2 w-inline-block"><div class="body-small-2">About Us</div></a><a href="https://www.plumhq.com/careers" class="footer-link-2 w-inline-block"><div class="body-small-2">Careers</div></a><a href="https://www.plumhq.com/terms-and-conditions" class="footer-link-2 w-inline-block"><div class="body-small-2">Terms and Conditions</div></a></div></div><div class="footer-link-container-2"><div class="footer-label"><div class="blt-small">Contact</div></div><div class="footer-link-wrap-2"><a href="https://www.plumhq.com/support" class="footer-link-2 w-inline-block"><div class="body-small-2">Plum Support</div></a><a href="mailto:sales@plumhq.com" class="footer-link-2 no-hover w-inline-block"><div class="body-small-2">Sales Enquiries: connect@plumhq.com</div></a><a href="mailto:media@plumhq.com" class="footer-link-2 no-hover w-inline-block"><div class="body-small-2">Press and Media Enquiries:<br>media@plumhq.com</div></a></div></div></div><div id="w-node-_338ee2f9-7430-09fe-437c-4f55f58f0bf0-bc8c6fd0" class="footer-center-block-2"><span class="plum-logo-footer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="Plum"><path transform="translate(303 747) scale(0.1 -0.1)" fill="currentColor" d="M3981 4054 c-239 -41 -449 -82 -468 -91 -18 -8 -43 -30 -56 -47 l-22
 -31 -3 -1595 c-2 -1503 -1 -1597 15 -1629 10 -19 31 -44 46 -55 28 -20 41 -21
 500 -24 319 -2 484 0 509 8 23 7 48 24 65 47 l28 36 3 1666 c2 1156 0 1677 -8
 1703 -16 57 -61 88 -123 87 -29 0 -247 -34 -486 -75z M1968 3456 c-406 -72
@@ -1969,15 +2042,154 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 -491 -1 -522 -20 -72 -44 -67 12 -73 -845 l-5 -770 -23 -50 c-31 -67 -62 -98
 -135 -132 -58 -26 -70 -28 -192 -28 -147 0 -205 14 -268 66 -46 38 -72 87 -86
 164 -7 39 -11 302 -11 782 0 784 2 750 -55 803 l-27 25 -496 2 c-273 1 -506
--2 -517 -6z"/></svg></div>
-    <div class="footer-brand">The India Employee Benefits Stack — A Guide for MNC Decision-Makers</div>
-    <div>Prepared for HR, legal, and finance teams of MNCs and GCCs setting up India operations.</div>
-    <div style="margin-top:4px;">Regulations current as of 2025–26. Verify thresholds against the latest IRDAI, EPFO, and ESIC circulars before purchase.</div>
-  </div>
-  <div>Sources: IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025; Income Tax Act 1961 (as amended); Code on Social Security 2020; Maternity Benefit Act 1961 (as amended per Supreme Court ruling, March 2026); state-level Shops and Establishments Acts.</div>
-</footer>
+-2 -517 -6z"/></svg></span><div class="footer-text ch-48"><p class="body-small-2">Primeco Union City, Block B, 6th Floor, ITPL Main Rd, Bengaluru, Karnataka 560067</p></div><div class="social-grid"><a href="https://x.com/getplumhq" target="_blank" class="w-inline-block"><div class="code-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"></path>
+</svg></div></a><a href="https://www.instagram.com/getplumhq/" target="_blank" class="w-inline-block"><div class="code-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+</svg></div></a><a href="https://www.linkedin.com/company/plumhq/" target="_blank" class="w-inline-block"><div class="code-2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"></path>
+</svg></div></a></div><div class="footer-legal-wrap"><div class="footer-text"><p class="body-small-2">ISO/IEC 27001:2013, SOC 2 Type 2, and GDPR certified</p></div><div class="footer-text legal-text"><p class="body-small-2">Insurance products offered and serviced by Plum Benefits Insurance Brokers Pvt Ltd<br>IRDAI Registration No: 897, Direct Broker (Life &amp; General)<br>CIN: U66000KA2022PTC160458</p></div><div class="footer-legal-grid"><a href="https://www.plumhq.com/disclaimer" class="footer-link-2 w-inline-block"><div class="body-small-2">Disclaimer</div></a><a href="https://www.plumhq.com/privacy-policy" class="footer-link-2 w-inline-block"><div class="body-small-2">Privacy policy</div></a><a href="https://www.plumhq.com/grievances" class="footer-link-2 w-inline-block"><div class="body-small-2">Grievance redressal</div></a></div></div></div></div></div></div><div class="footer-bg-blend"></div><div class="w-embed w-script"><style>
+.footer-section	a{
+	color : inherit;
+}
+.footer-section p{
+	color : inherit;
+}
+
+</style>
 
 
+<script>
+window.addEventListener('load', function() {
+  var el = document.getElementById('footer-bg-video'); // Wrapper div (ID aa par j hoy)
+  if (!el) return;
+
+  var video = el.querySelector('video'); // Andar thi real video tag shodhi kadhe
+  if (!video) return;
+
+  video.querySelectorAll('source').forEach(function(s) {
+    var src = s.getAttribute('src');
+    if (src) {
+      s.setAttribute('data-src', src);
+      s.removeAttribute('src');
+    }
+  });
+  video.pause();
+
+  video.querySelectorAll('source').forEach(function(s) {
+    var dataSrc = s.getAttribute('data-src');
+    if (dataSrc) s.setAttribute('src', dataSrc);
+  });
+  video.load();
+  video.play().catch(function() {});
+});
+</script></div></section>
+
+
+<script is:inline>
+  // Webflow's own navbar script (web-interactives-embed.js) is not bundled
+  // here, so the hamburger and the dropdowns need driving manually. This
+  // reproduces the class contract Webflow's CSS already expects:
+  //   button      .w--open
+  //   menu        [data-nav-menu-open]
+  //   dropdown    .w--open on toggle + list
+  (function () {
+    var navRoot = document.querySelector('.navbar.w-nav');
+    if (!navRoot) return;
+
+    // Plum's navbar does NOT use Webflow's .w-nav-button / .w-nav-menu. It has
+    // a custom .nav-hamburger (three lines) and hides .nav-menu with
+    // display:none below the breakpoint. So the open/close state is ours to
+    // define: .nav--menu-open on the navbar, styled in guide.css.
+    var button = navRoot.querySelector('.nav-hamburger');
+    var menu   = navRoot.querySelector('.nav-menu');
+
+    function setOpen(open) {
+      if (!button || !menu) return;
+      navRoot.classList.toggle('nav--menu-open', open);
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    }
+
+    if (button && menu) {
+      button.setAttribute('role', 'button');
+      button.setAttribute('tabindex', '0');
+      button.setAttribute('aria-label', 'Menu');
+      button.setAttribute('aria-expanded', 'false');
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        setOpen(!navRoot.classList.contains('nav--menu-open'));
+      });
+      button.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); button.click(); }
+      });
+      // Following a link should close the panel.
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+    }
+    addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    addEventListener('resize', function () {
+      if (innerWidth > 991) setOpen(false);
+    }, { passive: true });
+
+    // Dropdowns: click to toggle, and close the others.
+    var dropdowns = Array.prototype.slice.call(navRoot.querySelectorAll('.w-dropdown'));
+    dropdowns.forEach(function (dd) {
+      var toggle = dd.querySelector('.w-dropdown-toggle');
+      var list   = dd.querySelector('.w-dropdown-list');
+      if (!toggle || !list) return;
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        var open = !list.classList.contains('w--open');
+        dropdowns.forEach(function (o) {
+          var l = o.querySelector('.w-dropdown-list'), t = o.querySelector('.w-dropdown-toggle');
+          if (l) l.classList.remove('w--open');
+          if (t) { t.classList.remove('w--open'); t.setAttribute('aria-expanded', 'false'); }
+        });
+        if (open) {
+          list.classList.add('w--open');
+          toggle.classList.add('w--open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!navRoot.contains(e.target)) {
+        dropdowns.forEach(function (o) {
+          var l = o.querySelector('.w-dropdown-list'), t = o.querySelector('.w-dropdown-toggle');
+          if (l) l.classList.remove('w--open');
+          if (t) { t.classList.remove('w--open'); t.setAttribute('aria-expanded', 'false'); }
+        });
+      }
+    });
+
+    // Webflow's IX2 scroll interaction is not bundled, so drive the bar's
+    // scrolled state here: transparent over the red masthead, solid once the
+    // cream article is behind it.
+    var masthead = document.querySelector('.masthead');
+    function onScrollState() {
+      var past = masthead
+        ? masthead.getBoundingClientRect().bottom <= (navRoot.querySelector('.nav') || navRoot).offsetHeight
+        : window.scrollY > 24;
+      navRoot.classList.toggle('nav--scrolled', past);
+    }
+    onScrollState();
+    addEventListener('scroll', onScrollState, { passive: true });
+    addEventListener('resize', onScrollState, { passive: true });
+
+    // Publish the navbar's real height so the sticky TOC rail can clear it.
+    function measure() {
+      var bar = navRoot.querySelector('.nav-container-3') || navRoot;
+      var h = Math.round(bar.getBoundingClientRect().height);
+      if (h > 0) document.documentElement.style.setProperty('--chrome-nav-h', h + 'px');
+    }
+    measure();
+    addEventListener('resize', measure, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  })();
+</script>
 <script is:inline>
   // Mark the entry currently being read in the TOC rail, and mark its parent
   // entries too, so a reader deep in a sub-section can still see which

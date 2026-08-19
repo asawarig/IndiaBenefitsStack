@@ -177,41 +177,11 @@ body {
 }
 
 /* ── NAV ─────────────────────────────────────────────────────────────── */
-.nav-top {
-  background: var(--cream);
-  border-bottom: 1px solid var(--line-lav);
-  padding: 0 clamp(20px,5vw,64px);
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.nav-logo svg {
-  height: 28px;
-  width: auto;
-  display: block;
-  color: var(--plum-red);
-}
-.nav-cta {
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--fg-on-red);
-  background: var(--plum-red);
-  padding: 8px 20px;
-  border-radius: 3px;
-  text-decoration: none;
-  box-shadow: var(--shadow-cta);
-  transition: background .15s ease-out;
-  letter-spacing: .01em;
-}
-.nav-cta:hover { background: var(--plum-red-deep); }
-.nav-cta:active { background: var(--plum-red-press); }
+/* The guide's own mini-header (.nav-top / .nav-logo / .nav-cta) was replaced
+   by the site navbar lifted from plumhq.com, so its rules are gone. They had
+   to go rather than merely stop matching: .nav-logo is the one class name the
+   two share, and `.nav-logo svg { color: var(--plum-red) }` was repainting
+   Webflow's logo red-on-red against the masthead, making it invisible. */
 
 /* ── SECTION NAV (sticky TOC) ────────────────────────────────────────── */
 /* ── LAYOUT: sticky TOC rail + reading column ────────────────────────── */
@@ -1044,7 +1014,6 @@ h2 {
 
 /* improved mobile responsive rules */
 @media (max-width: 640px) {
-  .nav-top { padding: 0 16px; }
   .masthead { padding: 40px 20px 36px; }
   .policy-body, .claims-grid, .bd-body { grid-template-columns: 1fr; }
   .policy-card-head { flex-wrap: wrap; }
@@ -1405,3 +1374,115 @@ h2 {
   .page-body { padding-top: 36px; }
   section[id], h2[id], h3[id] { scroll-margin-top: 60px; }
 }
+
+
+/* ── COLOPHON ────────────────────────────────────────────────────────────
+   The guide's own footer was replaced by the site footer lifted from
+   plumhq.com, which carries no room for the sources list or the regulatory
+   disclaimer. Both are substantive, so they moved here, at the end of the
+   article where they still read as part of the document. */
+.guide-colophon {
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-lav);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+}
+.guide-colophon p { max-width: 78ch; margin-bottom: 8px; }
+.guide-colophon strong { color: var(--fg-2); font-weight: 600; }
+.guide-colophon-sources { font-size: 12px; line-height: 1.65; }
+
+/* ── STICKY RAIL vs THE SITE NAVBAR ──────────────────────────────────────
+   The lifted navbar is sticky, so the TOC rail cannot pin to top: 0 or it
+   sits underneath it. --chrome-nav-h is measured at runtime by the script in
+   index.astro and written onto :root; the fallback covers the pre-script
+   frame and the case where the navbar is not sticky. */
+:root { --chrome-nav-h: 76px; }
+@media (min-width: 1025px) {
+  .toc-bar {
+    top: var(--chrome-nav-h);
+    min-height: calc(100vh - var(--chrome-nav-h));
+    max-height: calc(100vh - var(--chrome-nav-h));
+  }
+  section[id], h2[id], h3[id] {
+    scroll-margin-top: calc(var(--chrome-nav-h) + 16px);
+  }
+}
+@media (max-width: 1024px) {
+  .toc-bar { top: var(--chrome-nav-h); }
+  section[id], h2[id], h3[id] {
+    scroll-margin-top: calc(var(--chrome-nav-h) + 60px);
+  }
+}
+
+
+/* ── SITE NAVBAR: the states Webflow's scroll interaction would have driven ──
+   .nav is position:fixed and .nav-bg (its background layer) ships at
+   opacity:0, faded in by a Webflow IX2 interaction on scroll. That runtime is
+   not bundled here, so the states are declared explicitly and the class is
+   toggled by the script in index.astro.
+
+   Webflow's own --_colors---nav--* variables are referenced by the extracted
+   rules but defined in index.css, which was not among the files available.
+   They are defined here from the guide's palette so the two agree. */
+.navbar {
+  --_colors---nav--nav-dark: #2B0A20;   /* darker than --fg-1, for light text */
+  --_colors---nav--nav-white: var(--cream);
+}
+
+/* Over the red masthead: transparent bar, light logo and light links. */
+.nav-logo svg { color: var(--fg-on-red); }
+.navbar:not(.nav--scrolled) .nav-menu a,
+.navbar:not(.nav--scrolled) .nav-item,
+.navbar:not(.nav--scrolled) .w-dropdown-toggle { color: var(--fg-on-red); }
+
+/* Past the masthead: the solid background Webflow fades in, so light text
+   keeps working once the cream article is behind the bar. */
+.navbar.nav--scrolled .nav-bg,
+/* also while the mobile panel is open, or the bar stays transparent at the top
+   of the page and the masthead text shows through behind the logo */
+.navbar.nav--menu-open .nav-bg { opacity: 1; }
+.nav-bg { transition: opacity .22s ease; }
+.navbar.nav--scrolled .nav-menu a,
+.navbar.nav--scrolled .nav-item,
+.navbar.nav--scrolled .w-dropdown-toggle { color: var(--fg-on-red); }
+
+@media (prefers-reduced-motion: reduce) { .nav-bg { transition: none; } }
+
+
+/* ── MOBILE NAV PANEL ────────────────────────────────────────────────────
+   Plum's .nav-menu is display:none below the breakpoint and revealed by a
+   Webflow IX2 slide-in that is not bundled here, so the open state is defined
+   explicitly. The burger is .nav-hamburger, not Webflow's .w-nav-button. */
+@media (max-width: 991px) {
+  .navbar.nav--menu-open .nav-menu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    position: fixed;
+    top: var(--chrome-nav-h);
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - var(--chrome-nav-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 20px clamp(16px, 5vw, 32px) 40px;
+    background: var(--_colors---nav--nav-dark, #2B0A20);
+    z-index: 999999998;
+  }
+  .navbar.nav--menu-open .nav-menu a,
+  .navbar.nav--menu-open .nav-menu .w-dropdown-toggle { color: var(--fg-on-red); }
+  .navbar.nav--menu-open .nav-menu .w-dropdown,
+  .navbar.nav--menu-open .nav-menu .w-dropdown-toggle { width: 100%; }
+
+  /* burger -> X */
+  .nav-hamburger { cursor: pointer; }
+  .nav-hamburger-line { transition: transform .18s ease, opacity .18s ease; }
+  .navbar.nav--menu-open .nav-hamburger-line._1 { transform: translateY(5px) rotate(45deg); }
+  .navbar.nav--menu-open .nav-hamburger-line._2 { opacity: 0; }
+  .navbar.nav--menu-open .nav-hamburger-line._3 { transform: translateY(-5px) rotate(-45deg); }
+}
+@media (prefers-reduced-motion: reduce) { .nav-hamburger-line { transition: none; } }
