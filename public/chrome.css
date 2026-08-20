@@ -685,3 +685,31 @@
    change. The headline goes cream, which is what it is over the video. */
 .footer-section { background-color: #1d0716 }
 .footer-section .heading-2-2 { color: var(--cream, #FFF8F2) }
+
+/* The footer background is an <img> where plumhq.com has a background video,
+   and .footer-bg only picks up object-fit inside the <=991px block — the video
+   got its cover behaviour from Webflow's data-object-fit JS, not from CSS. So
+   an unqualified rule is needed or the still stretches at desktop widths. */
+.footer-bg { object-fit: cover }
+
+/* Scrim over the footer background. plumhq.com runs dark video footage behind
+   this headline; the supplied still is a bright sunset, and cream type over it
+   measured 2.83:1 at 420px with 5% of the headline's area under 3:1 — short of
+   AA even for large text. A gentle top-down wash lifts that to 4.9-5.2:1
+   across 420/1024/1600, clear of the 4.5:1 threshold for normal text, while
+   leaving the artwork bright. Stronger washes measured 6.7-10:1 but muted the
+   painting, which defeats the point of having it.
+
+   z-index 3 puts it over both the image and .footer-bg-gradient-2 but still
+   inside .footer-bg-wrapper's own stacking context, which sits at z-index 1
+   against the footer content's 2 — so it never covers the text. */
+.footer-bg-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(180deg,
+    rgb(29 7 22 / 40%),
+    rgb(29 7 22 / 24%) 60%,
+    rgb(29 7 22 / 10%));
+}
