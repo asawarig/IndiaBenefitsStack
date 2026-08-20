@@ -593,9 +593,16 @@
    (the 553px Employee Health Report one overflowed the panel) instead of
    filling their flex column. Scoped to the two chrome roots rather than
    restored as a bare selector, so the guide body is still untouched.
+
+   The :where() is load-bearing. Written plainly, `.navbar img` scores
+   (0,1,1), which outranks single-class rules and clobbers them — it beat
+   .quate-logo{max-width:30px} and rendered the quote glyph 438px wide.
+   Webflow's original is a bare `img` at (0,0,1), sitting *below* every class
+   rule. :where() contributes zero specificity, so this scores (0,0,1) too:
+   the same losing position as the original, just confined to the chrome. The
+   anchor reset below is wrapped for the same reason.
    ───────────────────────────────────────────────────────────────────────── */
-.navbar img,
-.footer-section img { vertical-align: middle; max-width: 100%; display: inline-block }
+:where(.navbar, .footer-section) img { vertical-align: middle; max-width: 100%; display: inline-block }
 
 /* Mobile accordion. Below the breakpoint .nav-item-dropdown is display:none
    and position:static, and Webflow's IX2 is what opens it on tap — so the
@@ -603,4 +610,45 @@
 @media (max-width: 991px) {
   .nav-item--open .nav-item-dropdown { display: block }
   .nav-item--open .nav-item-link-icon-line.animate { transform: rotate(0deg) }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Two more casualties of the same two extraction rules, both visible in the
+   nav dropdowns.
+
+   1. Bare element selectors were dropped, and Webflow's site CSS resets
+      anchors with a{text-decoration:none}. Without it the browser default
+      underlined 84 of the chrome's 87 links. Restored scoped to the two
+      chrome roots, like the img rule above.
+
+   2. Webflow's IX2 sets each element's resting transform as an inline style,
+      and those inline styles were stripped because a page saved from the
+      browser freezes them mid-animation. Two of them were load-bearing
+      resting states rather than animation frames (33 occurrences each in the
+      saved source), so their elements sat in the hover position permanently:
+
+        .nav-subitem-link-hoverline  transform-origin:0% 50%; scale(0,1)
+        .nav-subitem-link-arrow      translate(-100%, 100%)
+
+      The hoverline is the "too thick divider": a 1px cream line stacked
+      directly on top of the link's own 1px border-bottom, giving 2px of
+      which the upper, brighter one should not be visible at all until hover.
+      The border stays exactly as the source has it — 1px #563a49b3.
+
+      The transition is the one deliberate addition: IX2 animates these in
+      JS, so no duration exists in the CSS to copy. Borrowed from the
+      .nav-subitem-link rule right above, which is the motion these were
+      drawn to accompany.
+   ───────────────────────────────────────────────────────────────────────── */
+:where(.navbar, .footer-section) a { text-decoration: none }
+
+.nav-subitem-link-hoverline {
+  transform-origin: 0% 50%;
+  transform: scale(0, 1);
+  transition: transform .8s cubic-bezier(.19, 1, .22, 1);
+}
+
+.nav-subitem-link-arrow {
+  transform: translate(-100%, 100%);
+  transition: transform .8s cubic-bezier(.19, 1, .22, 1);
 }
