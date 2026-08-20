@@ -148,7 +148,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 <path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
 </svg></div></div></a><a href="https://www.humanise.co.in/" target="_blank" class="nav-subitem-link w-inline-block"><div>Humanise</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
-</svg></div></div></a></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Featured Resources</div><div class="nav-subitem-featured-resources-container"><a href="https://www.plumhq.com/autumn-2025" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Autumn release</div></a><a href="https://datalabs.plumhq.com/" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Datalabs</div></a><a href="https://www.plumhq.com/employee-health-report-2025" class="nav-subitem-featured-resource w-inline-block"><div class="nav-subitem-featured-resource-name">Employee Health Report’25</div></a></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Company</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><div class="nav-subitem-link-wrapper"><a href="https://www.plumhq.com/about" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>About Us</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+</svg></div></div></a></div><div class="nav-seprator"></div><div class="nav-subitem"><div class="nav-subitem-title subtitle-serif-medium">Featured Resources</div><div class="nav-subitem-featured-resources-container"><a href="https://www.plumhq.com/autumn-2025" class="nav-subitem-featured-resource w-inline-block"><img loading="lazy" src={href("img/nav/692018b0209834284d1b16e8.avif")} alt="" class="nav-subitem-featured-resource-image" /><div class="nav-subitem-featured-resource-name">Autumn release</div></a><a href="https://datalabs.plumhq.com/" class="nav-subitem-featured-resource w-inline-block"><img loading="lazy" src={href("img/nav/692018aebfe97a6b3c87f1de.avif")} alt="" class="nav-subitem-featured-resource-image" /><div class="nav-subitem-featured-resource-name">Datalabs</div></a><a href="https://www.plumhq.com/employee-health-report-2025" class="nav-subitem-featured-resource w-inline-block"><img loading="lazy" src={href("img/nav/68b51ab681022e430894bae6.avif")} alt="" class="nav-subitem-featured-resource-image" /><div class="nav-subitem-featured-resource-name">Employee Health Report’25</div></a></div></div></div></div></div><div class="nav-item"><div class="nav-item-link"><div class="nav-item-link-icon"><div class="nav-item-link-icon-line"></div><div class="nav-item-link-icon-line animate"></div></div><div>Company</div></div><div class="nav-item-dropdown"><div class="nav-container-3 _2col"><div class="nav-subitem"><div class="nav-subitem-link-wrapper"><a href="https://www.plumhq.com/about" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>About Us</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
 </svg></div></div></div><div class="nav-subitem-link-details mobile"></div></a><a href="https://www.plumhq.com/careers" class="nav-subitem-link-block w-inline-block"><div class="nav-subitem-link"><div>Careers</div><div class="nav-subitem-link-hoverline"></div><div class="nav-subitem-link-arrow-wrapper"><div class="nav-subitem-link-arrow w-embed"><svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 10L10 1M10 1H1M10 1V10" stroke="currentColor"></path>
@@ -2131,6 +2131,46 @@ window.addEventListener('load', function() {
     addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
     addEventListener('resize', function () {
       if (innerWidth > 991) setOpen(false);
+    }, { passive: true });
+
+    // Mobile accordion. Above 991px the dropdowns open on hover, from the
+    // inline <style> in the head. Below it there is no hover and IX2 is what
+    // Webflow uses to expand them, so the tap handler is ours: toggle
+    // .nav-item--open (styled in chrome.css) and close the siblings.
+    var navItems = Array.prototype.slice.call(navRoot.querySelectorAll(".nav-item"));
+    navItems.forEach(function (item) {
+      var link = item.querySelector(".nav-item-link");
+      var panel = item.querySelector(".nav-item-dropdown");
+      if (!link || !panel) return;
+      link.setAttribute("role", "button");
+      link.setAttribute("tabindex", "0");
+      link.setAttribute("aria-expanded", "false");
+      function toggle(e) {
+        if (innerWidth > 991) return;   // hover territory, leave it to CSS
+        e.preventDefault();
+        var open = !item.classList.contains("nav-item--open");
+        navItems.forEach(function (o) {
+          o.classList.remove("nav-item--open");
+          var l = o.querySelector(".nav-item-link");
+          if (l) l.setAttribute("aria-expanded", "false");
+        });
+        if (open) {
+          item.classList.add("nav-item--open");
+          link.setAttribute("aria-expanded", "true");
+        }
+      }
+      link.addEventListener("click", toggle);
+      link.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") toggle(e);
+      });
+    });
+    // Leaving mobile clears the accordion so it cannot fight the hover rule.
+    addEventListener("resize", function () {
+      if (innerWidth > 991) navItems.forEach(function (o) {
+        o.classList.remove("nav-item--open");
+        var l = o.querySelector(".nav-item-link");
+        if (l) l.setAttribute("aria-expanded", "false");
+      });
     }, { passive: true });
 
     // Dropdowns: click to toggle, and close the others.
