@@ -2303,5 +2303,50 @@ window.addEventListener('load', function() {
     addEventListener('resize', onScroll, { passive: true });
   })();
 </script>
+<!-- Back to top. The guide is ~190KB of markup in one scroll, and below
+     1024px the TOC collapses to a horizontal scroller, so there is no quick
+     way back to the section list on a phone. -->
+<button type="button" class="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+    <path d="M12 20V5M12 5l-6.5 6.5M12 5l6.5 6.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script is:inline>
+  // Reveal the back-to-top control once the reader is past the masthead, and
+  // send focus with the scroll so it works from the keyboard too.
+  (function () {
+    var btn = document.querySelector('.to-top');
+    if (!btn) return;
+
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+    function update() {
+      btn.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
+    }
+
+    var queued = false;
+    function onScroll() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }
+
+    update();
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? 'auto' : 'smooth' });
+      // Scrolling alone leaves a keyboard user's focus at the bottom of the
+      // page, so the next Tab would jump them straight back down.
+      var h1 = document.querySelector('.masthead h1');
+      if (h1) {
+        h1.setAttribute('tabindex', '-1');
+        h1.focus({ preventScroll: true });
+      }
+    });
+  })();
+</script>
 </body>
 </html>

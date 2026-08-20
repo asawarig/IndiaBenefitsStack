@@ -1476,3 +1476,55 @@ h2 {
   .navbar.nav--menu-open .nav-hamburger-line._3 { transform: translateY(-5px) rotate(-45deg); }
 }
 @media (prefers-reduced-motion: reduce) { .nav-hamburger-line { transition: none; } }
+
+/* ── BACK TO TOP ─────────────────────────────────────────────────────────
+   The guide is one very long scroll, and below 1024px the TOC rail collapses
+   to a horizontal scroller showing only top-level entries, so there is no
+   quick route back to the section list on a phone.
+
+   z-index sits above the article but nowhere near .nav's 999999999, so the
+   navbar and its dropdowns always win. The bottom-right corner is otherwise
+   unoccupied — nothing else in the page is fixed to the bottom. */
+.to-top {
+  position: fixed;
+  right: clamp(16px, 2.5vw, 32px);
+  bottom: clamp(16px, 2.5vw, 32px);
+  z-index: 60;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--line-lav);
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--fg-1);
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgb(58 14 43 / 16%);
+  /* Hidden until the reader is past the masthead. visibility, not just
+     opacity, so it is not a click target or a tab stop while invisible. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s,
+              background-color .16s ease, color .16s ease, border-color .16s ease;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.to-top svg { width: 18px; height: 18px; display: block; }
+.to-top:hover {
+  background: var(--plum-red);
+  border-color: var(--plum-red);
+  color: var(--fg-on-red);
+}
+.to-top:focus-visible { outline: 2px solid var(--plum-red); outline-offset: 3px; }
+.to-top:active { transform: translateY(1px); }
+
+/* The mobile nav panel is fixed and can fill the viewport, so the button
+   would otherwise float on top of the open menu. .navbar and .to-top are
+   both direct children of <body>. */
+.navbar.nav--menu-open ~ .to-top { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .to-top { transition: none; }
+  .to-top:active { transform: none; }
+}
