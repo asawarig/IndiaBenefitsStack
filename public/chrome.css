@@ -581,3 +581,26 @@
 .hr-perks-brand.hr-perks-10{font-size:16px}
 .page--title.mobile{max-width:70%}
 .get-image-title.mobile,.get-your-title.mobile,.get-your-title.mobile{max-width:90%}}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   chrome.css was extracted by filtering Webflow's stylesheet down to the
+   chrome class list, and every bare element selector was dropped so nothing
+   could leak into the guide's own markup. One of those was load-bearing:
+
+     img { vertical-align: middle; max-width: 100%; display: inline-block }
+
+   Without max-width the nav dropdown thumbnails lay out at intrinsic width
+   (the 553px Employee Health Report one overflowed the panel) instead of
+   filling their flex column. Scoped to the two chrome roots rather than
+   restored as a bare selector, so the guide body is still untouched.
+   ───────────────────────────────────────────────────────────────────────── */
+.navbar img,
+.footer-section img { vertical-align: middle; max-width: 100%; display: inline-block }
+
+/* Mobile accordion. Below the breakpoint .nav-item-dropdown is display:none
+   and position:static, and Webflow's IX2 is what opens it on tap — so the
+   panel is inert without this. .nav-item--open is set by the nav script. */
+@media (max-width: 991px) {
+  .nav-item--open .nav-item-dropdown { display: block }
+  .nav-item--open .nav-item-link-icon-line.animate { transform: rotate(0deg) }
+}
