@@ -593,9 +593,16 @@
    (the 553px Employee Health Report one overflowed the panel) instead of
    filling their flex column. Scoped to the two chrome roots rather than
    restored as a bare selector, so the guide body is still untouched.
+
+   The :where() is load-bearing. Written plainly, `.navbar img` scores
+   (0,1,1), which outranks single-class rules and clobbers them — it beat
+   .quate-logo{max-width:30px} and rendered the quote glyph 438px wide.
+   Webflow's original is a bare `img` at (0,0,1), sitting *below* every class
+   rule. :where() contributes zero specificity, so this scores (0,0,1) too:
+   the same losing position as the original, just confined to the chrome. The
+   anchor reset below is wrapped for the same reason.
    ───────────────────────────────────────────────────────────────────────── */
-.navbar img,
-.footer-section img { vertical-align: middle; max-width: 100%; display: inline-block }
+:where(.navbar, .footer-section) img { vertical-align: middle; max-width: 100%; display: inline-block }
 
 /* Mobile accordion. Below the breakpoint .nav-item-dropdown is display:none
    and position:static, and Webflow's IX2 is what opens it on tap — so the
@@ -633,8 +640,7 @@
       .nav-subitem-link rule right above, which is the motion these were
       drawn to accompany.
    ───────────────────────────────────────────────────────────────────────── */
-.navbar a,
-.footer-section a { text-decoration: none }
+:where(.navbar, .footer-section) a { text-decoration: none }
 
 .nav-subitem-link-hoverline {
   transform-origin: 0% 50%;
