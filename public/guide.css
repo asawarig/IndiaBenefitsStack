@@ -1434,6 +1434,21 @@ h2 {
 /* also while the mobile panel is open, or the bar stays transparent at the top
    of the page and the masthead text shows through behind the logo */
 .navbar.nav--menu-open .nav-bg { opacity: 1; }
+
+/* ...and while a dropdown is open over the masthead. The panel paints itself
+   var(--_colors---nav--nav-dark) and .nav-bg uses the same variable, so
+   switching it on makes the bar and the panel one continuous block instead of
+   a red strip above a dark purple sheet.
+
+   Keyed off :has(:hover) rather than a class because at this width the panel
+   is opened by CSS hover alone — the inline <style> in the head does
+   .nav-item:hover .nav-item-dropdown { display: block } — so there is no
+   JS state to hook. Same min-width as that rule, so the two cannot disagree;
+   below it the panel is a tap-driven accordion inside the open menu, which
+   .nav--menu-open already covers. */
+@media (min-width: 992px) {
+  .navbar:has(.nav-item:hover) .nav-bg { opacity: 1; }
+}
 .nav-bg { transition: opacity .22s ease; }
 .navbar.nav--scrolled .nav-menu a,
 .navbar.nav--scrolled .nav-item,
