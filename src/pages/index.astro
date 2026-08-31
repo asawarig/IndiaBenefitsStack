@@ -36,6 +36,17 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The India Employee Benefits Stack — A Guide for MNC Decision-Makers | Plum</title>
 <meta name="description" content="What your insurance, employee benefits, and compliance programme should look like in India — from entity registration to full operations." />
+<!-- Google Analytics 4. Placed first in <head> per Google's install docs, so
+     the pageview fires before the rest of the head blocks on stylesheets and
+     fonts. is:inline keeps Astro from bundling the config block — it has to
+     stay a classic script so gtag() is defined on window for gtag.js to find. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QS7K5X34L"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-2QS7K5X34L');
+</script>
 <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
 <link rel="icon" type="image/png" sizes="32x32" href={href('favicon-32.png')} />
 <link rel="apple-touch-icon" href={href('apple-touch-icon.png')} />
