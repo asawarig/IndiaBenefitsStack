@@ -97,7 +97,9 @@ callouts keep the full column width.
 
 ## Fonts
 
-Self-hosted — the page makes **no external requests at all**.
+Self-hosted. Every font, image and stylesheet is served from this app —
+the only third-party request the page makes is Google Analytics
+(see below).
 
 | Role | Font | Status |
 |---|---|---|
@@ -146,6 +148,23 @@ were drawn against. Asking the foundry for Medium and Semibold closes both gaps.
 
 `latin-ext` is required for Figtree because of the rupee sign. GT Alpina ships a
 full ~1281-glyph charset, unsubsetted.
+
+## Analytics
+
+Google Analytics 4, property `G-2QS7K5X34L`, wired with the standard gtag.js
+snippet at the top of `<head>`.
+
+The config block carries `is:inline` deliberately. Astro would otherwise
+process it as a module, and `gtag()` has to be a plain function on `window` for
+the async `gtag.js` loader to find when it arrives.
+
+This is the page's only third-party request, and the only thing that sets
+cookies. The app is served at a path on the domain but is a separate
+deployment, so it does **not** inherit any consent tooling running on the rest
+of plumhq.com — if visitors from the EU/UK or under India's DPDP Act need a
+consent gate before analytics fires, it has to be added here. Google Consent
+Mode v2 is the usual way: default `analytics_storage` to `denied` and update it
+when consent is given.
 
 ## Notes
 
