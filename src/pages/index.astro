@@ -179,27 +179,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#statutory">Statutory Employee Benefits</a></li>
-    <li><a href="#voluntary-eb">Voluntary Employee Benefits</a>
-      <!-- Parts 2A-2D are their own <section>s but the v10 labelling makes them
-           sub-chapters of Part 2, so they nest. toc-chapters marks a nested list
-           whose entries are whole sections rather than headings within one —
-           the mobile rail keeps those and drops the rest. -->
-      <ul class="toc-chapters">
-        <li><a href="#buying-ghi">Buying GHI</a></li>
-        <li><a href="#global-benchmark">Global Benchmark</a>
-          <ul>
-            <li><a href="#benchmark-headcount">By headcount stage</a></li>
-          </ul>
-        </li>
-        <li><a href="#claims-reality">Claims Reality</a></li>
-        <li><a href="#maternity">Maternity</a></li>
-      </ul>
-    </li>
+    <li><a href="#group-health">Group Health Insurance</a></li>
     <li><a href="#business">Business Insurance</a></li>
-    <li><a href="#by-setup">By Setup Stage</a></li>
-    <li><a href="#sector">Sector Notes</a></li>
-    <li><a href="#city">City Guide</a></li>
-    <li><a href="#checklist">Checklist</a></li>
     <li><a href="#beyond">Beyond Insurance</a>
       <ul>
         <li><a href="#beyond-personas">Team personas</a></li>
@@ -211,6 +192,10 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </li>
       </ul>
     </li>
+    <li><a href="#by-setup">By Setup Stage</a></li>
+    <li><a href="#sector">Sector Notes</a></li>
+    <li><a href="#city">City Guide</a></li>
+    <li><a href="#checklist">Checklist</a></li>
     <li><a href="#tax">Tax Guide</a></li>
     <li><a href="#leave">Leave &amp; Policies</a></li>
     <li><a href="#allowances">Allowances</a></li>
@@ -219,7 +204,6 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 </nav>
 
 <main class="page-body">
-
   <!-- OVERVIEW -->
   <section id="overview" style="margin-top:0;margin-bottom:48px;">
     <div class="intro-strip">
@@ -257,11 +241,10 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
   <!-- PART 1: STATUTORY -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="statutory">
+  <section id="statutory">
     <div class="section-label">Part 1 – Employee Benefits</div>
     <h2>What Indian law actually requires you to provide</h2>
     <p class="section-intro">These are not optional. They're legal obligations under Indian labour law, each with its own registration deadline, filing cadence, and penalty for non-compliance. Most MNCs treat this layer as the hard part. It isn't. Registration is procedural. What catches people out is the sequencing.</p>
@@ -328,13 +311,25 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </table></div>
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
-  <!-- PART 2: VOLUNTARY EB -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="voluntary-eb">
-    <div class="section-label">Part 2 – Voluntary Employee Benefits</div>
-    <h2>The stack your candidates already expect</h2>
+  <!-- PART 2: GROUP HEALTH INSURANCE -->
+  <section id="group-health">
+    <div class="section-label">Part 2 – Group Health Insurance</div>
+    <h2>Group health insurance for MNCs in India</h2>
+
+    <div class="deep-accordion">
+
+      <details id="voluntary-eb" open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Voluntary employee benefits</div>
+            <div class="acc-summary-title">What it covers and who needs it</div>
+            <div class="acc-summary-sub">The stack your candidates already expect</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
     <p class="section-intro">None of these are legally required. No regulator will fine you for skipping them. But every credible candidate you recruit at ₹8 LPA and above will check for them. Candidates from IT, BFSI, and consulting arrive with a clear mental model of what a serious employer carries. This is the actual floor, and it's higher than the compliance floor.</p>
 
     <div class="policy-card">
@@ -465,15 +460,20 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
       </div>
     </div>
-  </section>
-
-
-  <!-- PART 2B: GLOBAL BENCHMARK -->
   
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="buying-ghi">
-    <div class="section-label">Part 2A – Buying GHI</div>
-    <h2>How to actually purchase a group health insurance policy in India</h2>
+        </div>
+      </details>
+
+      <details id="buying-ghi">
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Buying a policy</div>
+            <div class="acc-summary-title">How to buy a group health policy</div>
+            <div class="acc-summary-sub">How to actually purchase a group health insurance policy in India</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
     <p class="section-intro">Most MNC HR teams have bought insurance before – just not in India. The process here is broker-led, underwriter-reviewed, and more document-intensive than most markets. Knowing what's coming at each stage means your first policy lands before your first hire, not three weeks after.</p>
 
     <div class="deep-accordion">
@@ -652,12 +652,20 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       <span class="callout-icon">⚑</span>
       <div><strong>Ready to get a policy in place?</strong> Plum's sales team works specifically with MNCs and GCCs entering India. The process starts with a short brief – workforce size, city mix, target coverage – and Plum benchmarks your requirements against 500+ MNC policies before recommending a plan. <a href="https://www.plumhq.com/get-quote" style="color:var(--plum-red-deep);font-weight:600;text-decoration:underline;">Talk to the team at plumhq.com/get-quote.</a></div>
     </div>
-  </section>
+  
+        </div>
+      </details>
 
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="global-benchmark">
-    <div class="section-label">Part 2B – Global Standard</div>
-    <h2>What your candidates are comparing you against</h2>
+      <details id="global-benchmark">
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Global standard</div>
+            <div class="acc-summary-title">What the market benchmark looks like</div>
+            <div class="acc-summary-sub">What your candidates are comparing you against</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
     <p class="section-intro">The table below maps India Inc's median against what global startups operating in India actually carry. These are international companies that set up India entities and brought their home-country benefit standards with them. This is the cohort setting the expectations of the talent you're recruiting.</p>
 
     <div class="callout callout-blue">
@@ -798,15 +806,20 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       </table></div>
       <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. ESC = Employee + Spouse + Children. ESCP = ESC + Parents.</p>
     </div>
-  </section>
-
-
-  <!-- PART 2C: CLAIMS REALITY -->
   
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="claims-reality">
-    <div class="section-label">Part 2C – Claims Reality</div>
-    <h2>Where the money actually goes when claims come in</h2>
+        </div>
+      </details>
+
+      <details id="claims-reality">
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Claims reality</div>
+            <div class="acc-summary-title">Where claims actually go</div>
+            <div class="acc-summary-sub">Where the money actually goes when claims come in</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
     <p class="section-intro">Most MNCs buy group health insurance thinking of it as employee cover. In practice, 40% of all claim value flows to employees' parents. That single fact changes how you should structure your policy, your sub-limits, and your parental cover decision. Data from 18,000+ claims on Plum's platform, January 2023 to January 2024.</p>
 
     <div class="claims-grid">
@@ -878,15 +891,20 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       <span class="callout-icon">⚠</span>
       <div><strong>On parental cover:</strong> parents generate the highest average claim at ₹73,000. Retail health policies carry PED waiting periods of up to 36 months, making employer-facilitated group cover far more valuable for ageing parents than anything an employee can buy independently. If you're cutting costs, a voluntary opt-in parental plan is a better choice than removing cover entirely. Employees pay the premium; you carry the group rate.</div>
     </div>
-  </section>
-
-
-  <!-- PART 2D: MATERNITY -->
   
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="maternity">
-    <div class="section-label">Part 2D – Maternity</div>
-    <h2>The benefit most MNCs underprice, and why it matters</h2>
+        </div>
+      </details>
+
+      <details id="maternity">
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Maternity</div>
+            <div class="acc-summary-title">Maternity cover in depth</div>
+            <div class="acc-summary-sub">The benefit most MNCs underprice, and why it matters</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
     <p class="section-intro">Delivery and postnatal complications are the single largest cause of group health claims in India: 12% of all claims. Most corporate policies offer maternity sub-limits that don't cover the actual cost of a normal delivery, let alone a C-section or NICU stay. This is the gap your team will notice fastest.</p>
 
     <div class="stat-row">
@@ -965,516 +983,193 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       <span class="callout-icon">ℹ</span>
       <div><strong>What to ask your broker:</strong> request the specific sub-limit for normal delivery vs C-section separately, confirm newborn cover from day one, and check whether pregnancy complications are covered up to full sum insured or capped within the maternity limit. If your team skews young, these numbers matter more than your headline sum insured.</div>
     </div>
+  
+        </div>
+      </details>
+
+    </div>
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
   <!-- PART 3: BUSINESS INSURANCE -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="business">
+  <section id="business">
     <div class="section-label">Part 3 – Business Insurance (Non-EB)</div>
     <h2>Protecting the entity, not just the employees</h2>
     <p class="section-intro">This stack is separate from EB and is often the one India-entry teams leave until last. Several of these policies are required before your first client contract is signed, your first office lease is executed, or your first board meeting is held. The calendar moves faster than most people expect.</p>
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon purple">⚖️</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Directors &amp; Officers Liability (D&amp;O)</div>
-          <div class="policy-tagline">Personal liability protection for leadership</div>
-        </div>
-        <div class="policy-badges">
-          <span class="badge badge-recommended">Recommended</span>
-          <span class="badge badge-gc">GCC standard</span>
-        </div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>What it covers</label>
-          <p>Defence costs, settlements, and judgments from wrongful-acts claims by employees, shareholders, creditors, or regulators. Covers mismanagement, breach of fiduciary duty, and employment practices violations for named directors.</p>
-        </div>
-        <div class="policy-field">
-          <label>Indian regulatory basis</label>
-          <p>The Companies Act 2013 places no bar on indemnifying directors. The premium is not classified as remuneration unless the director is found guilty of negligence or misfeasance, at which point the policy's fraud exclusion would apply in any case.</p>
-        </div>
-        <div class="policy-field">
-          <label>Key exclusions</label>
-          <p>Fraud, wilful criminal acts, fines and penalties, anti-competitive behaviour, bodily injury to employees (covered under WC), professional errors by the entity (covered under PI).</p>
-        </div>
-        <div class="policy-field">
-          <label>Buy it before the first board meeting</label>
-          <p>Directors are personally exposed from the day your CIN is issued, before you hire staff or sign a single client. Most MNCs extend a global D&O programme to India via a difference-in-conditions local placement, but verify that India is explicitly covered; many global programmes have territorial carve-outs.</p>
-        </div>
-      </div>
-    </div>
+    <div class="deep-accordion">
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon teal">📋</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Professional Indemnity (PI) / E&amp;O</div>
-          <div class="policy-tagline">Errors, omissions, professional negligence</div>
+      <details open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Recommended · GCC standard</div>
+            <div class="acc-summary-title">Directors &amp; Officers Liability (D&amp;O)</div>
+            <div class="acc-summary-sub">Personal liability protection for leadership</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What it covers</h4>
+              <p>Defence costs, settlements, and judgments from wrongful-acts claims by employees, shareholders, creditors, or regulators. Covers mismanagement, breach of fiduciary duty, and employment practices violations for named directors.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Indian regulatory basis</h4>
+              <p>The Companies Act 2013 places no bar on indemnifying directors. The premium is not classified as remuneration unless the director is found guilty of negligence or misfeasance, at which point the policy's fraud exclusion would apply in any case.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Key exclusions</h4>
+              <p>Fraud, wilful criminal acts, fines and penalties, anti-competitive behaviour, bodily injury to employees (covered under WC), professional errors by the entity (covered under PI).</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Buy it before the first board meeting</h4>
+              <p>Directors are personally exposed from the day your CIN is issued, before you hire staff or sign a single client. Most MNCs extend a global D&O programme to India via a difference-in-conditions local placement, but verify that India is explicitly covered; many global programmes have territorial carve-outs.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-badges">
-          <span class="badge badge-sector">Sector-specific</span>
-          <span class="badge badge-gc">GCC standard</span>
-        </div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>What it covers</label>
-          <p>Claims arising from professional negligence, errors, or omissions in service delivery. Covers legal defense costs, settlements, and damages. Also typically covers intellectual property infringement and unintentional defamation.</p>
-        </div>
-        <div class="policy-field">
-          <label>CGL does not cover this</label>
-          <p>Commercial General Liability explicitly excludes professional advice failures. PI covers exactly that gap. If your India entity delivers any professional service (IT, consulting, BPO, financial advice, legal, engineering), CGL alone leaves you exposed.</p>
-        </div>
-        <div class="policy-field full">
-          <label>Who requires it</label>
-          <p>Most Fortune 500 client contracts include PI as a condition of vendor onboarding. RBI requires it for regulated entities; SEBI for market intermediaries; IRDAI for insurance intermediaries. If you're a GCC providing services to the parent entity, check whether your intercompany service agreement triggers it.</p>
-        </div>
-      </div>
-    </div>
+      </details>
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon coral">🏢</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Commercial General Liability (CGL)</div>
-          <div class="policy-tagline">Third-party bodily injury &amp; property damage</div>
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Sector-specific · GCC standard</div>
+            <div class="acc-summary-title">Professional Indemnity (PI) / E&amp;O</div>
+            <div class="acc-summary-sub">Errors, omissions, professional negligence</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What it covers</h4>
+              <p>Claims arising from professional negligence, errors, or omissions in service delivery. Covers legal defense costs, settlements, and damages. Also typically covers intellectual property infringement and unintentional defamation.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>CGL does not cover this</h4>
+              <p>Commercial General Liability explicitly excludes professional advice failures. PI covers exactly that gap. If your India entity delivers any professional service (IT, consulting, BPO, financial advice, legal, engineering), CGL alone leaves you exposed.</p>
+            </div>
+            <div class="acc-grid-cell policy-field full">
+              <h4>Who requires it</h4>
+              <p>Most Fortune 500 client contracts include PI as a condition of vendor onboarding. RBI requires it for regulated entities; SEBI for market intermediaries; IRDAI for insurance intermediaries. If you're a GCC providing services to the parent entity, check whether your intercompany service agreement triggers it.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-badges"><span class="badge badge-recommended">Recommended</span></div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>What it covers</label>
-          <p>Third-party bodily injury on premises, property damage caused by the business, product liability (for manufacturers), completed operations liability.</p>
-        </div>
-        <div class="policy-field">
-          <label>Key exclusions</label>
-          <p>Does NOT cover employee injuries (requires WC/EC) or professional advice errors (requires PI). CGL is always paired with WC cover for complete protection.</p>
-        </div>
-        <div class="policy-field">
-          <label>When you'll need it</label>
-          <p>Before your first client onboards you as a vendor. Before your landlord hands over office keys. Before SEZ registration, for IT/ITES entities. CGL is the certificate most counterparties ask for first.</p>
-        </div>
-        <div class="policy-field">
-          <label>Choosing an insurer</label>
-          <p>IRDAI's healthy ICR band is 70–90%. Above 95% suggests claims management problems; below 50% suggests the insurer is underpaying. Ask your broker for the ICR on any insurer they recommend for CGL.</p>
-        </div>
-      </div>
-    </div>
+      </details>
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon blue">🔐</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Cyber Liability Insurance</div>
-          <div class="policy-tagline">Data breaches, ransomware, regulatory fines</div>
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Recommended</div>
+            <div class="acc-summary-title">Commercial General Liability (CGL)</div>
+            <div class="acc-summary-sub">Third-party bodily injury &amp; property damage</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What it covers</h4>
+              <p>Third-party bodily injury on premises, property damage caused by the business, product liability (for manufacturers), completed operations liability.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Key exclusions</h4>
+              <p>Does NOT cover employee injuries (requires WC/EC) or professional advice errors (requires PI). CGL is always paired with WC cover for complete protection.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>When you'll need it</h4>
+              <p>Before your first client onboards you as a vendor. Before your landlord hands over office keys. Before SEZ registration, for IT/ITES entities. CGL is the certificate most counterparties ask for first.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Choosing an insurer</h4>
+              <p>IRDAI's healthy ICR band is 70–90%. Above 95% suggests claims management problems; below 50% suggests the insurer is underpaying. Ask your broker for the ICR on any insurer they recommend for CGL.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-badges">
-          <span class="badge badge-recommended">Recommended</span>
-          <span class="badge badge-gc">GCC standard</span>
-        </div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>What it covers</label>
-          <p>Data breach response costs, forensic investigation, notification to affected parties, regulatory fines under DPDP Act 2023 / IT Act, business interruption from cyber incidents, ransomware payments (subject to conditions), third-party liability from data leaks.</p>
-        </div>
-        <div class="policy-field">
-          <label>Why it's no longer optional</label>
-          <p>India's DPDP Act 2023 creates financial exposure for any data fiduciary. The average breach cost in India is ₹195 million (IBM, 2024). CGL does not cover cyber events. For GCCs processing cross-border data flows, the parent programme may not extend to India operations either.</p>
-        </div>
-        <div class="policy-field full">
-          <label>GCC context</label>
-          <p>43–46% of Indian businesses faced a cyberattack in 2024. For GCCs, check explicitly whether the parent's global cyber programme covers the India entity. Many do not. A local policy or a DIC endorsement is the correct fix.</p>
-        </div>
-      </div>
-    </div>
+      </details>
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon amber">🏗️</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Property / Fire &amp; Allied Perils</div>
-          <div class="policy-tagline">Physical assets, office contents, equipment</div>
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Recommended · GCC standard</div>
+            <div class="acc-summary-title">Cyber Liability Insurance</div>
+            <div class="acc-summary-sub">Data breaches, ransomware, regulatory fines</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What it covers</h4>
+              <p>Data breach response costs, forensic investigation, notification to affected parties, regulatory fines under DPDP Act 2023 / IT Act, business interruption from cyber incidents, ransomware payments (subject to conditions), third-party liability from data leaks.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Why it's no longer optional</h4>
+              <p>India's DPDP Act 2023 creates financial exposure for any data fiduciary. The average breach cost in India is ₹195 million (IBM, 2024). CGL does not cover cyber events. For GCCs processing cross-border data flows, the parent programme may not extend to India operations either.</p>
+            </div>
+            <div class="acc-grid-cell policy-field full">
+              <h4>GCC context</h4>
+              <p>43–46% of Indian businesses faced a cyberattack in 2024. For GCCs, check explicitly whether the parent's global cyber programme covers the India entity. Many do not. A local policy or a DIC endorsement is the correct fix.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-badges"><span class="badge badge-mandatory">Often contractual</span></div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>What it covers</label>
-          <p>Building structure (if owned), office contents, IT equipment, furniture, stock. Allied perils include earthquake, flood, storm, riot, and business interruption.</p>
-        </div>
-        <div class="policy-field">
-          <label>When it's required</label>
-          <p>Not a statutory obligation for most sectors, but almost every commercial lease makes it a condition precedent. The Standard Market Fire Policy (SMF) is the base form; negotiate an "all risks" endorsement for broader coverage.</p>
-        </div>
-      </div>
-    </div>
+      </details>
 
-    <div class="policy-card">
-      <div class="policy-card-head">
-        <div class="policy-icon purple">🔍</div>
-        <div class="policy-title-block">
-          <div class="policy-name">Crime / Fidelity &amp; Trade Credit</div>
-          <div class="policy-tagline">Internal fraud, employee dishonesty, credit risk</div>
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Often contractual</div>
+            <div class="acc-summary-title">Property / Fire &amp; Allied Perils</div>
+            <div class="acc-summary-sub">Physical assets, office contents, equipment</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>What it covers</h4>
+              <p>Building structure (if owned), office contents, IT equipment, furniture, stock. Allied perils include earthquake, flood, storm, riot, and business interruption.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>When it's required</h4>
+              <p>Not a statutory obligation for most sectors, but almost every commercial lease makes it a condition precedent. The Standard Market Fire Policy (SMF) is the base form; negotiate an "all risks" endorsement for broader coverage.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-badges"><span class="badge badge-sector">Sector-specific</span></div>
-      </div>
-      <div class="policy-divider"></div>
-      <div class="policy-body">
-        <div class="policy-field">
-          <label>Crime / Fidelity</label>
-          <p>Covers employee theft, fraud, forgery, and computer crime. Mandatory for BFSI entities under RBI operational risk guidelines. Worth carrying for any entity with treasury access or cash-handling functions.</p>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Sector-specific</div>
+            <div class="acc-summary-title">Crime / Fidelity &amp; Trade Credit</div>
+            <div class="acc-summary-sub">Internal fraud, employee dishonesty, credit risk</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <div class="acc-grid-2">
+            <div class="acc-grid-cell">
+              <h4>Crime / Fidelity</h4>
+              <p>Covers employee theft, fraud, forgery, and computer crime. Mandatory for BFSI entities under RBI operational risk guidelines. Worth carrying for any entity with treasury access or cash-handling functions.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Trade credit</h4>
+              <p>Covers B2B buyer default on invoiced receivables. Relevant for MNCs running large Indian distribution networks or extending credit to channel partners.</p>
+            </div>
+          </div>
         </div>
-        <div class="policy-field">
-          <label>Trade credit</label>
-          <p>Covers B2B buyer default on invoiced receivables. Relevant for MNCs running large Indian distribution networks or extending credit to channel partners.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      </details>
 
-
-  <!-- PART 4: BY SETUP STAGE -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="by-setup">
-    <div class="section-label">Part 4 – Setup Stage</div>
-    <h2>The right order matters more than the right policy</h2>
-    <p class="section-intro">The most expensive insurance mistake isn't buying the wrong policy. It's buying the right one six months after the exposure started. Directors are exposed from day one; employees need GHI before the first offer letter goes out. Here's the sequence that works.</p>
-
-    <div class="checklist-grid">
-      <div class="checklist-block">
-        <h3 id="phase-1"><span class="phase-dot p1"></span> Phase 1 – Entity registration (Day 1–90)</h3>
-        <ul>
-          <li>D&amp;O Liability: directors are exposed from CIN date</li>
-          <li>Professional Indemnity: if client contracts already signed</li>
-          <li>CGL: required by landlord or client before operations commence</li>
-          <li>Cyber Liability: if any data processing begins</li>
-          <li>Property / Fire: required by lease agreement</li>
-          <li>Workmen's Compensation: any contract or blue-collar workers on-site</li>
-        </ul>
-      </div>
-      <div class="checklist-block">
-        <h3 id="phase-2"><span class="phase-dot p2"></span> Phase 2 – First employees hired (7–19 employees)</h3>
-        <ul>
-          <li>Group Health Insurance: minimum 7 for group policy eligibility</li>
-          <li>Group Personal Accident: recommended from first hire. Only 36% of small companies carry it, but GCCs are expected to.</li>
-          <li>Group Term Life: standard alongside GHI for white-collar hiring</li>
-          <li>WC / EC mandatory for employees above ESI threshold</li>
-          <li>EDLI auto-enrolls via EPFO when EPF registration triggers</li>
-        </ul>
-      </div>
-      <div class="checklist-block">
-        <h3 id="phase-3"><span class="phase-dot p3"></span> Phase 3 – Scale (20+ employees)</h3>
-        <ul>
-          <li>EPF mandatory: register with EPFO within 30 days of crossing 20 employees</li>
-          <li>ESI mandatory: register with ESIC within 15 days of crossing 10 employees</li>
-          <li>Gratuity fund or LIC gratuity scheme for provisioning</li>
-          <li>Crèche facility required at 50+ employees (Maternity Benefit Act)</li>
-          <li>OPD and wellness: 35% adoption at 251–750 employees; expected from around 100 employees in a GCC context</li>
-          <li>Review GHI sum insured: 90th percentile target is ₹10L at any headcount</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="callout callout-amber" style="margin-top:20px;">
-      <span class="callout-icon">⚠</span>
-      <div><strong>If you're using an Employer of Record:</strong> group insurance can sit under the EOR's master policy before your entity is incorporated, which bypasses the 7-employee minimum. Confirm the policy explicitly names or covers your employees, not just the EOR's own staff – and check coverage limits against your parent-company standards.</div>
     </div>
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
-  <!-- PART 5: SECTOR NOTES -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="sector">
-    <div class="section-label">Part 5 – Sector Notes</div>
-    <h2>What your sector adds to the universal stack</h2>
-    <p class="section-intro">The policies in Parts 1–3 apply to every MNC. These are the additional requirements and candidate expectations that vary by industry, shaped by regulators, client contracts, and what existing employers in your sector already carry.</p>
-
-    <div class="table-scroll"><table class="statutory-table">
-      <thead>
-        <tr>
-          <th>Sector</th>
-          <th>Regulatory insurance requirement</th>
-          <th>EB benchmark (% offering family GHI cover)</th>
-          <th>Regulator</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Software development / IT services</strong></td>
-          <td>PI (E&amp;O) mandatory in most client contracts; Cyber cover required by parent-company governance; CGL certificate required for SEZ registration</td>
-          <td>86% and 84% respectively – the highest of any sector. Median SI ₹5L.</td>
-          <td>Client contract, SEZ authority</td>
-        </tr>
-        <tr>
-          <td><strong>BFSI</strong> (banks, NBFCs, fintechs)</td>
-          <td>Bankers Blanket Bond / Crime insurance; Cyber mandatory under RBI IT guidelines; D&amp;O and PI standard across SEBI-regulated entities</td>
-          <td>85% family GHI cover. Maternity offered by 79%.</td>
-          <td>RBI, SEBI</td>
-        </tr>
-        <tr>
-          <td><strong>Manufacturing / Industrial</strong></td>
-          <td>Public Liability mandatory under Public Liability Insurance Act, 1991 for hazardous industries; Product Liability; Erection All Risk (EAR) during construction phase</td>
-          <td>73% family GHI cover. Median SI ₹3L, below the cross-sector median.</td>
-          <td>Ministry of Environment, DISH</td>
-        </tr>
-        <tr>
-          <td><strong>Healthcare / Pharma</strong></td>
-          <td>Clinical Trials insurance (CDSCO requirement); Medical Professional Indemnity; Product Liability for device/pharma manufacturers</td>
-          <td>68% family GHI cover. Maternity offered by 47%.</td>
-          <td>CDSCO, MoH</td>
-        </tr>
-        <tr>
-          <td><strong>SaaS / Business consulting</strong></td>
-          <td>PI (E&amp;O) standard; Cyber cover for any SaaS processing customer data in India under DPDP Act 2023</td>
-          <td>84% / 72% family GHI cover. Maternity offered by 74% / 65%.</td>
-          <td>Client contract, DPDP regulator</td>
-        </tr>
-        <tr>
-          <td><strong>Transportation / Logistics</strong></td>
-          <td>Aviation Third-Party Liability (Aircraft Act 1934); Cargo insurance; Marine Open Policy for freight forwarders; WC/EC critical for field operations</td>
-          <td>81% family GHI cover. Maternity offered by 66%.</td>
-          <td>DGCA, MoCA</td>
-        </tr>
-        <tr>
-          <td><strong>Insurance intermediaries</strong></td>
-          <td>PI insurance mandatory for IRDAI-licensed brokers and corporate agents; minimum net worth requirements backed by security deposits</td>
-          <td>Median SI ₹5L. Maternity expected.</td>
-          <td>IRDAI</td>
-        </tr>
-      </tbody>
-    </table></div>
-    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">EB benchmark data: Plum State of Employee Benefits 2024.</p>
-  </section>
-
-
-  <!-- PART 6: CITY GUIDE -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="city">
-    <div class="section-label">Part 6 – City Guide</div>
-    <h2>Your city changes your benchmarks</h2>
-    <p class="section-intro">The same ₹5L GHI plan means different things in different cities. Mumbai has the highest average claim size of any market; Hyderabad has the highest average maternity claim; Ahmedabad has the lowest GHI adoption, so a basic plan immediately exceeds local norms. Where you hire shapes what you need to carry.</p>
-
-    <div class="table-scroll"><table class="city-table">
-      <thead>
-        <tr>
-          <th>City</th>
-          <th>% companies at ₹5L+ sum insured</th>
-          <th>Avg claim size</th>
-          <th>% offering maternity</th>
-          <th>Avg maternity claim</th>
-          <th>Competitive context</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Mumbai</strong></td>
-          <td><span class="city-bar" style="width:63px"></span>63%</td>
-          <td style="font-weight:600;color:var(--accent-coral)">₹92,796</td>
-          <td>63%</td>
-          <td>₹1,20,000</td>
-          <td>Highest avg claim of any city. Expensive hospital network. ₹10L+ SI benchmark for competitive positioning.</td>
-        </tr>
-        <tr>
-          <td><strong>Delhi</strong></td>
-          <td><span class="city-bar" style="width:68px"></span>68%</td>
-          <td>₹62,375</td>
-          <td>60%</td>
-          <td>₹1,00,000 est.</td>
-          <td>Above-median SI adoption. Dense hospital network. Strong IT and consulting sector expectations.</td>
-        </tr>
-        <tr>
-          <td><strong>Bangalore</strong></td>
-          <td><span class="city-bar" style="width:72px"></span>72%</td>
-          <td>₹73,000</td>
-          <td>70%</td>
-          <td>₹1,12,000</td>
-          <td>Highest GHI adoption. GCC capital – global benchmark expected. Strong maternity adoption driven by tech sector demographics.</td>
-        </tr>
-        <tr>
-          <td><strong>Chennai</strong></td>
-          <td><span class="city-bar" style="width:72px"></span>72%</td>
-          <td>₹69,000</td>
-          <td>60%</td>
-          <td>₹85,000</td>
-          <td>High SI adoption, mid-range claims. Manufacturing and IT services mix. Competitive maternity floor is ₹75K+.</td>
-        </tr>
-        <tr>
-          <td><strong>Hyderabad</strong></td>
-          <td><span class="city-bar" style="width:63px"></span>63%</td>
-          <td>₹83,000</td>
-          <td>61%</td>
-          <td>₹1,50,000</td>
-          <td>Highest average maternity claim of any city. MNCs expanding to Hyderabad should budget for a higher maternity sub-limit than the ₹50K national median.</td>
-        </tr>
-        <tr>
-          <td><strong>Pune</strong></td>
-          <td><span class="city-bar" style="width:64px"></span>64%</td>
-          <td>₹60,794</td>
-          <td>64%</td>
-          <td>₹85,000</td>
-          <td>Below-average claim size; above-average maternity adoption. Manufacturing and IT services mix.</td>
-        </tr>
-        <tr>
-          <td><strong>Ahmedabad</strong></td>
-          <td><span class="city-bar" style="width:49px"></span>49%</td>
-          <td>₹60,500</td>
-          <td>27%</td>
-          <td>₹1,20,000</td>
-          <td>Lowest GHI adoption and maternity coverage rate. An MNC entering here with a ₹5L plan and maternity cover immediately exceeds local market norms.</td>
-        </tr>
-      </tbody>
-    </table></div>
-    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Maternity claim figures are city-level plan averages.</p>
-
-    <div class="callout callout-blue" style="margin-top:16px;">
-      <span class="callout-icon">ℹ</span>
-      <div><strong>If you're hiring across cities:</strong> use one group policy with a sum insured calibrated to your highest-cost location – typically Mumbai or Hyderabad. City-tiered policies exist but add renewal complexity and HR administration overhead that rarely justifies the modest premium difference.</div>
-    </div>
-  </section>
-
-
-  <!-- PART 7: CHECKLIST -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="checklist">
-    <div class="section-label">Quick Reference</div>
-    <h2>The pre-operations checklist</h2>
-    <p class="section-intro">Before your India entity goes live, each item below should have a policy number, a renewal date, and a named contact. If any row is blank, that's the gap to close first.</p>
-
-    <div class="table-scroll"><table class="statutory-table">
-      <thead>
-        <tr>
-          <th>Policy</th>
-          <th>Category</th>
-          <th>Status</th>
-          <th>Threshold / Trigger</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>EPF registration &amp; contributions</strong></td>
-          <td>Statutory EB</td>
-          <td><span class="dot-mandatory">● Mandatory</span></td>
-          <td>20+ employees</td>
-        </tr>
-        <tr>
-          <td><strong>ESI registration &amp; contributions</strong></td>
-          <td>Statutory EB</td>
-          <td><span class="dot-mandatory">● Mandatory</span></td>
-          <td>10+ employees; wages ≤₹21k</td>
-        </tr>
-        <tr>
-          <td><strong>Gratuity provisioning</strong></td>
-          <td>Statutory EB</td>
-          <td><span class="dot-mandatory">● Mandatory</span></td>
-          <td>10+ employees</td>
-        </tr>
-        <tr>
-          <td><strong>Workmen's / Employee Compensation</strong></td>
-          <td>Statutory EB</td>
-          <td><span class="dot-mandatory">● Mandatory</span></td>
-          <td>Employees above ESI threshold or non-ESI areas</td>
-        </tr>
-        <tr>
-          <td><strong>EDLI (via EPFO)</strong></td>
-          <td>Statutory EB</td>
-          <td><span class="dot-mandatory">● Mandatory</span></td>
-          <td>Auto with EPF registration</td>
-        </tr>
-        <tr>
-          <td><strong>Group Health Insurance</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹5L min; ₹10L for global benchmark</span></td>
-          <td>Voluntary EB</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>7+ employees</td>
-        </tr>
-        <tr>
-          <td><strong>Group Personal Accident</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 5–10× CTC; 90th percentile is ₹50L+</span></td>
-          <td>Voluntary EB</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>First hire onwards</td>
-        </tr>
-        <tr>
-          <td><strong>Group Term Life</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 3–5× CTC; 90th percentile is ₹50L–₹1Cr</span></td>
-          <td>Voluntary EB</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Alongside GHI</td>
-        </tr>
-        <tr>
-          <td><strong>Maternity sub-limit</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹1L normal / ₹1.25L C-section</span></td>
-          <td>Voluntary EB (within GHI)</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Within GHI – check at policy design stage</td>
-        </tr>
-        <tr>
-          <td><strong>D&amp;O Liability</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Entity registration / director appointment</td>
-        </tr>
-        <tr>
-          <td><strong>Professional Indemnity (PI / E&amp;O)</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-recommended">● Sector-required</span></td>
-          <td>Client contracts / service-based sectors</td>
-        </tr>
-        <tr>
-          <td><strong>Commercial General Liability</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Operations / client onboarding</td>
-        </tr>
-        <tr>
-          <td><strong>Cyber Liability</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Any data processing; DPDP Act obligations</td>
-        </tr>
-        <tr>
-          <td><strong>Property / Fire &amp; Allied</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-recommended">● Contractual</span></td>
-          <td>Office lease; owned assets</td>
-        </tr>
-        <tr>
-          <td><strong>Crime / Fidelity</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
-          <td>BFSI; entities with treasury/cash functions</td>
-        </tr>
-        <tr>
-          <td><strong>Public Liability</strong></td>
-          <td>Business (Non-EB)</td>
-          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
-          <td>Hazardous manufacturing (Public Liability Insurance Act, 1991)</td>
-        </tr>
-      </tbody>
-    </table></div>
-
-    <div class="callout callout-teal" style="margin-top:24px;">
-      <span class="callout-icon">ℹ</span>
-      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed composite broker – licensed for both life and general (including health) products. This puts your entire stack under one relationship, one renewal cycle, and one claims contact. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
-    </div>
-  </section>
-
-
-  <!-- PART 8: BEYOND INSURANCE -->
-  
-<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
-<section id="beyond">
-    <div class="section-label">Part 8 – Beyond Insurance</div>
+  <!-- PART 4: BEYOND INSURANCE -->
+  <section id="beyond">
+    <div class="section-label">Part 4 – Beyond Insurance</div>
     <h2>The benefits your team will actually notice</h2>
     <p class="section-intro">Insurance is the foundation, not the programme. Hospitalisation happens once in a few years. A telehealth call at 11pm, a therapy session on a Wednesday, an annual check-up that catches something early – these are the benefits your employees feel. They're also what separates a benefits programme from a compliance exercise.</p>
 
@@ -1729,8 +1424,332 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
   </section>
 
-  <!-- PART 9: TAX CONSIDERATIONS -->
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+
+  <!-- PART 5: BY SETUP STAGE -->
+  <section id="by-setup">
+    <div class="section-label">Part 5 – Setup Stage</div>
+    <h2>The right order matters more than the right policy</h2>
+    <p class="section-intro">The most expensive insurance mistake isn't buying the wrong policy. It's buying the right one six months after the exposure started. Directors are exposed from day one; employees need GHI before the first offer letter goes out. Here's the sequence that works.</p>
+
+    <div class="checklist-grid">
+      <div class="checklist-block">
+        <h3 id="phase-1"><span class="phase-dot p1"></span> Phase 1 – Entity registration (Day 1–90)</h3>
+        <ul>
+          <li>D&amp;O Liability: directors are exposed from CIN date</li>
+          <li>Professional Indemnity: if client contracts already signed</li>
+          <li>CGL: required by landlord or client before operations commence</li>
+          <li>Cyber Liability: if any data processing begins</li>
+          <li>Property / Fire: required by lease agreement</li>
+          <li>Workmen's Compensation: any contract or blue-collar workers on-site</li>
+        </ul>
+      </div>
+      <div class="checklist-block">
+        <h3 id="phase-2"><span class="phase-dot p2"></span> Phase 2 – First employees hired (7–19 employees)</h3>
+        <ul>
+          <li>Group Health Insurance: minimum 7 for group policy eligibility</li>
+          <li>Group Personal Accident: recommended from first hire. Only 36% of small companies carry it, but GCCs are expected to.</li>
+          <li>Group Term Life: standard alongside GHI for white-collar hiring</li>
+          <li>WC / EC mandatory for employees above ESI threshold</li>
+          <li>EDLI auto-enrolls via EPFO when EPF registration triggers</li>
+        </ul>
+      </div>
+      <div class="checklist-block">
+        <h3 id="phase-3"><span class="phase-dot p3"></span> Phase 3 – Scale (20+ employees)</h3>
+        <ul>
+          <li>EPF mandatory: register with EPFO within 30 days of crossing 20 employees</li>
+          <li>ESI mandatory: register with ESIC within 15 days of crossing 10 employees</li>
+          <li>Gratuity fund or LIC gratuity scheme for provisioning</li>
+          <li>Crèche facility required at 50+ employees (Maternity Benefit Act)</li>
+          <li>OPD and wellness: 35% adoption at 251–750 employees; expected from around 100 employees in a GCC context</li>
+          <li>Review GHI sum insured: 90th percentile target is ₹10L at any headcount</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-amber" style="margin-top:20px;">
+      <span class="callout-icon">⚠</span>
+      <div><strong>If you're using an Employer of Record:</strong> group insurance can sit under the EOR's master policy before your entity is incorporated, which bypasses the 7-employee minimum. Confirm the policy explicitly names or covers your employees, not just the EOR's own staff – and check coverage limits against your parent-company standards.</div>
+    </div>
+  </section>
+
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+
+  <!-- PART 6: SECTOR NOTES -->
+  <section id="sector">
+    <div class="section-label">Part 6 – Sector Notes</div>
+    <h2>What your sector adds to the universal stack</h2>
+    <p class="section-intro">The policies in Parts 1–3 apply to every MNC. These are the additional requirements and candidate expectations that vary by industry, shaped by regulators, client contracts, and what existing employers in your sector already carry.</p>
+
+    <div class="table-scroll"><table class="statutory-table">
+      <thead>
+        <tr>
+          <th>Sector</th>
+          <th>Regulatory insurance requirement</th>
+          <th>EB benchmark (% offering family GHI cover)</th>
+          <th>Regulator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Software development / IT services</strong></td>
+          <td>PI (E&amp;O) mandatory in most client contracts; Cyber cover required by parent-company governance; CGL certificate required for SEZ registration</td>
+          <td>86% and 84% respectively – the highest of any sector. Median SI ₹5L.</td>
+          <td>Client contract, SEZ authority</td>
+        </tr>
+        <tr>
+          <td><strong>BFSI</strong> (banks, NBFCs, fintechs)</td>
+          <td>Bankers Blanket Bond / Crime insurance; Cyber mandatory under RBI IT guidelines; D&amp;O and PI standard across SEBI-regulated entities</td>
+          <td>85% family GHI cover. Maternity offered by 79%.</td>
+          <td>RBI, SEBI</td>
+        </tr>
+        <tr>
+          <td><strong>Manufacturing / Industrial</strong></td>
+          <td>Public Liability mandatory under Public Liability Insurance Act, 1991 for hazardous industries; Product Liability; Erection All Risk (EAR) during construction phase</td>
+          <td>73% family GHI cover. Median SI ₹3L, below the cross-sector median.</td>
+          <td>Ministry of Environment, DISH</td>
+        </tr>
+        <tr>
+          <td><strong>Healthcare / Pharma</strong></td>
+          <td>Clinical Trials insurance (CDSCO requirement); Medical Professional Indemnity; Product Liability for device/pharma manufacturers</td>
+          <td>68% family GHI cover. Maternity offered by 47%.</td>
+          <td>CDSCO, MoH</td>
+        </tr>
+        <tr>
+          <td><strong>SaaS / Business consulting</strong></td>
+          <td>PI (E&amp;O) standard; Cyber cover for any SaaS processing customer data in India under DPDP Act 2023</td>
+          <td>84% / 72% family GHI cover. Maternity offered by 74% / 65%.</td>
+          <td>Client contract, DPDP regulator</td>
+        </tr>
+        <tr>
+          <td><strong>Transportation / Logistics</strong></td>
+          <td>Aviation Third-Party Liability (Aircraft Act 1934); Cargo insurance; Marine Open Policy for freight forwarders; WC/EC critical for field operations</td>
+          <td>81% family GHI cover. Maternity offered by 66%.</td>
+          <td>DGCA, MoCA</td>
+        </tr>
+        <tr>
+          <td><strong>Insurance intermediaries</strong></td>
+          <td>PI insurance mandatory for IRDAI-licensed brokers and corporate agents; minimum net worth requirements backed by security deposits</td>
+          <td>Median SI ₹5L. Maternity expected.</td>
+          <td>IRDAI</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">EB benchmark data: Plum State of Employee Benefits 2024.</p>
+  </section>
+
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+
+  <!-- PART 7: CITY GUIDE -->
+  <section id="city">
+    <div class="section-label">Part 7 – City Guide</div>
+    <h2>Your city changes your benchmarks</h2>
+    <p class="section-intro">The same ₹5L GHI plan means different things in different cities. Mumbai has the highest average claim size of any market; Hyderabad has the highest average maternity claim; Ahmedabad has the lowest GHI adoption, so a basic plan immediately exceeds local norms. Where you hire shapes what you need to carry.</p>
+
+    <div class="table-scroll"><table class="city-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>% companies at ₹5L+ sum insured</th>
+          <th>Avg claim size</th>
+          <th>% offering maternity</th>
+          <th>Avg maternity claim</th>
+          <th>Competitive context</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mumbai</strong></td>
+          <td><span class="city-bar" style="width:63px"></span>63%</td>
+          <td style="font-weight:600;color:var(--accent-coral)">₹92,796</td>
+          <td>63%</td>
+          <td>₹1,20,000</td>
+          <td>Highest avg claim of any city. Expensive hospital network. ₹10L+ SI benchmark for competitive positioning.</td>
+        </tr>
+        <tr>
+          <td><strong>Delhi</strong></td>
+          <td><span class="city-bar" style="width:68px"></span>68%</td>
+          <td>₹62,375</td>
+          <td>60%</td>
+          <td>₹1,00,000 est.</td>
+          <td>Above-median SI adoption. Dense hospital network. Strong IT and consulting sector expectations.</td>
+        </tr>
+        <tr>
+          <td><strong>Bangalore</strong></td>
+          <td><span class="city-bar" style="width:72px"></span>72%</td>
+          <td>₹73,000</td>
+          <td>70%</td>
+          <td>₹1,12,000</td>
+          <td>Highest GHI adoption. GCC capital – global benchmark expected. Strong maternity adoption driven by tech sector demographics.</td>
+        </tr>
+        <tr>
+          <td><strong>Chennai</strong></td>
+          <td><span class="city-bar" style="width:72px"></span>72%</td>
+          <td>₹69,000</td>
+          <td>60%</td>
+          <td>₹85,000</td>
+          <td>High SI adoption, mid-range claims. Manufacturing and IT services mix. Competitive maternity floor is ₹75K+.</td>
+        </tr>
+        <tr>
+          <td><strong>Hyderabad</strong></td>
+          <td><span class="city-bar" style="width:63px"></span>63%</td>
+          <td>₹83,000</td>
+          <td>61%</td>
+          <td>₹1,50,000</td>
+          <td>Highest average maternity claim of any city. MNCs expanding to Hyderabad should budget for a higher maternity sub-limit than the ₹50K national median.</td>
+        </tr>
+        <tr>
+          <td><strong>Pune</strong></td>
+          <td><span class="city-bar" style="width:64px"></span>64%</td>
+          <td>₹60,794</td>
+          <td>64%</td>
+          <td>₹85,000</td>
+          <td>Below-average claim size; above-average maternity adoption. Manufacturing and IT services mix.</td>
+        </tr>
+        <tr>
+          <td><strong>Ahmedabad</strong></td>
+          <td><span class="city-bar" style="width:49px"></span>49%</td>
+          <td>₹60,500</td>
+          <td>27%</td>
+          <td>₹1,20,000</td>
+          <td>Lowest GHI adoption and maternity coverage rate. An MNC entering here with a ₹5L plan and maternity cover immediately exceeds local market norms.</td>
+        </tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Maternity claim figures are city-level plan averages.</p>
+
+    <div class="callout callout-blue" style="margin-top:16px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>If you're hiring across cities:</strong> use one group policy with a sum insured calibrated to your highest-cost location – typically Mumbai or Hyderabad. City-tiered policies exist but add renewal complexity and HR administration overhead that rarely justifies the modest premium difference.</div>
+    </div>
+  </section>
+
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+
+  <!-- PART 8: CHECKLIST -->
+  <section id="checklist">
+    <div class="section-label">Part 8 – Checklist</div>
+    <h2>The pre-operations checklist</h2>
+    <p class="section-intro">Before your India entity goes live, each item below should have a policy number, a renewal date, and a named contact. If any row is blank, that's the gap to close first.</p>
+
+    <div class="table-scroll"><table class="statutory-table">
+      <thead>
+        <tr>
+          <th>Policy</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Threshold / Trigger</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EPF registration &amp; contributions</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>20+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>ESI registration &amp; contributions</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>10+ employees; wages ≤₹21k</td>
+        </tr>
+        <tr>
+          <td><strong>Gratuity provisioning</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>10+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>Workmen's / Employee Compensation</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>Employees above ESI threshold or non-ESI areas</td>
+        </tr>
+        <tr>
+          <td><strong>EDLI (via EPFO)</strong></td>
+          <td>Statutory EB</td>
+          <td><span class="dot-mandatory">● Mandatory</span></td>
+          <td>Auto with EPF registration</td>
+        </tr>
+        <tr>
+          <td><strong>Group Health Insurance</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹5L min; ₹10L for global benchmark</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>7+ employees</td>
+        </tr>
+        <tr>
+          <td><strong>Group Personal Accident</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 5–10× CTC; 90th percentile is ₹50L+</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>First hire onwards</td>
+        </tr>
+        <tr>
+          <td><strong>Group Term Life</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: 3–5× CTC; 90th percentile is ₹50L–₹1Cr</span></td>
+          <td>Voluntary EB</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Alongside GHI</td>
+        </tr>
+        <tr>
+          <td><strong>Maternity sub-limit</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹1L normal / ₹1.25L C-section</span></td>
+          <td>Voluntary EB (within GHI)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Within GHI – check at policy design stage</td>
+        </tr>
+        <tr>
+          <td><strong>D&amp;O Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Entity registration / director appointment</td>
+        </tr>
+        <tr>
+          <td><strong>Professional Indemnity (PI / E&amp;O)</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Sector-required</span></td>
+          <td>Client contracts / service-based sectors</td>
+        </tr>
+        <tr>
+          <td><strong>Commercial General Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Operations / client onboarding</td>
+        </tr>
+        <tr>
+          <td><strong>Cyber Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Recommended</span></td>
+          <td>Any data processing; DPDP Act obligations</td>
+        </tr>
+        <tr>
+          <td><strong>Property / Fire &amp; Allied</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-recommended">● Contractual</span></td>
+          <td>Office lease; owned assets</td>
+        </tr>
+        <tr>
+          <td><strong>Crime / Fidelity</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
+          <td>BFSI; entities with treasury/cash functions</td>
+        </tr>
+        <tr>
+          <td><strong>Public Liability</strong></td>
+          <td>Business (Non-EB)</td>
+          <td><span class="dot-mandatory">● Sector-mandatory</span></td>
+          <td>Hazardous manufacturing (Public Liability Insurance Act, 1991)</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="callout callout-teal" style="margin-top:24px;">
+      <span class="callout-icon">ℹ</span>
+      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed composite broker – licensed for both life and general (including health) products. This puts your entire stack under one relationship, one renewal cycle, and one claims contact. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
+    </div>
+  </section>
+
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+
+  <!-- PART 9: TAX CONSIDERATIONS -->
   <section id="tax">
     <div class="section-label">Part 9 – Tax Guide</div>
     <h2>Tax treatment of employee benefits in India</h2>
@@ -1906,9 +1925,9 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div><!-- /deep-accordion tax -->
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
   <!-- PART 10: LEAVE & POLICIES -->
-  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
   <section id="leave">
     <div class="section-label">Part 10 – Leave &amp; Policies</div>
     <h2>Leave entitlements and what global MNCs typically add on top</h2>
@@ -2049,9 +2068,9 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div><!-- /deep-accordion leave -->
   </section>
 
+  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 
   <!-- PART 11: ALLOWANCES & CTC STRUCTURE -->
-  <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
   <section id="allowances">
     <div class="section-label">Part 11 – Allowances &amp; CTC</div>
     <h2>India CTC structure and allowances: what MNCs need to know</h2>
@@ -2195,8 +2214,6 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     </div><!-- /deep-accordion allowances -->
   </section>
-
-
 </main>
 
 </div>
