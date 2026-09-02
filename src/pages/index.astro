@@ -179,14 +179,22 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#statutory">Statutory Employee Benefits</a></li>
-    <li><a href="#voluntary-eb">Voluntary Employee Benefits</a></li>
-    <li><a href="#global-benchmark">Global Benchmark</a>
-      <ul>
-        <li><a href="#benchmark-headcount">By headcount stage</a></li>
+    <li><a href="#voluntary-eb">Voluntary Employee Benefits</a>
+      <!-- Parts 2A-2D are their own <section>s but the v10 labelling makes them
+           sub-chapters of Part 2, so they nest. toc-chapters marks a nested list
+           whose entries are whole sections rather than headings within one —
+           the mobile rail keeps those and drops the rest. -->
+      <ul class="toc-chapters">
+        <li><a href="#buying-ghi">Buying GHI</a></li>
+        <li><a href="#global-benchmark">Global Benchmark</a>
+          <ul>
+            <li><a href="#benchmark-headcount">By headcount stage</a></li>
+          </ul>
+        </li>
+        <li><a href="#claims-reality">Claims Reality</a></li>
+        <li><a href="#maternity">Maternity</a></li>
       </ul>
     </li>
-    <li><a href="#claims-reality">Claims Reality</a></li>
-    <li><a href="#maternity">Maternity</a></li>
     <li><a href="#business">Business Insurance</a></li>
     <li><a href="#by-setup">By Setup Stage</a></li>
     <li><a href="#sector">Sector Notes</a></li>
@@ -233,7 +241,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       </div>
       <div class="intro-card">
         <div class="intro-card-label">India median sum insured</div>
-        <div class="intro-card-value">₹5,00,000 — global startups in India carry ₹10,00,000</div>
+        <div class="intro-card-value">₹5,00,000 – global startups in India carry ₹10,00,000</div>
       </div>
       <div class="intro-card">
         <div class="intro-card-label">Claims data source</div>
@@ -242,8 +250,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <div class="legend">
-      <div class="legend-item"><div class="legend-dot" style="background:var(--mandatory-border)"></div> Mandatory — legal obligation</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-teal)"></div> Recommended — market standard for MNCs</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--mandatory-border)"></div> Mandatory – legal obligation</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent-teal)"></div> Recommended – market standard for MNCs</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--accent-purple)"></div> Sector-specific requirement</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--accent-blue)"></div> GCC / global capability centre applicability</div>
     </div>
@@ -254,7 +262,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="statutory">
-    <div class="section-label">Part 1 — Employee Benefits</div>
+    <div class="section-label">Part 1 – Employee Benefits</div>
     <h2>What Indian law actually requires you to provide</h2>
     <p class="section-intro">These are not optional. They're legal obligations under Indian labour law, each with its own registration deadline, filing cadence, and penalty for non-compliance. Most MNCs treat this layer as the hard part. It isn't. Registration is procedural. What catches people out is the sequencing.</p>
 
@@ -325,7 +333,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="voluntary-eb">
-    <div class="section-label">Part 2 — Voluntary Employee Benefits</div>
+    <div class="section-label">Part 2 – Voluntary Employee Benefits</div>
     <h2>The stack your candidates already expect</h2>
     <p class="section-intro">None of these are legally required. No regulator will fine you for skipping them. But every credible candidate you recruit at ₹8 LPA and above will check for them. Candidates from IT, BFSI, and consulting arrive with a clear mental model of what a serious employer carries. This is the actual floor, and it's higher than the compliance floor.</p>
 
@@ -334,7 +342,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <div class="policy-icon teal">🏥</div>
         <div class="policy-title-block">
           <div class="policy-name">Group Health Insurance (GHI)</div>
-          <div class="policy-tagline">Floater or individual sum insured; employee + dependants</div>
+          <div class="policy-tagline">Floater or individual sum insured; employee + dependents</div>
         </div>
         <div class="policy-badges">
           <span class="badge badge-recommended">Recommended</span>
@@ -463,8 +471,192 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 2B: GLOBAL BENCHMARK -->
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
+<section id="buying-ghi">
+    <div class="section-label">Part 2A – Buying GHI</div>
+    <h2>How to actually purchase a group health insurance policy in India</h2>
+    <p class="section-intro">Most MNC HR teams have bought insurance before – just not in India. The process here is broker-led, underwriter-reviewed, and more document-intensive than most markets. Knowing what's coming at each stage means your first policy lands before your first hire, not three weeks after.</p>
+
+    <div class="deep-accordion">
+
+      <details open>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">The process</div>
+            <div class="acc-summary-title">Form fill to policy issuance: the five stages</div>
+            <div class="acc-summary-sub">End to end typically takes 7–14 working days for a new group. Renewals move faster.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>Group health insurance in India is not bought off a shelf. Every policy is underwritten individually based on your group's size, demographics, location mix, and – for renewals – claims history. A broker sits between you and the insurer, structures the proposal, negotiates terms, and manages the relationship through the policy year. Choosing the right broker matters more than choosing the right insurer, because the broker determines what you get quoted, what sub-limits get negotiated, and how fast claims move when your employees need them.</p>
+
+          <div class="acc-grid-2" style="margin-top:20px;">
+            <div class="acc-grid-cell" style="background:var(--cream-deep);border-bottom:2px solid var(--plum-red);">
+              <h4>Stage 1 – Form fill and brief</h4>
+              <p>You share your workforce composition with the broker: total headcount, employee grades or salary bands if SI is CTC-linked, city mix, desired family definition (E / ESC / ESCP), target sum insured, and any specific coverage requirements (maternity limit, OPD, modern treatments, parental copay structure). For Plum, this begins with a short form and a meeting with the sales team who benchmarks your requirements against 500+ MNC policies already on the platform.</p>
+            </div>
+            <div class="acc-grid-cell" style="background:var(--cream-deep);border-bottom:2px solid var(--plum-red);">
+              <h4>Stage 2 – Quote request and plan design</h4>
+              <p>The broker submits a request for quotation (RFQ) to the insurer panel. For a new group, insurers quote based on the employee data sheet and the benefit structure specified. Plum's panel includes ICICI Lombard, HDFC ERGO, Bajaj General Insurance, Star Health, Niva Bupa, and Aditya Birla Health Insurance. The broker presents options across insurers – typically three to five configurations at different price points – with a recommendation based on your workforce profile, city network adequacy, and claims service track record.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Stage 3 – Proposal</h4>
+              <p>Once you select a configuration, the broker prepares a formal proposal to the chosen insurer. This includes the signed proposal form, the employee data sheet, and supporting KYC documents for the entity. For groups above 50 lives, some insurers require a medical questionnaire or health declaration from employees – though Plum's group policies typically waive individual medical underwriting at this stage. The proposal is the binding document that triggers underwriting review.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Stage 4 – Underwriting</h4>
+              <p>The insurer reviews the proposal and issues terms. For groups under 50 lives, underwriting is typically straightforward and takes 2–4 working days. For larger groups or those with pre-existing claims history, the insurer may request additional information: salary data to verify SI multiples, previous policy documents, or a claims loss ratio if porting from another insurer. Premium is confirmed at this stage. Any negotiated concessions – waiver of waiting periods, enhanced sub-limits, parental copay structure – are locked into the policy wording.</p>
+            </div>
+            <div class="acc-grid-cell" style="grid-column:1/-1;background:var(--sev-blush);">
+              <h4>Stage 5 – Policy issuance and digital onboarding</h4>
+              <p>On receipt of premium, the insurer issues the master policy document. Coverage begins from the policy start date – pre-existing conditions are covered from day one under group policies, unlike retail plans. The broker then handles employee onboarding: digital enrolment via a platform or app, health ID generation, and insurer network access. With Plum, 95% of employees and their families enrol within 7 working days. Health IDs are available within 4 hours of enrolment and accessible on the Plum app and via WhatsApp.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-teal" style="margin-top:8px;">
+            <span class="callout-icon">ℹ</span>
+            <div><strong>On timing:</strong> start the buying process at least 3 weeks before your intended policy start date. If you're hiring your first India employees and need coverage from day one of their employment, factor this into your entity setup timeline. Coverage cannot be backdated.</div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Documents</div>
+            <div class="acc-summary-title">What you need to have ready before submitting a proposal</div>
+            <div class="acc-summary-sub">Split into company documents and employee data. Missing either delays underwriting.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>Document requirements vary slightly by insurer and group size, but the core set is consistent across the market. Prepare these before your first broker conversation – not after you've selected a policy configuration – so underwriting can move immediately once you commit.</p>
+
+          <div class="acc-grid-2" style="margin-top:16px;">
+            <div class="acc-grid-cell">
+              <h4>Company documents</h4>
+              <ul class="bd-check-list" style="margin-top:0;">
+                <li>Certificate of Incorporation (COI) or Certificate of Commencement of Business</li>
+                <li>Company PAN card</li>
+                <li>GST registration certificate</li>
+                <li>KYC of authorised signatory: PAN + Aadhaar or passport</li>
+                <li>Board resolution or letter of authority authorising the signatory to purchase insurance on behalf of the company</li>
+                <li>Registered office address proof (utility bill, lease agreement, or government-issued document)</li>
+                <li>Previous policy documents if porting from another insurer or renewing</li>
+                <li>Claims loss ratio for previous policy year if group is 50+ lives (insurer-requested, not always mandatory)</li>
+              </ul>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Employee data sheet</h4>
+              <ul class="bd-check-list" style="margin-top:0;">
+                <li>Employee full name (as per PAN or passport)</li>
+                <li>Date of birth</li>
+                <li>Gender</li>
+                <li>Employee ID or staff number</li>
+                <li>Designation or grade (required if sum insured is grade-linked)</li>
+                <li>Date of joining</li>
+                <li>City or office location</li>
+                <li>Dependent details: name, date of birth, relationship – for each dependent to be covered</li>
+                <li>Nominee name and relationship (for GTL, if being placed simultaneously)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout callout-amber">
+            <span class="callout-icon">⚠</span>
+            <div><strong>For foreign national employees:</strong> passport number substitutes for PAN in the employee data sheet at enrolment. However, PAN is required for TDS and payroll compliance separately. Initiate PAN applications for foreign nationals at or before joining – the 2–4 week processing time affects more than just insurance.</div>
+          </div>
+
+          <div class="callout callout-blue" style="margin-top:8px;">
+            <span class="callout-icon">ℹ</span>
+            <div><strong>For dependents residing outside India:</strong> coverage for overseas-resident dependents is generally not available under Indian group health policies, which are governed by IRDAI and cover treatment at Indian hospitals. If an MNC employee's spouse or parents are based outside India, they will need coverage under the country of residence's insurance framework. Confirm this with your broker at plan design stage, not at claims time.</div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Policy wording</div>
+            <div class="acc-summary-title">What to check before signing – the terms first-time buyers miss</div>
+            <div class="acc-summary-sub">The quoted premium is only part of the picture. These are the policy wording details that determine what your employees can actually claim.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>Indian group health policy documents run to 40–80 pages. Most HR teams read the summary schedule and sign. The clauses that cause problems at claims time are rarely in the schedule – they're in the policy wording, and they're negotiable at proposal stage in ways they are not once the policy is issued.</p>
+          <div class="acc-grid-2" style="margin-top:16px;">
+            <div class="acc-grid-cell">
+              <h4>Room rent sub-limit</h4>
+              <p>Many standard policies cap room rent reimbursement at 1–2% of sum insured per day. A ₹5L policy with a 1% room rent cap allows ₹5,000/day – which covers a single room in a mid-tier hospital but not a private room in a top-tier hospital in Mumbai or Bangalore. When room rent is capped, proportional deductions apply to all other treatment costs in that hospitalisation. This one clause reduces effective coverage significantly. Check whether your policy is room-rent-capped and negotiate it out at proposal stage.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Pre-existing disease treatment</h4>
+              <p>Under group policies, pre-existing conditions are covered from day one – this is one of the most valuable features of employer-sponsored GHI vs retail. However, some policies include specific disease waiting periods for listed conditions (hernia, cataract, joint replacement) even when the general PED waiver is granted. Read the specific disease exclusion list in the policy wording and ensure these are waived or minimised, particularly for a workforce with older dependents.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Network adequacy by city</h4>
+              <p>Cashless hospitalisation is available only at the insurer's empanelled network hospitals. Network coverage varies significantly by city and by insurer. An insurer with strong Mumbai and Delhi network coverage may have thin coverage in Pune or Ahmedabad. If your workforce is spread across cities, ask the broker for the insurer's network list in each of your locations before selecting. Check specifically for the hospitals your employees are most likely to use – people have existing relationships with specific hospitals and doctors, and network mismatch is a claims friction point.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Maternity sub-limit and waiting period</h4>
+              <p>Standard policies impose a 9-month waiting period for maternity claims. Group policies can waive this – and for MNCs with a young workforce, they should. Confirm the waiting period is explicitly waived in the policy schedule. Also check: whether the maternity sub-limit covers both normal delivery and C-section at the amounts your workforce actually needs (market rate: ₹1L normal, ₹1.25L C-section), whether newborn cover is included from day one, and whether the maternity limit is inside or outside the family floater sum insured.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Copay structure</h4>
+              <p>Some policies include a mandatory copay – typically 10–20% of each claim – which reduces insurer liability and lowers the premium. A parental copay (applied only to parent claims) is a common cost-sharing mechanism. Before accepting a copay structure, understand its effect on employee experience: employees with a copay make smaller claims and may defer treatment. If you're introducing copay for cost reasons, a parental copay only is less disruptive than a blanket copay. Copay percentages and applicability should be clearly defined in the policy schedule, not just the wording.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Mid-term additions and deletions</h4>
+              <p>New employees added to the policy mid-year are typically covered from the date of joining (or endorsement date, depending on the policy). Understand the endorsement process: how additions and deletions are submitted, what the processing time is, and whether coverage is retroactive to the employee's start date or from the endorsement date only. With Plum, mid-year additions and deletions are handled digitally with no paperwork – employees add their own details via the app, and endorsements are processed with the insurer automatically.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <div class="acc-summary-inner">
+            <div class="acc-summary-label">Renewal</div>
+            <div class="acc-summary-title">What happens at renewal – and what you can change</div>
+            <div class="acc-summary-sub">Renewal is when most MNCs either fix what went wrong in year one or lock in the same mistakes for another year.</div>
+          </div>
+          <span class="deep-acc-indicator" aria-hidden="true">+</span>
+        </summary>
+        <div class="deep-acc-body">
+          <p>Group health policies run on a 12-month cycle. Renewal typically begins 60 days before expiry – the broker requests a claims loss ratio from the insurer, benchmarks it against the market, and negotiates the renewal premium. For a new India entity in its first policy year, you won't have claims data to negotiate with. By renewal, you will.</p>
+          <div class="acc-grid-2" style="margin-top:16px;">
+            <div class="acc-grid-cell">
+              <h4>What the insurer looks at</h4>
+              <p>Claims loss ratio (CLR): total claims paid divided by premium collected. A CLR below 70% is favourable – you're likely to see flat or reduced rates at renewal. A CLR above 100% means the insurer paid out more than they received, and renewal will come with a rate increase or a request to restructure the policy. Your broker should show you your CLR and benchmark it against the insurer's overall book – a high CLR on your account but a profitable overall book gives you more negotiating room than the reverse.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>What you can change at renewal</h4>
+              <p>Renewal is the right time to restructure your plan: increase sum insured, add or remove OPD riders, change the family definition, introduce or remove parental copay, add modern treatment coverage, or switch insurers entirely. Switching insurers at renewal is common and not disruptive with a good broker – your employee data migrates to the new policy and coverage is continuous. Benefits that were add-ons in year one can be made standard in year two based on utilisation data.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>Plum's renewal intelligence</h4>
+              <p>Plum flags anomalies in claims data, benchmarks your renewal quote against market rates across its 500+ MNC client base, and identifies where you're overpaying or underinsured before you sign. Renewal surprises – premium spikes, mid-year rate revisions, insurer-side policy changes – are flagged in advance rather than discovered at signing. This is particularly valuable for India-entry MNCs whose HQ may not have visibility into whether the renewal terms are reasonable for the market.</p>
+            </div>
+            <div class="acc-grid-cell">
+              <h4>HRIS integration at renewal</h4>
+              <p>Plum integrates with Workday, Oracle, BambooHR, Darwinbox, and 30+ other HRIS platforms. At renewal, employee additions, deletions, and data changes sync automatically rather than requiring a manual data refresh. For MNCs managing India headcount from a global HRIS, this eliminates the annual spreadsheet exercise that most India HR teams dread. Endorsements through the year are handled by the same integration – no separate manual process for new joiners or exits.</p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /deep-accordion buying-ghi -->
+
+    <div class="callout callout-coral" style="margin-top:24px;">
+      <span class="callout-icon">⚑</span>
+      <div><strong>Ready to get a policy in place?</strong> Plum's sales team works specifically with MNCs and GCCs entering India. The process starts with a short brief – workforce size, city mix, target coverage – and Plum benchmarks your requirements against 500+ MNC policies before recommending a plan. <a href="https://www.plumhq.com/get-quote" style="color:var(--plum-red-deep);font-weight:600;text-decoration:underline;">Talk to the team at plumhq.com/get-quote.</a></div>
+    </div>
+  </section>
+
+<div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="global-benchmark">
-    <div class="section-label">Part 2B — Global Standard</div>
+    <div class="section-label">Part 2B – Global Standard</div>
     <h2>What your candidates are comparing you against</h2>
     <p class="section-intro">The table below maps India Inc's median against what global startups operating in India actually carry. These are international companies that set up India entities and brought their home-country benefit standards with them. This is the cohort setting the expectations of the talent you're recruiting.</p>
 
@@ -532,7 +724,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Analysis of 4,500+ employee healthcare plans.</p>
 
     <div style="margin-top:28px;">
-      <h2 id="benchmark-headcount" style="margin-bottom:10px;">What the market looks like at each headcount stage</h2>
+      <h2 style="margin-bottom:10px;" id="benchmark-headcount">What the market looks like at each headcount stage</h2>
       <p class="section-intro">Your candidates have worked at Indian companies before. This is what those companies were carrying. Now you know what you're being measured against.</p>
 
       <div class="table-scroll"><table class="bench-table">
@@ -613,7 +805,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="claims-reality">
-    <div class="section-label">Part 2C — Claims Reality</div>
+    <div class="section-label">Part 2C – Claims Reality</div>
     <h2>Where the money actually goes when claims come in</h2>
     <p class="section-intro">Most MNCs buy group health insurance thinking of it as employee cover. In practice, 40% of all claim value flows to employees' parents. That single fact changes how you should structure your policy, your sub-limits, and your parental cover decision. Data from 18,000+ claims on Plum's platform, January 2023 to January 2024.</p>
 
@@ -693,7 +885,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="maternity">
-    <div class="section-label">Part 2D — Maternity</div>
+    <div class="section-label">Part 2D – Maternity</div>
     <h2>The benefit most MNCs underprice, and why it matters</h2>
     <p class="section-intro">Delivery and postnatal complications are the single largest cause of group health claims in India: 12% of all claims. Most corporate policies offer maternity sub-limits that don't cover the actual cost of a normal delivery, let alone a C-section or NICU stay. This is the gap your team will notice fastest.</p>
 
@@ -780,7 +972,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="business">
-    <div class="section-label">Part 3 — Business Insurance (Non-EB)</div>
+    <div class="section-label">Part 3 – Business Insurance (Non-EB)</div>
     <h2>Protecting the entity, not just the employees</h2>
     <p class="section-intro">This stack is separate from EB and is often the one India-entry teams leave until last. Several of these policies are required before your first client contract is signed, your first office lease is executed, or your first board meeting is held. The calendar moves faster than most people expect.</p>
 
@@ -955,13 +1147,13 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="by-setup">
-    <div class="section-label">Part 4 — Setup Stage</div>
+    <div class="section-label">Part 4 – Setup Stage</div>
     <h2>The right order matters more than the right policy</h2>
     <p class="section-intro">The most expensive insurance mistake isn't buying the wrong policy. It's buying the right one six months after the exposure started. Directors are exposed from day one; employees need GHI before the first offer letter goes out. Here's the sequence that works.</p>
 
     <div class="checklist-grid">
       <div class="checklist-block">
-        <h3 id="phase-1"><span class="phase-dot p1"></span> Phase 1 — Entity registration (Day 1–90)</h3>
+        <h3 id="phase-1"><span class="phase-dot p1"></span> Phase 1 – Entity registration (Day 1–90)</h3>
         <ul>
           <li>D&amp;O Liability: directors are exposed from CIN date</li>
           <li>Professional Indemnity: if client contracts already signed</li>
@@ -972,7 +1164,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </ul>
       </div>
       <div class="checklist-block">
-        <h3 id="phase-2"><span class="phase-dot p2"></span> Phase 2 — First employees hired (7–19 employees)</h3>
+        <h3 id="phase-2"><span class="phase-dot p2"></span> Phase 2 – First employees hired (7–19 employees)</h3>
         <ul>
           <li>Group Health Insurance: minimum 7 for group policy eligibility</li>
           <li>Group Personal Accident: recommended from first hire. Only 36% of small companies carry it, but GCCs are expected to.</li>
@@ -982,7 +1174,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </ul>
       </div>
       <div class="checklist-block">
-        <h3 id="phase-3"><span class="phase-dot p3"></span> Phase 3 — Scale (20+ employees)</h3>
+        <h3 id="phase-3"><span class="phase-dot p3"></span> Phase 3 – Scale (20+ employees)</h3>
         <ul>
           <li>EPF mandatory: register with EPFO within 30 days of crossing 20 employees</li>
           <li>ESI mandatory: register with ESIC within 15 days of crossing 10 employees</li>
@@ -996,7 +1188,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-amber" style="margin-top:20px;">
       <span class="callout-icon">⚠</span>
-      <div><strong>If you're using an Employer of Record:</strong> group insurance can sit under the EOR's master policy before your entity is incorporated, which bypasses the 7-employee minimum. Confirm the policy explicitly names or covers your employees, not just the EOR's own staff — and check coverage limits against your parent-company standards.</div>
+      <div><strong>If you're using an Employer of Record:</strong> group insurance can sit under the EOR's master policy before your entity is incorporated, which bypasses the 7-employee minimum. Confirm the policy explicitly names or covers your employees, not just the EOR's own staff – and check coverage limits against your parent-company standards.</div>
     </div>
   </section>
 
@@ -1005,7 +1197,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="sector">
-    <div class="section-label">Part 5 — Sector Notes</div>
+    <div class="section-label">Part 5 – Sector Notes</div>
     <h2>What your sector adds to the universal stack</h2>
     <p class="section-intro">The policies in Parts 1–3 apply to every MNC. These are the additional requirements and candidate expectations that vary by industry, shaped by regulators, client contracts, and what existing employers in your sector already carry.</p>
 
@@ -1022,7 +1214,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <tr>
           <td><strong>Software development / IT services</strong></td>
           <td>PI (E&amp;O) mandatory in most client contracts; Cyber cover required by parent-company governance; CGL certificate required for SEZ registration</td>
-          <td>86% and 84% respectively — the highest of any sector. Median SI ₹5L.</td>
+          <td>86% and 84% respectively – the highest of any sector. Median SI ₹5L.</td>
           <td>Client contract, SEZ authority</td>
         </tr>
         <tr>
@@ -1071,7 +1263,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="city">
-    <div class="section-label">Part 6 — City Guide</div>
+    <div class="section-label">Part 6 – City Guide</div>
     <h2>Your city changes your benchmarks</h2>
     <p class="section-intro">The same ₹5L GHI plan means different things in different cities. Mumbai has the highest average claim size of any market; Hyderabad has the highest average maternity claim; Ahmedabad has the lowest GHI adoption, so a basic plan immediately exceeds local norms. Where you hire shapes what you need to carry.</p>
 
@@ -1109,7 +1301,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <td>₹73,000</td>
           <td>70%</td>
           <td>₹1,12,000</td>
-          <td>Highest GHI adoption. GCC capital — global benchmark expected. Strong maternity adoption driven by tech sector demographics.</td>
+          <td>Highest GHI adoption. GCC capital – global benchmark expected. Strong maternity adoption driven by tech sector demographics.</td>
         </tr>
         <tr>
           <td><strong>Chennai</strong></td>
@@ -1149,7 +1341,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-blue" style="margin-top:16px;">
       <span class="callout-icon">ℹ</span>
-      <div><strong>If you're hiring across cities:</strong> use one group policy with a sum insured calibrated to your highest-cost location — typically Mumbai or Hyderabad. City-tiered policies exist but add renewal complexity and HR administration overhead that rarely justifies the modest premium difference.</div>
+      <div><strong>If you're hiring across cities:</strong> use one group policy with a sum insured calibrated to your highest-cost location – typically Mumbai or Hyderabad. City-tiered policies exist but add renewal complexity and HR administration overhead that rarely justifies the modest premium difference.</div>
     </div>
   </section>
 
@@ -1224,7 +1416,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <td><strong>Maternity sub-limit</strong><br><span style="font-size:11px;color:var(--ink-muted)">Target: ₹1L normal / ₹1.25L C-section</span></td>
           <td>Voluntary EB (within GHI)</td>
           <td><span class="dot-recommended">● Recommended</span></td>
-          <td>Within GHI — check at policy design stage</td>
+          <td>Within GHI – check at policy design stage</td>
         </tr>
         <tr>
           <td><strong>D&amp;O Liability</strong></td>
@@ -1273,7 +1465,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-teal" style="margin-top:24px;">
       <span class="callout-icon">ℹ</span>
-      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed composite broker — licensed for both life and general (including health) products. This puts your entire stack under one relationship, one renewal cycle, and one claims contact. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
+      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed composite broker – licensed for both life and general (including health) products. This puts your entire stack under one relationship, one renewal cycle, and one claims contact. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
     </div>
   </section>
 
@@ -1282,9 +1474,9 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   
 <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
 <section id="beyond">
-    <div class="section-label">Part 8 — Beyond Insurance</div>
+    <div class="section-label">Part 8 – Beyond Insurance</div>
     <h2>The benefits your team will actually notice</h2>
-    <p class="section-intro">Insurance is the foundation, not the programme. Hospitalisation happens once in a few years. A telehealth call at 11pm, a therapy session on a Wednesday, an annual check-up that catches something early — these are the benefits your employees feel. They're also what separates a benefits programme from a compliance exercise.</p>
+    <p class="section-intro">Insurance is the foundation, not the programme. Hospitalisation happens once in a few years. A telehealth call at 11pm, a therapy session on a Wednesday, an annual check-up that catches something early – these are the benefits your employees feel. They're also what separates a benefits programme from a compliance exercise.</p>
 
     <div class="pull-quote">
       "76% of employees say the quality of their benefits directly impacts whether they stay. More than half don't know what benefits they have."
@@ -1292,8 +1484,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <!-- WHO YOUR TEAM ACTUALLY IS -->
-    <h2 id="beyond-personas" style="margin-bottom:8px;margin-top:32px;">A 50-person team has at least three different benefit needs</h2>
-    <p class="section-intro">Most India-entry benefit plans are designed for a single archetype — usually a mid-30s male employee with two children. That employee exists, but so does a 26-year-old living alone in Bangalore, a 43-year-old with elderly parents in Hyderabad, and everyone in between. A plan built around the median undersells the value to almost everyone.</p>
+    <h2 style="margin-bottom:8px;margin-top:32px;" id="beyond-personas">A 50-person team has at least three different benefit needs</h2>
+    <p class="section-intro">Most India-entry benefit plans are designed for a single archetype – usually a mid-30s male employee with two children. That employee exists, but so does a 26-year-old living alone in Bangalore, a 43-year-old with elderly parents in Hyderabad, and everyone in between. A plan built around the median undersells the value to almost everyone.</p>
 
     <div class="persona-strip">
       <div class="persona-card p-a">
@@ -1305,7 +1497,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <li>Telehealth and mental health access</li>
           <li>Annual preventive check-up</li>
           <li>Dermatology (18% of all Plum telehealth consultations)</li>
-          <li>Dental and vision — not typically in base GHI</li>
+          <li>Dental and vision – not typically in base GHI</li>
           <li>Gym / wellness allowance</li>
         </ul>
       </div>
@@ -1318,7 +1510,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <li>Family floater GHI with maternity ≥ ₹1L sub-limit</li>
           <li>Newborn cover from day one</li>
           <li>OB-GYN teleconsults (10% of all Plum telehealth)</li>
-          <li>Parental cover for ageing parents — opt-in at minimum</li>
+          <li>Parental cover for ageing parents – opt-in at minimum</li>
           <li>GTL at 4–5× CTC to cover EMI exposure</li>
         </ul>
       </div>
@@ -1328,8 +1520,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <div class="persona-name">Priya, 43</div>
         <div class="persona-role">Head of operations · senior hire · Hyderabad</div>
         <ul class="persona-needs">
-          <li>ESCP cover — parents are her primary dependants</li>
-          <li>Higher sum insured (₹15–25L) — benchmarking against MNC offers</li>
+          <li>ESCP cover – parents are her primary dependents</li>
+          <li>Higher sum insured (₹15–25L) – benchmarking against MNC offers</li>
           <li>Modern treatments covered (cancer, robotic surgery)</li>
           <li>D&amp;O coverage as a named director</li>
           <li>GTL at 5× CTC minimum</li>
@@ -1339,12 +1531,12 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-blue">
       <span class="callout-icon">ℹ</span>
-      <div><strong>What flex data shows:</strong> 75% of employees want to choose their own benefits. At Plum enterprise clients that moved to flex-care, 60% of employees chose a non-default dependant configuration, and satisfaction scores went up 15%. The same budget, spent differently, produces materially better outcomes.</div>
+      <div><strong>What flex data shows:</strong> 75% of employees want to choose their own benefits. At Plum enterprise clients that moved to flex-care, 60% of employees chose a non-default dependent configuration, and satisfaction scores went up 15%. The same budget, spent differently, produces materially better outcomes.</div>
     </div>
 
     <!-- THREE BENEFIT DIMENSIONS -->
-    <h2 id="beyond-gaps" style="margin-top:36px;margin-bottom:8px;">Three areas where the gap between median and global standard is widest</h2>
-    <p class="section-intro">Plum places and administers all three. Each one has a large adoption gap between India Inc's median and what global startups in India actually carry — which means moving on any of them immediately differentiates your offer.</p>
+    <h2 style="margin-top:36px;margin-bottom:8px;" id="beyond-gaps">Three areas where the gap between median and global standard is widest</h2>
+    <p class="section-intro">Plum places and administers all three. Each one has a large adoption gap between India Inc's median and what global startups in India actually carry – which means moving on any of them immediately differentiates your offer.</p>
 
     <!-- OPD & TELEHEALTH -->
     <div class="benefit-dimension">
@@ -1361,11 +1553,11 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <h4>The numbers</h4>
           <div class="bd-stat-row">
             <span class="bd-stat-num">19%</span>
-            <span class="bd-stat-label">of all Plum telehealth consultations are mental health — the single largest category</span>
+            <span class="bd-stat-label">of all Plum telehealth consultations are mental health – the single largest category</span>
           </div>
           <div class="bd-stat-row">
             <span class="bd-stat-num">18%</span>
-            <span class="bd-stat-label">of consultations are dermatology — rarely covered in base GHI</span>
+            <span class="bd-stat-label">of consultations are dermatology – rarely covered in base GHI</span>
           </div>
           <div class="bd-stat-row">
             <span class="bd-stat-num">4×</span>
@@ -1394,12 +1586,12 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <h4>What to put in place</h4>
           <ul class="bd-check-list">
             <li>Telehealth access included in GHI plan (24/7 GP, specialist triage)</li>
-            <li>Annual preventive health check-up — employer-sponsored</li>
+            <li>Annual preventive health check-up – employer-sponsored</li>
             <li>Mental health: therapy sessions or EAP programme covered</li>
             <li>Dermatology consultations accessible (telehealth or OPD wallet)</li>
-            <li>OB-GYN access for female employees — telehealth minimum</li>
+            <li>OB-GYN access for female employees – telehealth minimum</li>
             <li>Pharmacy reimbursement or OPD wallet for medicines</li>
-            <li>Dental and vision check-up — often bundled at low cost</li>
+            <li>Dental and vision check-up – often bundled at low cost</li>
             <li>Diagnostic tests covered within OPD sum or as employer-sponsored camps</li>
           </ul>
         </div>
@@ -1421,7 +1613,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <h4>What the data says</h4>
           <div class="bd-stat-row">
             <span class="bd-stat-num">10%</span>
-            <span class="bd-stat-label">of Indian companies currently offer dedicated mental health cover — despite it being the top telehealth use case</span>
+            <span class="bd-stat-label">of Indian companies currently offer dedicated mental health cover – despite it being the top telehealth use case</span>
           </div>
           <div class="bd-stat-row">
             <span class="bd-stat-num">57%</span>
@@ -1429,23 +1621,23 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           </div>
           <div class="bd-stat-row">
             <span class="bd-stat-num">80%</span>
-            <span class="bd-stat-label">of global startups in India offer inclusive benefits including mental health — vs &lt;15% India median</span>
+            <span class="bd-stat-label">of global startups in India offer inclusive benefits including mental health – vs &lt;15% India median</span>
           </div>
           <div style="margin-top:14px;">
             <div style="font-size:11px;color:var(--ink-muted);margin-bottom:6px;font-weight:600;">IRDAI 2024</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.55;background:var(--surface);padding:10px 12px;border-radius:6px;border:1px solid var(--rule);">Group policies are now required to cover psychiatric ailments at parity with physical conditions in hospitalisation. An EAP or therapy benefit is still a voluntary add-on — but the regulatory direction is clear.</div>
+            <div style="font-size:13px;color:var(--ink-mid);line-height:1.55;background:var(--surface);padding:10px 12px;border-radius:6px;border:1px solid var(--rule);">Group policies are now required to cover psychiatric ailments at parity with physical conditions in hospitalisation. An EAP or therapy benefit is still a voluntary add-on – but the regulatory direction is clear.</div>
           </div>
         </div>
         <div class="bd-col">
           <h4>What to put in place</h4>
           <ul class="bd-check-list">
             <li>Psychiatric hospitalisation covered within GHI sum insured (now IRDAI-required)</li>
-            <li>EAP (Employee Assistance Programme) — confidential counselling access</li>
-            <li>Therapy sessions covered — minimum 6–10 sessions per year</li>
+            <li>EAP (Employee Assistance Programme) – confidential counselling access</li>
+            <li>Therapy sessions covered – minimum 6–10 sessions per year</li>
             <li>Teleconsultation with therapist or psychologist available</li>
-            <li>Manager training on mental health conversations — HR programme, not insurance</li>
-            <li>Anonymous utilisation reporting to HR — not individual data</li>
-            <li>Mental health parity in leave policy — mental health sick days treated as medical sick days</li>
+            <li>Manager training on mental health conversations – HR programme, not insurance</li>
+            <li>Anonymous utilisation reporting to HR – not individual data</li>
+            <li>Mental health parity in leave policy – mental health sick days treated as medical sick days</li>
           </ul>
         </div>
       </div>
@@ -1486,9 +1678,9 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <ul class="bd-check-list">
             <li checked class="checked">Base GHI plan: employer-funded, non-negotiable for all employees</li>
             <li checked class="checked">Flex wallet: annual allowance (₹15,000–₹40,000 typical range) for employees to allocate</li>
-            <li>Parental cover: opt-in via flex wallet — employee-funded, employer-facilitated, group rates</li>
+            <li>Parental cover: opt-in via flex wallet – employee-funded, employer-facilitated, group rates</li>
             <li>Super top-up: employee can upgrade sum insured using flex budget</li>
-            <li>Wellness: gym, mental health, nutrition — chosen per employee</li>
+            <li>Wellness: gym, mental health, nutrition – chosen per employee</li>
             <li>OPD add-on: optional, higher utilisation when employee-chosen</li>
             <li>Annual review: reset flex allocations at renewal based on utilisation data</li>
           </ul>
@@ -1497,7 +1689,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     </div>
 
     <!-- OUTSIDE PLUM'S LANE -->
-    <h2 id="beyond-outside" style="margin-top:36px;margin-bottom:8px;">What sits outside insurance — and who should own it</h2>
+    <h2 style="margin-top:36px;margin-bottom:8px;" id="beyond-outside">What sits outside insurance – and who should own it</h2>
     <p class="section-intro">These aren't insurance products, so they're outside Plum's scope. But they're part of your total offer, and senior candidates will ask about them. Your CHRO, PEO, or India HR lead should have a view on each one before your first senior hire conversation.</p>
 
     <div class="outside-lane">
@@ -1510,7 +1702,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="outside-item">
           <div class="outside-item-label">ESOPs / equity</div>
-          <div class="outside-item-value">Not a legal requirement, but effectively mandatory for senior GCC hires benchmarking against global comp. Indian ESOP taxation changed in 2021 — verify with a tax advisor.</div>
+          <div class="outside-item-value">Not a legal requirement, but effectively mandatory for senior GCC hires benchmarking against global comp. Indian ESOP taxation changed in 2021 – verify with a tax advisor.</div>
         </div>
         <div class="outside-item">
           <div class="outside-item-label">Learning &amp; development</div>
@@ -1522,7 +1714,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="outside-item">
           <div class="outside-item-label">Food &amp; transport</div>
-          <div class="outside-item-value">Meal allowance: ₹2,200/month is the tax-exempt limit. Transport allowance: ₹1,600/month tax-exempt. Both are standard in the Indian CTC structure — often included as allowances rather than cash reimbursements.</div>
+          <div class="outside-item-value">Meal allowance: ₹2,200/month is the tax-exempt limit. Transport allowance: ₹1,600/month tax-exempt. Both are standard in the Indian CTC structure – often included as allowances rather than cash reimbursements.</div>
         </div>
         <div class="outside-item">
           <div class="outside-item-label">Internet &amp; WFH stipend</div>
@@ -1533,14 +1725,14 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-teal" style="margin-top:20px;">
       <span class="callout-icon">ℹ</span>
-      <div><strong>Run this calculation before your next renewal:</strong> on a ₹20.2 crore total compensation budget, moving from 1% to 2% on benefits costs 1 percentage point on salary increments — a 12% hike becomes 11%. For that difference, you go from ₹5L sum insured with no parental cover to ₹7–10L, parental cover, progressive maternity, and primary healthcare. 70% of employees say they'd take the better benefits over the better hike. Most HR teams haven't shown this maths to their CFO.</div>
+      <div><strong>Run this calculation before your next renewal:</strong> on a ₹20.2 crore total compensation budget, moving from 1% to 2% on benefits costs 1 percentage point on salary increments – a 12% hike becomes 11%. For that difference, you go from ₹5L sum insured with no parental cover to ₹7–10L, parental cover, progressive maternity, and primary healthcare. 70% of employees say they'd take the better benefits over the better hike. Most HR teams haven't shown this maths to their CFO.</div>
     </div>
   </section>
 
   <!-- PART 9: TAX CONSIDERATIONS -->
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
   <section id="tax">
-    <div class="section-label">Part 9 — Tax Guide</div>
+    <div class="section-label">Part 9 – Tax Guide</div>
     <h2>Tax treatment of employee benefits in India</h2>
     <p class="section-intro">India runs two parallel income tax regimes simultaneously, and the tax treatment of almost every benefit differs between them. Most MNC finance teams discover this in month two of India payroll. Understanding it at setup saves a lot of retrospective restructuring.</p>
 
@@ -1550,7 +1742,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">The foundation</div>
-            <div class="acc-summary-title">Old regime vs new regime — what every HR and finance lead needs to know</div>
+            <div class="acc-summary-title">Old regime vs new regime – what every HR and finance lead needs to know</div>
             <div class="acc-summary-sub">The default has changed. Most employees are now on the new regime.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -1577,7 +1769,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Insurance benefits</div>
             <div class="acc-summary-title">Tax treatment of GHI, GTL, GPA, and statutory schemes</div>
-            <div class="acc-summary-sub">Most employer-paid insurance is a deductible business expense — but the employee-side treatment varies.</div>
+            <div class="acc-summary-sub">Most employer-paid insurance is a deductible business expense – but the employee-side treatment varies.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
         </summary>
@@ -1645,7 +1837,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Perquisites</div>
-            <div class="acc-summary-title">What counts as a perquisite — and how it's valued for tax</div>
+            <div class="acc-summary-title">What counts as a perquisite – and how it's valued for tax</div>
             <div class="acc-summary-sub">Perquisites are employer-provided benefits included in taxable income. The valuation rules matter as much as the classification.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -1718,7 +1910,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 10: LEAVE & POLICIES -->
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
   <section id="leave">
-    <div class="section-label">Part 10 — Leave &amp; Policies</div>
+    <div class="section-label">Part 10 – Leave &amp; Policies</div>
     <h2>Leave entitlements and what global MNCs typically add on top</h2>
     <p class="section-intro">India's statutory leave framework is state-governed and more fragmented than most MNCs expect. The floor is lower than in most countries your HR team has operated in. The gap between statutory minimum and what you'll need to offer to compete for talent is where most of the design work happens.</p>
 
@@ -1729,7 +1921,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <div class="acc-summary-inner">
             <div class="acc-summary-label">The statutory floor</div>
             <div class="acc-summary-title">What Indian law actually mandates on leave</div>
-            <div class="acc-summary-sub">Less than most MNCs assume — and varies significantly by state.</div>
+            <div class="acc-summary-sub">Less than most MNCs assume – and varies significantly by state.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
         </summary>
@@ -1801,7 +1993,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Flexible working</div>
             <div class="acc-summary-title">Hybrid, remote, and flexible working in India</div>
-            <div class="acc-summary-sub">No statutory framework — but a major factor in competitive hiring.</div>
+            <div class="acc-summary-sub">No statutory framework – but a major factor in competitive hiring.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
         </summary>
@@ -1861,7 +2053,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 11: ALLOWANCES & CTC STRUCTURE -->
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
   <section id="allowances">
-    <div class="section-label">Part 11 — Allowances &amp; CTC</div>
+    <div class="section-label">Part 11 – Allowances &amp; CTC</div>
     <h2>India CTC structure and allowances: what MNCs need to know</h2>
     <p class="section-intro">India's cost-to-company (CTC) structure is more complex than most countries your payroll team has operated in. The split between basic salary and allowances has direct consequences for statutory contributions, tax liability, and what employees actually take home. Getting this structure right at incorporation saves significant rework later.</p>
 
@@ -1871,7 +2063,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">The structure</div>
-            <div class="acc-summary-title">How India CTC is typically built — and why the basic salary ratio matters</div>
+            <div class="acc-summary-title">How India CTC is typically built – and why the basic salary ratio matters</div>
             <div class="acc-summary-sub">The Labour Code 2025 changed the rules on basic salary. Many historic structures are now non-compliant.</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -2005,11 +2197,6 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   </section>
 
 
-  <div class="guide-colophon">
-    <p><strong>Prepared for</strong> HR, legal, and finance teams of MNCs and GCCs setting up India operations.</p>
-    <p>Regulations current as of 2025–26. Verify thresholds against the latest IRDAI, EPFO, and ESIC circulars before purchase.</p>
-    <p class="guide-colophon-sources"><strong>Sources:</strong> IRDAI Master Circular on Health Insurance; Code on Social Security 2020 (effective Nov 2025); Payment of Gratuity Act 1972; Companies Act 2013; DPDP Act 2023; Public Liability Insurance Act 1991; Plum State of Employee Benefits 2024 (4,500+ plans, 18,000+ claims, Jan 2023–Jan 2024); Plum Employee Health Report 2025; Income Tax Act 1961 (as amended); Code on Social Security 2020; Maternity Benefit Act 1961 (as amended per Supreme Court ruling, March 2026); state-level Shops and Establishments Acts.</p>
-  </div>
 </main>
 
 </div>
