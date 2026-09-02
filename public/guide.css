@@ -1104,7 +1104,12 @@ h2 {
   border-radius: 0;
   line-height: 1;
 }
-.deep-accordion details[open] .deep-acc-indicator {
+/* Child combinators, not descendants: Part 2's "How to buy a group health
+   policy" panel contains its own accordion, and as a descendant selector this
+   rule matched every indicator inside an open panel — so all four nested
+   summaries rendered the rotated "close" glyph while still closed. Each
+   indicator must answer to its own <details> only. */
+.deep-accordion details[open] > summary > .deep-acc-indicator {
   transform: rotate(45deg);
   background: var(--plum-red);
   color: var(--fg-on-red);
