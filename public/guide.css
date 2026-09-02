@@ -104,10 +104,17 @@
 
 /* ── TOKENS ─────────────────────────────────────────────────────────── */
 :root {
-  /* Surfaces */
+  /* Surfaces.
+     --cream-deep was #F5EEE0, 10.5% darker than the page cream. Across its 15
+     uses — every table's zebra striping and first column, plus card hovers —
+     that much separation read as beige panels rather than a quiet tint, and
+     flattened the whole page. Now 5.3% down: still a clearly trackable stripe,
+     roughly half the weight. --cream-warm (#EDE3D0, one use, .stat-box) was
+     duller still and moved by the same proportion. Text contrast improves
+     slightly on both — ink goes 14.24:1 to 15.02:1 on the striping. */
   --cream:          #FFFAF2;
-  --cream-deep:     #F5EEE0;
-  --cream-warm:     #EDE3D0;
+  --cream-deep:     #FAF4EA;   /* table striping, first columns, card hovers */
+  --cream-warm:     #F6EFE2;   /* .stat-box only */
 
   /* Brand red */
   --plum-red:       #FF4052;
@@ -1344,8 +1351,29 @@ h2 {
   }
   .toc-heading { display: none; }
   .toc-bar > .toc-inner > ul { display: flex; white-space: nowrap; }
-  /* 23 entries in a horizontal scroller is unusable — show only the sections */
+  /* 23 entries in a horizontal scroller is unusable, so nested levels go —
+     except .toc-chapters, whose entries are whole sections (Parts 2A-2D) rather
+     than headings inside one. Hiding those would drop Global Benchmark, Claims
+     Reality and Maternity from the mobile rail, which are in it today, and
+     never add Buying GHI. Keeping them puts the count at 16 against 15 before
+     the restructure. Anything deeper is still desktop-only.
+
+     They flatten into the SAME row rather than forming a second tier: nesting
+     them visually made the rail two rows tall with the lower one offset under
+     its parent, which cost vertical space and read as a stray fragment. On a
+     horizontal scroller a flat row of peers is what works. */
   .toc-bar ul ul { display: none; }
+  .toc-bar > .toc-inner > ul > li { display: flex; align-items: stretch; }
+  .toc-bar > .toc-inner > ul > li > ul.toc-chapters { display: flex; margin: 0; }
+  .toc-bar ul.toc-chapters ul { display: none; }
+  /* undo the desktop indent/de-emphasis so they read as peers here */
+  .toc-bar ul.toc-chapters a {
+    padding: 13px 13px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--fg-2);
+  }
+  .toc-bar ul.toc-chapters a[aria-current="true"] { color: var(--plum-red); }
   .toc-bar a {
     padding: 13px 13px;
     font-size: 12.5px;
