@@ -246,12 +246,12 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 1: STATUTORY -->
   <section id="statutory">
     <div class="section-label">Part 1 – Employee Benefits</div>
-    <h2>What Indian law actually requires you to provide</h2>
+    <h2>What employee benefits are legally mandatory in India?</h2>
     <p class="section-intro">These are not optional. They're legal obligations under Indian labour law, each with its own registration deadline, filing cadence, and penalty for non-compliance. Most MNCs treat this layer as the hard part. It isn't. Registration is procedural. What catches people out is the sequencing.</p>
 
     <div class="callout callout-coral">
       <span class="callout-icon">⚑</span>
-      <div><strong>Labour Code 2025:</strong> Four new codes consolidated 29 prior laws, effective 21 November 2025. Basic salary must now be at least 50% of CTC. Salary structures built around suppressing EPF liability are no longer compliant. Gratuity eligibility for fixed-term employees drops from 5 years to 1. Restructure payroll before your first hire, not after.</div>
+      <div><strong>Labour Codes, effective 21 November 2025:</strong> four codes consolidated 29 prior laws. Under the definition of &ldquo;wages&rdquo; in the Code on Wages, 2019, if the allowances excluded from that definition together exceed 50% of an employee's total remuneration, the excess is added back into wages for EPF, gratuity and other statutory calculations. In practice this ends the structure most Indian packages were built on, where basic plus DA sat at 30 to 40% and allowances carried the rest. Fixed-term employees now earn gratuity after one year of contract service instead of five. Restructure payroll before your first hire, not after.</div>
     </div>
 
     <div class="table-scroll"><table class="statutory-table">
@@ -277,7 +277,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <td>Establishments with 10+ employees. Employees earning ≤₹21,000/month gross</td>
           <td>3.25% of gross wages</td>
           <td>0.75% of gross wages</td>
-          <td>Medical care, sickness cash benefit, maternity, occupational injury. <em>Note: ESI replaces employer obligation for group health for in-scope employees.</em></td>
+          <td>Medical care, sickness cash benefit, maternity, occupational injury. <em>Note: ESI discharges the employer's statutory medical care duty for employees at or below ₹21,000/month. Above that threshold there is no statutory health obligation at all, which is the gap group health insurance fills voluntarily.</em></td>
         </tr>
         <tr>
           <td><strong>Gratuity</strong><br><span style="font-size:11px;color:var(--ink-muted)">Payment of Gratuity Act, 1972</span></td>
@@ -309,6 +309,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </tr>
       </tbody>
     </table></div>
+  
+    <p style="margin-top:32px;"><strong>Who does this in practice.</strong> Plum is an IRDAI-licensed direct broker authorised for both life and general insurance, so a single relationship covers every line described above, on one renewal cycle with one claims contact. It administers benefits for more than 500 MNC entities in India, including master policy structures where a global parent governs plan design across markets. Median cashless pre-authorisation runs 45 minutes and claims NPS is 79. For an entity being set up now, the practical starting point is sequencing the registrations above against your first payroll run, so that nothing in the table is filed late.</p>
   </section>
 
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
@@ -324,7 +326,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Voluntary employee benefits</div>
-            <div class="acc-summary-title">What it covers and who needs it</div>
+            <div class="acc-summary-title">What group insurance do MNC subsidiaries in India actually offer?</div>
             <div class="acc-summary-sub">The stack your candidates already expect</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -364,11 +366,11 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="policy-field">
           <label>IRDAI 2024 changes</label>
-          <p>Pre-existing disease waiting period capped at 36 months (was 48). Moratorium reduced from 8 to 5 years. No upper age limit on new group policy enrolments. Retail PED waits now extend to 36 months, making group cover materially more valuable than a retail policy.</p>
+          <p>Pre-existing disease waiting periods are now capped at 36 months, down from 48. Moratorium reduced from 8 to 5 years. No upper age limit on new group policy enrolments. Group plans typically cover pre-existing conditions from day one, which keeps group cover materially more valuable than a retail policy – but day-one PED cover is market practice negotiated at placement, not a regulatory guarantee, so get it in writing.</p>
         </div>
         <div class="policy-field">
           <label>Tax</label>
-          <p>Premium is deductible for the employer under Section 37(1). 18% GST applies. Not treated as a perquisite under Section 17(2), so it doesn't increase the employee's taxable income.</p>
+          <p>Premium is deductible for the employer under Section 36(1)(ib), which covers insurance on the health of employees where the premium is paid by any mode other than cash. 18% GST applies. Not treated as a perquisite under Section 17(2), so it doesn't increase the employee's taxable income.</p>
         </div>
         <div class="policy-field full">
           <label>Insurer options</label>
@@ -397,7 +399,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       <div class="policy-body">
         <div class="policy-field">
           <label>What it covers</label>
-          <p>Accidental death at 5–10× annual salary, permanent total and partial disability, weekly income replacement for temporary disablement. Often includes a medical expense reimbursement component.</p>
+          <p>Accidental death at 5–10× CTC, permanent total and partial disability, weekly income replacement for temporary disablement. Often includes a medical expense reimbursement component.</p>
         </div>
         <div class="policy-field">
           <label>Relation to WC/EC</label>
@@ -405,7 +407,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="policy-field full">
           <label>Why it matters</label>
-          <p>EDLI under EPF maxes out at ₹7 lakh, less than one year's salary for most MNC hires. GPA is what makes the accidental death benefit credible. At the 90th percentile, companies offer ₹50,00,000 or 3–5× CTC.</p>
+          <p>EDLI under EPF maxes out at ₹7 lakh, less than one year's salary for most MNC hires. GPA is what makes the accidental death benefit credible. At the 90th percentile, companies offer ₹50,00,000 or 5–10× CTC.</p>
         </div>
       </div>
     </div>
@@ -430,7 +432,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="policy-field">
           <label>Where adoption stands</label>
-          <p>36% of sub-100 companies carry it; 76% at 750+. Notably, global startups in India are at 30%, well behind their GHI provision. GTL is where most MNCs have a gap.</p>
+          <p>Only 8% of companies under 100 employees carry GTL, against 76% at 750+. Global startups in India sit at 30%, well behind their own GHI provision. GTL is where most MNCs have a gap, and at sub-100 headcount it is where the smallest spend buys the largest differentiation against what your candidates are being offered elsewhere.</p>
         </div>
       </div>
     </div>
@@ -452,7 +454,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="policy-field">
           <label>Where adoption stands</label>
-          <p>9% of sub-100 companies offer OPD; 60% of 750+ companies do. Global startups in India are already at 60%, double the India median of 16%. The gap is closing fast.</p>
+          <p>9% of sub-100 companies offer OPD; 60% of 750+ companies do. Global startups in India are already at 60%, 3.75 times the India median of 16%. The gap is closing fast.</p>
         </div>
         <div class="policy-field full">
           <label>The hospitalisation blind spot</label>
@@ -660,7 +662,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Global standard</div>
-            <div class="acc-summary-title">What the market benchmark looks like</div>
+            <div class="acc-summary-title">How do India benefits compare to global standards?</div>
             <div class="acc-summary-sub">What your candidates are comparing you against</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -732,7 +734,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
     <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Analysis of 4,500+ employee healthcare plans.</p>
 
     <div style="margin-top:28px;">
-      <h2 style="margin-bottom:10px;" id="benchmark-headcount">What the market looks like at each headcount stage</h2>
+      <h2 style="margin-bottom:10px;" id="benchmark-headcount">What is the benchmark sum insured for a 50-person India subsidiary?</h2>
       <p class="section-intro">Your candidates have worked at Indian companies before. This is what those companies were carrying. Now you know what you're being measured against.</p>
 
       <div class="table-scroll"><table class="bench-table">
@@ -814,7 +816,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <summary>
           <div class="acc-summary-inner">
             <div class="acc-summary-label">Claims reality</div>
-            <div class="acc-summary-title">Where claims actually go</div>
+            <div class="acc-summary-title">Who claims the most on Indian group health policies?</div>
             <div class="acc-summary-sub">Where the money actually goes when claims come in</div>
           </div>
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
@@ -950,13 +952,13 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <td><strong>Newborn cover</strong></td>
           <td>60% of companies include it</td>
           <td>Covered from day one</td>
-          <td>NICU costs exceed ₹10,000/day in urban hospitals; India's neonatal mortality rate is among the world's highest</td>
+          <td>NICU costs exceed ₹10,000/day in urban hospitals, and India records more neonatal deaths than any other country – around 27% of the global total against 19% of live births</td>
         </tr>
         <tr>
           <td><strong>Maternity complications</strong></td>
           <td>&lt;20% of companies</td>
           <td>Covered up to full sum insured</td>
-          <td>Life-threatening complications affect 15% of pregnancies. Not covered unless explicitly called out in the policy.</td>
+          <td>WHO puts the share of pregnancies that develop a potentially life-threatening complication requiring skilled care at around 15%. Not covered unless explicitly called out in the policy.</td>
         </tr>
         <tr>
           <td><strong>Pre &amp; post-natal expenses</strong></td>
@@ -968,7 +970,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <td><strong>Infertility treatments (IVF, egg freezing)</strong></td>
           <td>&lt;5% of companies</td>
           <td>Included in policy construct</td>
-          <td>1 in 15 Indian couples experience infertility; IVF costs average ₹1,50,000 per cycle</td>
+          <td>ICMR estimates that 10 to 15% of Indian couples of reproductive age experience infertility; IVF costs average ₹1,50,000 per cycle</td>
         </tr>
         <tr>
           <td><strong>Miscarriage &amp; abortion</strong></td>
@@ -988,6 +990,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       </details>
 
     </div>
+  
+    <p style="margin-top:32px;"><strong>Who does this in practice.</strong> Plum is an IRDAI-licensed direct broker authorised for both life and general insurance, so a single relationship covers every line described above, on one renewal cycle with one claims contact. It administers benefits for more than 500 MNC entities in India, including master policy structures where a global parent governs plan design across markets. Median cashless pre-authorisation runs 45 minutes and claims NPS is 79. For an entity being set up now, the practical starting point is a benchmark against companies of your headcount in your hiring cities, which is the data in the tables above.</p>
   </section>
 
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
@@ -995,7 +999,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 3: BUSINESS INSURANCE -->
   <section id="business">
     <div class="section-label">Part 3 – Business Insurance (Non-EB)</div>
-    <h2>Protecting the entity, not just the employees</h2>
+    <h2>What business insurance does a new India entity need?</h2>
     <p class="section-intro">This stack is separate from EB and is often the one India-entry teams leave until last. Several of these policies are required before your first client contract is signed, your first office lease is executed, or your first board meeting is held. The calendar moves faster than most people expect.</p>
 
     <div class="deep-accordion">
@@ -1083,7 +1087,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             </div>
             <div class="acc-grid-cell">
               <h4>Choosing an insurer</h4>
-              <p>IRDAI's healthy ICR band is 70–90%. Above 95% suggests claims management problems; below 50% suggests the insurer is underpaying. Ask your broker for the ICR on any insurer they recommend for CGL.</p>
+              <p>Plum treats an incurred claims ratio (ICR) of 70–90% as the healthy band when shortlisting insurers; IRDAI publishes ICRs by insurer but prescribes no band. Above 95% suggests claims management problems; below 50% suggests the insurer is underpaying. Ask your broker for the ICR on any insurer they recommend for CGL.</p>
             </div>
           </div>
         </div>
@@ -1106,7 +1110,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             </div>
             <div class="acc-grid-cell">
               <h4>Why it's no longer optional</h4>
-              <p>India's DPDP Act 2023 creates financial exposure for any data fiduciary. The average breach cost in India is ₹195 million (IBM, 2024). CGL does not cover cyber events. For GCCs processing cross-border data flows, the parent programme may not extend to India operations either.</p>
+              <p>India's DPDP Act 2023 creates financial exposure for any data fiduciary, and the DPDP Rules, 2025, notified on 14 November 2025 with staggered commencement, put dates against those obligations. The average breach cost in India is ₹195 million (IBM, 2024). CGL does not cover cyber events. For GCCs processing cross-border data flows, the parent programme may not extend to India operations either.</p>
             </div>
             <div class="acc-grid-cell policy-field full">
               <h4>GCC context</h4>
@@ -1163,6 +1167,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
       </details>
 
     </div>
+  
+    <p style="margin-top:32px;"><strong>Who does this in practice.</strong> Plum is an IRDAI-licensed direct broker authorised for both life and general insurance, so a single relationship covers every line described above, on one renewal cycle with one claims contact. It administers benefits for more than 500 MNC entities in India, including master policy structures where a global parent governs plan design across markets. Median cashless pre-authorisation runs 45 minutes and claims NPS is 79. For an entity being set up now, the practical starting point is establishing which of the non-EB lines above your client contracts, your lease and your parent-company governance already oblige you to carry.</p>
   </section>
 
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
@@ -1319,8 +1325,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             <span class="bd-stat-label">of global startups in India offer inclusive benefits including mental health – vs &lt;15% India median</span>
           </div>
           <div style="margin-top:14px;">
-            <div style="font-size:11px;color:var(--ink-muted);margin-bottom:6px;font-weight:600;">IRDAI 2024</div>
-            <div style="font-size:13px;color:var(--ink-mid);line-height:1.55;background:var(--surface);padding:10px 12px;border-radius:6px;border:1px solid var(--rule);">Group policies are now required to cover psychiatric ailments at parity with physical conditions in hospitalisation. An EAP or therapy benefit is still a voluntary add-on – but the regulatory direction is clear.</div>
+            <div style="font-size:11px;color:var(--ink-muted);margin-bottom:6px;font-weight:600;">Mental Healthcare Act 2017 &middot; IRDAI</div>
+            <div style="font-size:13px;color:var(--ink-mid);line-height:1.55;background:var(--surface);padding:10px 12px;border-radius:6px;border:1px solid var(--rule);">Section 21(4) of the Mental Healthcare Act, 2017 requires every insurer to provide for the treatment of mental illness on the same basis as physical illness. An IRDAI circular of October 2022 made this binding on every policy in force, group policies included, with effect from 31 October 2022 – so an inherited plan without psychiatric hospitalisation cover has been non-compliant for close to four years. An EAP or therapy benefit remains a voluntary add-on.</div>
           </div>
         </div>
         <div class="bd-col">
@@ -1409,7 +1415,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </div>
         <div class="outside-item">
           <div class="outside-item-label">Food &amp; transport</div>
-          <div class="outside-item-value">Meal allowance: ₹2,200/month is the tax-exempt limit. Transport allowance: ₹1,600/month tax-exempt. Both are standard in the Indian CTC structure – often included as allowances rather than cash reimbursements.</div>
+          <div class="outside-item-value">Meal allowance: ₹2,200/month is exempt under the old regime only, and only when provided as meal vouchers or a prepaid meal card rather than cash. There is no exemption under the new regime, which is the default. Transport allowance: no longer separately exempt. The ₹1,600/month exemption was withdrawn from FY 2018-19 when the standard deduction replaced the transport and medical allowance exemptions. Only specified differently-abled employees retain one, at ₹3,200/month, under both regimes. Transport remains a common CTC line item; it is simply taxable. Both are standard in the Indian CTC structure – often included as allowances rather than cash reimbursements.</div>
         </div>
         <div class="outside-item">
           <div class="outside-item-label">Internet &amp; WFH stipend</div>
@@ -1429,7 +1435,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 5: BY SETUP STAGE -->
   <section id="by-setup">
     <div class="section-label">Part 5 – Setup Stage</div>
-    <h2>The right order matters more than the right policy</h2>
+    <h2>In what order should a new India entity buy insurance?</h2>
     <p class="section-intro">The most expensive insurance mistake isn't buying the wrong policy. It's buying the right one six months after the exposure started. Directors are exposed from day one; employees need GHI before the first offer letter goes out. Here's the sequence that works.</p>
 
     <div class="checklist-grid">
@@ -1494,7 +1500,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <tr>
           <td><strong>Software development / IT services</strong></td>
           <td>PI (E&amp;O) mandatory in most client contracts; Cyber cover required by parent-company governance; CGL certificate required for SEZ registration</td>
-          <td>86% and 84% respectively – the highest of any sector. Median SI ₹5L.</td>
+          <td>86% / 84% family GHI cover – the highest of any sector. Median SI ₹5L.</td>
           <td>Client contract, SEZ authority</td>
         </tr>
         <tr>
@@ -1523,7 +1529,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </tr>
         <tr>
           <td><strong>Transportation / Logistics</strong></td>
-          <td>Aviation Third-Party Liability (Aircraft Act 1934); Cargo insurance; Marine Open Policy for freight forwarders; WC/EC critical for field operations</td>
+          <td>Aviation Third-Party Liability (Bharatiya Vayuyan Adhiniyam, 2024, which replaced the Aircraft Act 1934 from 1 January 2025); Cargo insurance; Marine Open Policy for freight forwarders; WC/EC critical for field operations</td>
           <td>81% family GHI cover. Maternity offered by 66%.</td>
           <td>DGCA, MoCA</td>
         </tr>
@@ -1543,7 +1549,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 7: CITY GUIDE -->
   <section id="city">
     <div class="section-label">Part 7 – City Guide</div>
-    <h2>Your city changes your benchmarks</h2>
+    <h2>How do employee benefit benchmarks differ across Indian cities?</h2>
     <p class="section-intro">The same ₹5L GHI plan means different things in different cities. Mumbai has the highest average claim size of any market; Hyderabad has the highest average maternity claim; Ahmedabad has the lowest GHI adoption, so a basic plan immediately exceeds local norms. Where you hire shapes what you need to carry.</p>
 
     <div class="table-scroll"><table class="city-table">
@@ -1561,7 +1567,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <tr>
           <td><strong>Mumbai</strong></td>
           <td><span class="city-bar" style="width:63px"></span>63%</td>
-          <td style="font-weight:600;color:var(--accent-coral)">₹92,796</td>
+          <td style="font-weight:600;color:var(--accent-coral)">₹93,000</td>
           <td>63%</td>
           <td>₹1,20,000</td>
           <td>Highest avg claim of any city. Expensive hospital network. ₹10L+ SI benchmark for competitive positioning.</td>
@@ -1569,9 +1575,9 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <tr>
           <td><strong>Delhi</strong></td>
           <td><span class="city-bar" style="width:68px"></span>68%</td>
-          <td>₹62,375</td>
+          <td>₹62,500</td>
           <td>60%</td>
-          <td>₹1,00,000 est.</td>
+          <td>₹1,00,000&#8202;&dagger;</td>
           <td>Above-median SI adoption. Dense hospital network. Strong IT and consulting sector expectations.</td>
         </tr>
         <tr>
@@ -1601,7 +1607,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         <tr>
           <td><strong>Pune</strong></td>
           <td><span class="city-bar" style="width:64px"></span>64%</td>
-          <td>₹60,794</td>
+          <td>₹61,000</td>
           <td>64%</td>
           <td>₹85,000</td>
           <td>Below-average claim size; above-average maternity adoption. Manufacturing and IT services mix.</td>
@@ -1616,7 +1622,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
         </tr>
       </tbody>
     </table></div>
-    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Maternity claim figures are city-level plan averages.</p>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;">Source: Plum State of Employee Benefits 2024. Maternity claim figures are city-level plan averages. Average claim sizes are rounded to the nearest ₹500. &dagger; Delhi’s average maternity claim is an internal estimate rather than a measured figure; every other value in the table is measured.</p>
 
     <div class="callout callout-blue" style="margin-top:16px;">
       <span class="callout-icon">ℹ</span>
@@ -1743,8 +1749,10 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
 
     <div class="callout callout-teal" style="margin-top:24px;">
       <span class="callout-icon">ℹ</span>
-      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed composite broker – licensed for both life and general (including health) products. This puts your entire stack under one relationship, one renewal cycle, and one claims contact. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
+      <div><strong>On choosing a broker:</strong> work with an IRDAI-licensed direct broker authorised for both life and general (including health) products – in IRDAI’s categories that is a Direct Broker (Life &amp; General); a composite broker is one licensed for direct and reinsurance broking, which is a different thing. When you evaluate brokers, ask for their median cashless pre-authorisation TAT and their endorsement turnaround time. These numbers tell you whether your employees will actually experience the benefit, or just see it on an offer letter.</div>
     </div>
+  
+    <p style="margin-top:32px;"><strong>Who does this in practice.</strong> Plum is an IRDAI-licensed direct broker authorised for both life and general insurance, so a single relationship covers every line described above, on one renewal cycle with one claims contact. It administers benefits for more than 500 MNC entities in India, including master policy structures where a global parent governs plan design across markets. Median cashless pre-authorisation runs 45 minutes and claims NPS is 79. For an entity being set up now, the practical starting point is putting the broker evaluation questions above to whoever you are considering, including us.</p>
   </section>
 
   <div class="rule-section" aria-hidden="true"><div class="rule-arr-l"></div><div class="rule-line"></div><div class="rule-arr-r"></div></div>
@@ -1752,8 +1760,8 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 9: TAX CONSIDERATIONS -->
   <section id="tax">
     <div class="section-label">Part 9 – Tax Guide</div>
-    <h2>Tax treatment of employee benefits in India</h2>
-    <p class="section-intro">India runs two parallel income tax regimes simultaneously, and the tax treatment of almost every benefit differs between them. Most MNC finance teams discover this in month two of India payroll. Understanding it at setup saves a lot of retrospective restructuring.</p>
+    <h2>Is group health insurance taxable for employees in India?</h2>
+    <p class="section-intro">India runs two parallel income tax regimes simultaneously, and the tax treatment of almost every benefit differs between them. Most MNC finance teams discover this in month two of India payroll. Understanding it at setup saves a lot of retrospective restructuring. Section references in this part are to the Income-tax Act, 1961 and the Income Tax Rules. The Income-tax Act, 2025 replaces the 1961 Act with effect from 1 April 2026, so from FY 2026-27: it consolidates and renumbers rather than reversing the treatments below, but expect to re-map every section reference you rely on.</p>
 
     <div class="deep-accordion">
 
@@ -1767,7 +1775,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
         </summary>
         <div class="deep-acc-body">
-          <p>India has operated two parallel income tax regimes since 2020. The new regime became the default in FY2023-24. Employees can still opt into the old regime when filing their annual return. They must actively choose to do so. In practice, many employees earning below ₹15 LPA now find the new regime more beneficial, since the lower rates outweigh the lost deductions.</p>
+          <p>India has operated two parallel income tax regimes since 2020. The new regime became the default in FY2023-24. Employees can still opt into the old regime when filing their annual return. They must actively choose to do so. Budget 2025 shifted the balance decisively: from FY 2025-26, income up to ₹12,00,000 – ₹12,75,000 once the ₹75,000 standard deduction is applied – bears nil tax under the new regime. In practice most salaried employees now find the new regime more beneficial, since the lower rates and the higher rebate outweigh the lost deductions.</p>
           <p>For MNC HR and finance teams, the practical consequence is that several benefits which were tax-efficient under the old regime are now taxable for a significant portion of your workforce. Salary structure decisions that made sense three years ago may no longer serve your employees well.</p>
           <div class="regime-split">
             <div class="regime-card old">
@@ -1776,7 +1784,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             </div>
             <div class="regime-card new">
               <div class="regime-label">New regime (default)</div>
-              <p>Lower income tax rates but almost all exemptions and deductions removed. HRA, LTA, meal allowance exemptions, and most Section 80C deductions are not available. Standard deduction is ₹75,000 (increased from ₹50,000 in Budget 2024). Beneficial for most employees earning below ₹15 LPA with few deductions, and for those without a home loan.</p>
+              <p>Lower income tax rates but almost all exemptions and deductions removed. HRA, LTA, meal allowance exemptions, and most Section 80C deductions are not available. Standard deduction is ₹75,000. Since Budget 2025, income up to ₹12,00,000 – ₹12,75,000 with the standard deduction applied – bears nil tax from FY 2025-26. Beneficial for most employees with few deductions, and for those without a home loan; the old regime now wins only where an employee carries a large deduction stack, typically home loan interest plus a full Section 80C plus a metro HRA claim.</p>
             </div>
           </div>
           <p>The implication for benefits design: many allowances and benefit structures that were built around old-regime tax efficiency (LTA, HRA, meal vouchers) now deliver less value to new-regime employees. Flex benefit wallets, where employees allocate a budget to categories that suit their regime choice, are increasingly the more rational structure.</p>
@@ -1793,7 +1801,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <span class="deep-acc-indicator" aria-hidden="true">+</span>
         </summary>
         <div class="deep-acc-body">
-          <p>The good news for MNCs: group health insurance premiums paid by the employer are deductible under Section 37(1) as a business expense, and are not treated as a perquisite in the employee's hands. This makes GHI one of the most tax-efficient benefits in the India stack, regardless of which tax regime the employee has chosen.</p>
+          <p>The good news for MNCs: group health insurance premiums paid by the employer are deductible under Section 36(1)(ib) as a business expense, provided the premium is paid by any mode other than cash, and are not treated as a perquisite in the employee's hands. This makes GHI one of the most tax-efficient benefits in the India stack, regardless of which tax regime the employee has chosen.</p>
           <div class="table-scroll"><table class="tax-table">
             <thead>
               <tr>
@@ -1806,7 +1814,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             <tbody>
               <tr>
                 <td>Group Health Insurance (GHI)</td>
-                <td>Deductible under Section 37(1). 18% GST on premium.</td>
+                <td>Deductible under Section 36(1)(ib) where the premium is paid other than in cash. 18% GST on premium.</td>
                 <td><span class="tax-exempt">Not a perquisite.</span> Not included in taxable income.</td>
                 <td><span class="tax-exempt">Not a perquisite.</span> Not included in taxable income.</td>
               </tr>
@@ -1958,7 +1966,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
             <tbody>
               <tr>
                 <td>Earned / Privilege leave</td>
-                <td>12 days/year minimum (factory workers); 1 day per 20 worked. State rules vary for non-factory workers.</td>
+                <td>15 days under the Factories Act (1 day per 20 days worked). For the offices an MNC actually opens, state Shops and Establishments Acts govern and are often higher: Karnataka 18, Maharashtra 21, Delhi 15.</td>
                 <td>Accrual-based. Unused days can be carried forward up to 30–45 days depending on state. Leave encashment on exit is taxable (partially exempt on retirement).</td>
                 <td>20–25 days. Many MNCs and GCCs offer 24 days as a standard. Some offer unlimited leave for senior roles.</td>
               </tr>
@@ -2073,7 +2081,7 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
   <!-- PART 11: ALLOWANCES & CTC STRUCTURE -->
   <section id="allowances">
     <div class="section-label">Part 11 – Allowances &amp; CTC</div>
-    <h2>India CTC structure and allowances: what MNCs need to know</h2>
+    <h2>How should an MNC structure India CTC under the new labour codes?</h2>
     <p class="section-intro">India's cost-to-company (CTC) structure is more complex than most countries your payroll team has operated in. The split between basic salary and allowances has direct consequences for statutory contributions, tax liability, and what employees actually take home. Getting this structure right at incorporation saves significant rework later.</p>
 
     <div class="deep-accordion">
@@ -2092,14 +2100,15 @@ const href = (p) => `${base}${base.endsWith('/') ? '' : '/'}${p}`;
           <div class="acc-grid-2">
             <div class="acc-grid-cell">
               <h4>The 50% rule (Labour Code 2025)</h4>
-              <p>The Code on Social Security 2020, effective November 2025, requires that basic salary plus dearness allowance be at least 50% of total CTC. This was introduced specifically to close the practice of inflating allowances (which don't attract EPF or gratuity) while suppressing basic salary. Many pre-2025 India salary structures were built to keep basic at 30–40% of CTC. These are now non-compliant. If your India entity inherited salary structures from an EOR or a pre-2025 template, review them before your first independent payroll run.</p>
+              <p>The definition of &ldquo;wages&rdquo; at section 2(y) of the Code on Wages, 2019, carried into the Code on Social Security, 2020, lists the components excluded from wages. Where those excluded components together exceed 50% of total remuneration, the excess is added back into wages. Note the base: it is total remuneration, not CTC. The employer's share of PF and pension is counted within the computation, while gratuity and ESI contributions sit outside it. The intended effect is that basic plus DA can no longer be held at 30 to 40% of the package while allowances carry the balance. If your India entity inherited salary structures from an EOR or a pre-2025 template, review them before your first independent payroll run.</p>
             </div>
             <div class="acc-grid-cell">
               <h4>Practical CTC split example (₹24 LPA)</h4>
-              <p>Basic salary: ₹12,00,000 (50% of CTC). HRA: ₹4,80,000 (40% of basic, for metro city). LTA: ₹48,000. Special allowance: ₹3,96,000. Employer EPF: ₹1,44,000 (12% of basic). Employer NPS (optional): ₹48,000. Gratuity provision: ₹57,692. Total CTC: ₹24,00,000. The employee's gross salary (excluding employer's statutory contributions) is approximately ₹21.4 LPA. Take-home varies significantly based on regime choice and individual deductions.</p>
+              <p>Basic salary: ₹12,00,000 (50% of CTC). HRA: ₹4,80,000 (40% of basic, for metro city). LTA: ₹48,000. Special allowance: ₹4,22,308 (the balancing figure — recompute it if any other component changes). Employer EPF: ₹1,44,000 (12% of full basic – the voluntary choice explained below; at the statutory ₹15,000 wage ceiling it would be ₹21,600). Employer NPS (optional): ₹48,000. Gratuity provision: ₹57,692. Total CTC: ₹24,00,000. The employee's gross salary (excluding employer's statutory contributions) is approximately ₹21.4 LPA. Take-home varies significantly based on regime choice and individual deductions.</p>
             </div>
           </div>
-          <p>The practical consequence of the 50% rule: for a ₹24 LPA CTC, EPF now applies on ₹12L/year basic rather than ₹6–7L that was common before. Employer EPF contribution increases from ~₹72,000/year to ₹1,44,000/year per employee. Budget for this cost increase when modelling headcount in India for the first time.</p>
+          <p>The practical consequence of the 50% rule depends on a choice your entity makes. EPF is statutorily payable on basic plus DA up to a wage ceiling of ₹15,000/month, which caps the employer's mandatory contribution at ₹1,800/month, or ₹21,600 a year, whatever the package size. Most MNC subsidiaries choose instead to contribute on full basic salary, to match parent-company norms and to keep the benefit meaningful for senior hires. On a ₹24 LPA package with basic at ₹12,00,000, that voluntary choice costs ₹1,44,000 a year per employee against ₹21,600 at the ceiling. Decide which of the two you are doing before you model India headcount, because at senior levels the difference is close to 5% of payroll cost.</p>
+          <p>Worth watching: the ₹15,000 ceiling has been unchanged since 2014. A Supreme Court direction in January 2026 required the Centre and EPFO to decide on a revision, and a notification of 29 May 2026 gave the ₹15,000 figure statutory recognition under the Code on Social Security, 2020 without raising it. An increase to ₹25,000 has been cleared by the Finance Ministry but remains a proposal rather than law, with reporting pointing to a likely effective date of 1 April 2027 subject to Cabinet. Plan on ₹15,000 until it is notified.</p>
         </div>
       </details>
 
